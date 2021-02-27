@@ -5,7 +5,7 @@ import '../../SCSS/LandingPage.scss';
 const LandingPage = () => {
     return (
         <div className="landing-page">
-            Landing Page Component
+            Welcome to jitterbox!
         </div>
     )
 }
