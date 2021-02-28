@@ -10,7 +10,7 @@ export const AppProvider = ({ children }) => {
   const [isSurvey, setIsSurvey] = useState(true);
   const [addressState, setAddressState] = useState(null);
   const [bugSuggestions, setBugSuggestions] = useState(["ants", "spiders"]);
-  const [currentOrganicOption, setCurrentOrganicOption] = useState(null);
+  const [currentOption, setCurrentOption] = useState(null);
   const { push } = useHistory();
 
 //   useEffect(() => {
@@ -55,8 +55,8 @@ export const AppProvider = ({ children }) => {
         bugSuggestions,
         setBugSuggestions,
         addBug,
-        currentOrganicOption,
-        setCurrentOrganicOption,
+        currentOption,
+        setCurrentOption,
 
       }}
     >

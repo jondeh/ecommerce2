@@ -1,1 +1,44 @@
 @import './variables.scss';
+
+.customize-container {
+    &-true {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10vh;
+    }
+    &-false {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10vh;
+    }
+}
+
+.questions-container {
+    border: 1px solid black;
+    height: 90%;
+    width: 90%;
+    background: white;
+    &-true {
+        height: 90%;
+        width: 90%;
+        background: white;
+        animation: fadeIn;
+        animation-duration: 250ms;    
+    }
+    &-false {
+        height: 90%;
+        width: 90%;
+        background: white;
+        opacity: 0;
+        transition-duration: 250ms;
+    }
+}
+
+.customize-button-container {
+    display: flex;
+    justify-content: space-evenly;
+}

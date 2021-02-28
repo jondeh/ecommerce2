@@ -1,1 +1,45 @@
 @import './variables.scss';
+
+@import './variables.scss';
+
+.my-plan-container {
+    height: 90vh;
+    width: 100%;
+    margin-top: 10vh;
+    background: lightgreen;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    .my-plan-box {
+        height: 50%;
+        width: 90%;
+        border: 1px solid black;
+        display: grid;
+        // grid-template-rows: repeat(4, 1fr)
+    }
+    
+    .my-plan-box-row {
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .row-left {
+            width: 15%;
+            height: 90%;
+            border: 1px solid white;
+        }
+
+        .row-right {
+            width: 70%;
+            height: 90%;
+            border: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.display-bug {
+    // border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: lowercase;
+    span {
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .bug-image {
+        font-size: 16px;
+        font-size: 2em;
+        border: 2px solid whitesmoke;
+        height: 2em;
+        max-height: 2em;
+        width: 2em;
+        max-width: 2em;
+        background: whitesmoke;
+        // background: $baseGreen;
+        color: $baseBlue4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition-duration: 250ms;
+    }
+}

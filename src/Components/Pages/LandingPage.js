@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
 import { UserContext } from '../../context/UserContext';
+import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 
 import '../../SCSS/LandingPage.scss';
@@ -10,12 +11,14 @@ import video1 from '../../data/media/sampleVideo1.mp4';
 
 const LandingPage = () => {
     const { user } = useContext(UserContext);
+    const { setIsSurvey } = useContext(AppContext);
     const { push } = useHistory()
 
     const handleClick = (loggedIn) => {
         if (loggedIn) {
             push ('/my-plan');
         } else {
+            setIsSurvey(true)
             push ('/customize');
         };
     };

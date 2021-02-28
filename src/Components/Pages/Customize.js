@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import '../../SCSS/Customize.scss';
@@ -20,6 +20,10 @@ const Customize = () => {
         {component: <BugQuestion />, description: "People in XYZ typically have these pests.  Select the pests you need help with."}, 
       ]);
 
+    //   useEffect(() => {
+    //     console.log("isSurvey", isSurvey)
+    //   }, [isSurvey])
+
     const handleClick = (type) => {
         switch (type){
             case "previous":
@@ -37,8 +41,10 @@ const Customize = () => {
                 }
                 break;
             case "get-plan":
+                console.log("HIT", isSurvey)
                 setIsSurvey(false)
-                push("/my-plan")
+                push('/my-plan')
+                // push('/my-plan')
                 break;
         }
     }
@@ -46,13 +52,13 @@ const Customize = () => {
 
     return (
         <div className={`customize-container-${isSurvey}`}>
-            <div className={`pests-container`}>
+            <div className={`questions-container`}>
             <span>{surveyPosition[surveyNum].description}</span> <br/>
             {/* <span>The highlighted pests are common in your area.</span> */}
                 {isSurvey ? 
                 surveyPosition[surveyNum].component : 
                 null} 
-                <div className="survey-button-container">
+                <div className="customize-button-container">
                     {
                         surveyNum > 0 && <button onClick={() => handleClick("previous")}>PREVIOUS</button>
                     }
