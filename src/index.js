@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { HashRouter, BrowserRouter } from 'react-router-dom';
+import { AppProvider } from './context/AppContext';
+import { UserProvider } from './context/UserContext';
 
 const Router = process.env.NODE_ENV === 'development' ? HashRouter: BrowserRouter
 
@@ -11,7 +13,11 @@ const Router = process.env.NODE_ENV === 'development' ? HashRouter: BrowserRoute
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <UserProvider>
+        <AppProvider>
+          <App />
+        </AppProvider>
+      </UserProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

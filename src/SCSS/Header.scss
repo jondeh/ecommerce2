@@ -1,0 +1,24 @@
+@import './variables.scss';
+
+.header-container {
+    height: 10vh;
+    width: 100%;
+    max-width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26px;
+    padding: 0 1em;
+    position: absolute;
+    z-index: 2;
+    transition-duration: $time2;
+    // border: 1px solid red;
+    top: 0;
+    h2 {
+        font-size: 24px;
+        font-family: 'Lato', sans-serif;
+        color: white;
+        font-weight: 1000;
+    }
+}

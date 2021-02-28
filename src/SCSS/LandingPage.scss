@@ -1,1 +1,34 @@
 @import './variables.scss';
+
+.landing-page {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(187, 87, 87, 0.479);
+    text-align: center;
+    
+    video {
+        height: 80vh;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    .funnel-start {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+        width: 100%;
+        button {
+            width: 60%;
+        }
+    }
+
+    
+
+    
+}

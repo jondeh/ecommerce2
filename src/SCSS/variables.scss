@@ -1,0 +1,34 @@
+$baseGreen: #ACE1AF; // Celadon
+$baseGreen2: lightgreen; // Lightgreen
+$baseGreen3: #8FBC8B; // Dark Sea Green
+$baseGreen4: #71BC78; // Fern
+$baseGreen5: #98FB98; // Pale Green
+$baseGreen6: #50C878; // Paris Green
+$baseGreen7: #D0F0C0; // Tea Green
+$baseGreen8: #DADD98; // Green Earth
+$baseGreen9: #A9BA9D; // Laurel Green
+$baseGreen10: #3EB489; // Mint
+
+$baseBlue: #F0F8FF; // AliceBlue
+$baseBlue2: #6CB4EE; // Argentinian Blue
+$baseBlue3: #7CB9E8; // Aero
+$baseBlue4: #72A0C1; // Air Superiority Blue / Icons
+$baseBlue5: #89CFF0; // Baby blue
+$baseBlue6: #5072A7; // Blue Yonder
+$baseBlue7: #6699CC; // Blue-Gray
+$baseBlue8: #4B9CD3; // Carolina Blue
+$baseBlue9: #B9D9EB; // Columbia Blue / Background
+$baseBlue10: #5D76A9; // Grizzlies Blue
+$baseBlue11: #E1EBEE; // Marian Blue
+$baseBlue12: #B0C4DE; // Light Steel Blue / Background
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+$time1: 250ms;
+$time2: 400ms;
+$time3: 550ms;
+
+$headerHeight: 10vh;
