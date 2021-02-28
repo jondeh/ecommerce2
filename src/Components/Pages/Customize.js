@@ -1,13 +1,13 @@
 import React from 'react';
 
-import '../../SCSS/LandingPage.scss';
+import '../../SCSS/Customize.scss';
 
-const LandingPage = () => {
+const Customize = () => {
     return (
-        <div className="landing-page">
-
+        <div className="customize-container">
+            Customize Component
         </div>
     )
 }
 
-export default LandingPage;
+export default Customize;

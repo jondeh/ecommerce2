@@ -8,7 +8,7 @@ const express = require("express"),
 
 // Controllers
 
-// const authCtrl = require("./controllers/authController");
+const authCtrl = require("./controllers/authController");
 
 // Middleware
 app.use(express.json());
@@ -42,10 +42,11 @@ massive({
 
 
 // Auth Endpoints
-// app.post("/auth/register", authCtrl.register);
-// app.post("/auth/login", authCtrl.login);
-// app.post("/auth/logout", authCtrl.logout);
-// app.post("/auth/user", authCtrl.register);
+
+app.post("/auth/register", authCtrl.register);
+app.post("/auth/login", authCtrl.login);
+app.post("/auth/logout", authCtrl.logout);
+app.post("/auth/user", authCtrl.register);
 
 // User Endpoints
 // app.get("/api/users", userCtrl.getUsers);
