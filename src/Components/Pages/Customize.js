@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import '../../SCSS/Customize.scss';
+import { Button } from '@material-ui/core';
 
 import BugQuestion from '../Sections/BugQuestion';
 import WhoQuestion from '../Sections/WhoQuestion';
@@ -60,9 +61,10 @@ const Customize = () => {
                 null} 
                 <div className="customize-button-container">
                     {
-                        surveyNum > 0 && <button onClick={() => handleClick("previous")}>PREVIOUS</button>
+                        surveyNum > 0 && <Button variant="contained" onClick={() => handleClick("previous")}>PREVIOUS</Button>
                     }
-                    {surveyNum >= surveyPosition.length-1 ? <button onClick={() => handleClick("get-plan")}>GET PLAN</button> : <button onClick={() => handleClick("next")}>NEXT</button>}
+                    {surveyNum >= surveyPosition.length-1 ? 
+                    <Button variant="contained" onClick={() => handleClick("get-plan")}>GET PLAN</Button> : <Button variant="contained" onClick={() => handleClick("next")}>NEXT</Button>}
                     
                 </div>
         </div>
