@@ -10,9 +10,11 @@
     overflow: hidden;
     background: rgba(187, 87, 87, 0.479);
     text-align: center;
+    animation: fadeIn;
+    animation-duration: $time3;
     
     video {
-        height: 80vh;
+        height: 70vh;
         object-fit: cover;
         overflow: hidden;
     }
@@ -24,6 +26,7 @@
         height: 20vh;
         width: 100%;
         button {
+            transition-duration: $time3;
             width: 60%;
         }
     }

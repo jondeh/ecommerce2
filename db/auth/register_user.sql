@@ -1,4 +1,4 @@
-insert into accounts (
+insert into customers (
    email,
    password,
    is_admin
@@ -7,4 +7,4 @@ insert into accounts (
    ${password},
    false
 )
-returning email, user_id, is_admin;
+returning email, customer_id, is_admin;

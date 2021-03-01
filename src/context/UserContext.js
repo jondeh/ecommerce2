@@ -23,9 +23,6 @@ export const UserProvider = ({ children }) => {
       localStorage.setItem("user", json)
     }, [user]);
 
-
-    console.log("user", user)
-
     const login = (body) => {
         console.log("body", body)
         axios

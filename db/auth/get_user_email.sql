@@ -1,3 +1,3 @@
 select *
-from accounts
+from customers
 where email = $1;

@@ -7,6 +7,7 @@ import MyPlan from './Components/Pages/MyPlan';
 import Checkout from './Components/Pages/Checkout';
 import Cart from './Components/Pages/Cart';
 import Auth from './Components/Pages/Auth';
+import Register from './Components/Pages/Register';
 
 export default (
     <Switch>
@@ -16,5 +17,6 @@ export default (
         <Route exact path='/checkout' component={ Checkout } />
         <Route exact path='/cart' component={ Cart } />
         <Route exact path='/auth' component={ Auth } />
+        <Route exact path='/register' component={ Register } />
     </Switch>
 )

@@ -7,6 +7,7 @@ module.exports = {
         const db = req.app.get("db");
         const { email, password } = req.body;
         const emailResult = await db.auth.get_user_email(email);
+        console.log("emailResult", emailResult)
         if (emailResult[0]) {
             return res.status(409).send("Email already registered");
         };

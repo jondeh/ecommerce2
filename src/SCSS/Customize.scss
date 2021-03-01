@@ -8,7 +8,7 @@
         align-items: center;
         padding-top: 10vh;
         animation: fadeIn;
-        animation-duration: $time2;
+        animation-duration: $time3;
     }
     &-false {
         height: 100vh;
@@ -17,7 +17,7 @@
         align-items: center;
         padding-top: 10vh;
         animation: fadeIn;
-        animation-duration: $time2;
+        animation-duration: $time3;
     }
 }
 
@@ -31,14 +31,14 @@
         width: 90%;
         background: white;
         animation: fadeIn;
-        animation-duration: 250ms;    
+        animation-duration: $time3;    
     }
     &-false {
         height: 90%;
         width: 90%;
         background: white;
         opacity: 0;
-        transition-duration: 250ms;
+        transition-duration: $time3;
     }
 }
 

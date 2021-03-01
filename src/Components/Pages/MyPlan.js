@@ -12,7 +12,7 @@ const MyPlan = () => {
     ]
 
     const mappedData = myPlanData.map((e,i) => {
-        return <div className="my-plan-box-row">
+        return <div className="my-plan-box-row" key={i} >
                     <div className="row-left">{e.image}</div>
                     <div className="row-right"><span>{e.description}</span></div>
                 </div>

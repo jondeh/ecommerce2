@@ -2,14 +2,16 @@ import React, { useState, useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 import '../../SCSS/Auth.scss';
 import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 
 const Auth = () => {
+    const { push } = useHistory()
     const { user, setUser, login } = useContext(UserContext);
     const [emailInput, setEmailInput] = useState(null);
     const [passwordInput, setPasswordInput] = useState(null);
 
-    const handleButtonClick = () => {
+    const handleLogin = () => {
         login({email: emailInput, password: passwordInput});
     };
 
@@ -21,6 +23,10 @@ const Auth = () => {
                 setPasswordInput(value);
         };
     };
+
+    const handleRegister = () => {
+        push('/register');
+    }
 
     return (
         <div className="auth-container">
@@ -42,12 +48,14 @@ const Auth = () => {
                 />
             </div>
             
-            <Button variant="contained">
+            <Button
+                onClick={handleLogin} 
+                variant="contained">
                 SUBMIT
             </Button>
             <div className="register">
                 <h4>Don't have an account?</h4>
-                <Button variant="contained">REGISTER HERE</Button>
+                <Button onClick={handleRegister} variant="contained">REGISTER HERE</Button>
             </div>
         </div>
     )
