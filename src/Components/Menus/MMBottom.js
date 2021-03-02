@@ -23,7 +23,8 @@ const MMBottom = () => {
     }
 
     const handleGetStarted = () => {
-        
+        push('/customize')
+        setMobileMenuVisible(false)
     }
 
     if (user) {

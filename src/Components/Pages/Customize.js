@@ -10,6 +10,7 @@ import WhoQuestion from '../Sections/WhoQuestion';
 import ProductQuestion from '../Sections/ProductQuestion';
 import HomeQuestion from '../Sections/HomeQuestion';
 import SprayerQuestion from '../Sections/SprayerQuestion';
+import EmailQuestion from '../Sections/EmailQuestion';
 
 
 const Customize = () => {
@@ -20,7 +21,7 @@ const Customize = () => {
     const [bugAnswer, setBugAnswer] = useState(["ants", "spiders"]);
     const [sprayerAnswer, setSprayerAnswer] = useState(null);
     const [addressState, setAddressState] = useState(null);
-    const { isSurvey, setIsSurvey } = useContext(AppContext);
+    const { isSurvey, setIsSurvey, emailQuestion, setEmailQuestion } = useContext(AppContext);
     const [surveyNum, setSurveyNum] = useState(0);
     
     useEffect(() => {
@@ -70,10 +71,10 @@ const Customize = () => {
             }
             break;
         case "get-plan":
-            console.log("HIT", isSurvey)
-            setIsSurvey(false)
-            push('/my-plan')
+            // console.log("HIT", isSurvey)
+            // setIsSurvey(false)
             // push('/my-plan')
+            setEmailQuestion(true)
             break;
         }
     }
@@ -88,40 +89,40 @@ const Customize = () => {
 
     return (
         <div className={`customize-container-${isSurvey}`}>
-            <div className={`questions-container`}>
+            <div className={`questions-container`}> 
             <span>{surveyPosition[surveyNum].description}</span> <br/>
             {/* <span>The highlighted pests are common in your area.</span> */}
-                {isSurvey ? 
-                surveyPosition[surveyNum].component : 
-                null} 
-                <div className="customize-button-container">
-                    {
-                        surveyNum > 0 ? 
-                        <Button 
-                            variant="contained" 
-                            onClick={() => handleClick("previous")}>PREVIOUS
-                        </Button> : 
-                        <Button 
-                            variant="contained" 
-                            disabled>PREVIOUS
-                        </Button>
-                    }
-                    {surveyNum >= surveyPosition.length-1 ? 
+            {isSurvey ? 
+            surveyPosition[surveyNum].component : 
+            null} 
+            <div className="customize-button-container">
+                {
+                    surveyNum > 0 ? 
                     <Button 
                         variant="contained" 
-                        onClick={() => handleClick("get-plan")}>GET PLAN
+                        onClick={() => handleClick("previous")}>PREVIOUS
                     </Button> : 
-                    [productAnswer, homeAnswer, whoAnswer, bugAnswer,sprayerAnswer][surveyNum] === null ? <Button 
-                    variant="contained" 
-                    onClick={() => handleClick("next")}
-                    disabled>NEXT
-                </Button> : 
                     <Button 
                         variant="contained" 
-                        onClick={() => handleClick("next")}>NEXT
-                    </Button>}
-                    
-                </div>
+                        disabled>PREVIOUS
+                    </Button>
+                }
+                {surveyNum >= surveyPosition.length-1 ? 
+                <Button 
+                    variant="contained" 
+                    onClick={() => handleClick("get-plan")}>GET PLAN
+                </Button> : 
+                [productAnswer, homeAnswer, whoAnswer, bugAnswer,sprayerAnswer][surveyNum] === null ? <Button 
+                variant="contained" 
+                onClick={() => handleClick("next")}
+                disabled>NEXT
+            </Button> : 
+                <Button 
+                    variant="contained" 
+                    onClick={() => handleClick("next")}>NEXT
+                </Button>}
+                
+            </div>
         </div>
         </div>
     )

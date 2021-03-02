@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .landing-page {
-    min-height: 100vh;
+    height: calc(100vh - #{$headerHeight});
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -10,8 +10,7 @@
     overflow: hidden;
     background: rgba(187, 87, 87, 0.479);
     text-align: center;
-    animation: fadeIn;
-    animation-duration: $time3;
+    @include fadeInEase3();
     
     video {
         height: 70vh;
@@ -20,9 +19,7 @@
     }
 
     .funnel-start {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter();
         height: 20vh;
         width: 100%;
         button {

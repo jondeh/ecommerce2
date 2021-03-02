@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .cart-container {
-    height: calc(100vh - #{$headerHeight});
-    margin-top: $headerHeight;
+    @include heightWithHeader();
+    @include fadeInEase3();
     background: white;
 }

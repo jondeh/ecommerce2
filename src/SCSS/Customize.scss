@@ -2,16 +2,16 @@
 
 .customize-container {
     &-true {
-        height: 100vh;
-        padding-top: $headerHeight;
+        @include heightWithHeader();
         @include flexCenter();
-        @include fadeInEase();
+        @include fadeInEase3();
+        position: relative;
     }
     &-false {
-        height: 100vh;
-        padding-top: $headerHeight;
+        @include heightWithHeader();
         @include flexCenter();
-        @include fadeInEase();
+        @include fadeInEase3();
+        position: relative;
     }
 }
 
@@ -21,11 +21,14 @@
     width: 90%;
     background: white;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     &-true {
         height: 90%;
         width: 90%;
         background: white;
-        @include fadeInEase();    
+        @include fadeInEase3();    
     }
     &-false {
         height: 90%;
@@ -41,10 +44,11 @@
     // border: 1px solid black;
     display: flex;
     justify-content: space-evenly;
-    position: absolute;
+    // position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 1em;
+    padding: .5em;
+    // margin-top: 2em;
     button {
         width: 44%;
         transition-duration: $time3;

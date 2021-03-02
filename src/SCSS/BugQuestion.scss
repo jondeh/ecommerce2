@@ -3,8 +3,7 @@
 .bug-question-grid {
     display: grid;
     height: 80%;
-    animation: fadeIn;
-    animation-duration: 250ms;
+    @include fadeInEase1();
     // width: 90%;
 }
 

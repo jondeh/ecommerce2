@@ -1,8 +1,7 @@
 @import './variables.scss';
 
 .auth-container {
-    margin-top: 10vh;
-    height: 90vh;
+    @include heightWithHeader();
     width: 100%;
     background: lightyellow;
     border: 4px solid yellow;

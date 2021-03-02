@@ -35,7 +35,7 @@ const MyPlan = () => {
     return (
         <div className="my-plan-container" style={gridStyle}>
             <h1>My Plan</h1>
-            <span>Order your nutrient plan for a beautiful, lush, healthy lawn from spring to fall.</span>
+            <span>Your box:</span>
             <div className="my-plan-box">
             {mappedData}
             </div>

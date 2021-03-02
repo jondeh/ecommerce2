@@ -13,7 +13,7 @@ const MobileMenu = () => {
     const { mobileMenuVisible } = useContext(AppContext);
     const { user } = useContext(UserContext);
 
-    console.log(mobileMenuVisible)
+    // console.log(mobileMenuVisible)
 
     return (
         <div className={`mobile-menu-${mobileMenuVisible}`}>

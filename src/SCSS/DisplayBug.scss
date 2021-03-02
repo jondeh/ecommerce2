@@ -1,17 +1,15 @@
 @import './variables.scss';
 
 .display-bug {
-    // border: 1px solid blue;
-    display: flex;
+    @include flexCenter();
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-transform: lowercase;
     span {
         font-size: 11px;
         font-weight: bold;
     }
     .bug-image {
+        @include flexCenter();
         font-size: 16px;
         font-size: 2em;
         border: 2px solid whitesmoke;
@@ -22,9 +20,6 @@
         background: whitesmoke;
         // background: $baseGreen;
         color: $baseBlue4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         transition-duration: 250ms;
     }
 }

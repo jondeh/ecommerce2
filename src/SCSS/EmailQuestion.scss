@@ -1,5 +1,37 @@
 @import './variables.scss';
 
 .email-question-container {
-    position: absolute;
+    &-true {
+        @include heightWithHeader();
+        @include fadeInEase3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        border: 4px double black;
+        background: whitesmoke;
+        z-index: 3;
+        transition-duration: $time2;
+        animation: fadeIn;
+        transition-duration: $time3;
+        animation-duration: $time2;
+        input {
+            width: 65%;
+        }
+        // transform: translateY(110%);
+    }
+    &-false {
+        @include heightWithHeader();
+        @include fadeInEase3;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        border: 4px double black;
+        background: whitesmoke;
+        z-index: 3;
+        transform: translateY(110%);
+        transition-duration: $time3;
+    }
 }

@@ -1,19 +1,25 @@
 import React, { useState, useContext, useEffect } from 'react';
 import './App.scss';
 import routes from './routes';
+import { useLocation } from 'react-router-dom';
 import Header from './Components/Menus/Header';
 import { AppContext } from './context/AppContext';
 import MobileMenu from './Components/Menus/MobileMenu';
+import Footer from './Components/Menus/Footer';
+import EmailQuestion from './Components/Sections/EmailQuestion';
 
 function App() {
-
-  // const { mobileMenuVisible } = useContext(AppContext);
+  const location = useLocation()
+  const { mobileMenuVisible, emailQuestion } = useContext(AppContext);
 
   return (
     <div className="App">
       <Header />
       <MobileMenu />
+      <EmailQuestion />   
       { routes }
+      {/* {(!mobileMenuVisible && location.pathname !== '/customize') && <Footer />} */}
+      <Footer />
     </div>
   );
 }

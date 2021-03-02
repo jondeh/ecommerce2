@@ -1,11 +1,9 @@
 import React, { useState, createContext, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
-
-// import { states } from '../data/regions';
-
+import { useHistory, useLocation } from 'react-router-dom';
 export const AppContext = createContext(null);
 
 export const AppProvider = ({ children }) => {
+  const location = useLocation()
   // const [productAnswer, setProductAnswer] = useState(null);
   // const [houseAnswer, setHouseAnswer] = useState(null);
   // const [whoAnswer, setWhoAnswer] = useState(null);
@@ -13,8 +11,9 @@ export const AppProvider = ({ children }) => {
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [isSurvey, setIsSurvey] = useState(true);
   const [addressState, setAddressState] = useState(null);
-  // const [bugSuggestions, setBugSuggestions] = useState(["ants", "spiders"]);
+  const [emailQuestion, setEmailQuestion] = useState(false);
   const [cart, setCart] = useState([]);
+  const [getAnswers, setGetAnswers] = useState(null)
 
   const { push } = useHistory();
 
@@ -23,6 +22,10 @@ export const AppProvider = ({ children }) => {
     push(route)
     console.log("hi")
   }
+
+  useEffect(() => {
+    setEmailQuestion(false);
+  }, [location]);
 
   return (
     <AppContext.Provider
@@ -42,9 +45,10 @@ export const AppProvider = ({ children }) => {
         setIsSurvey,
         addressState,
         setAddressState,
-        // bugSuggestions,
-        // setBugSuggestions,
-        // addBug,
+        emailQuestion,
+        setEmailQuestion,
+        getAnswers,
+        setGetAnswers
 
       }}
     >

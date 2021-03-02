@@ -1,17 +1,15 @@
 @import './variables.scss';
 
 .my-plan-container {
-    // height: 90vh;
-    height: calc(100vh - #{$headerHeight});
+    @include heightWithHeader();
     width: 100%;
-    margin-top: $headerHeight;
     background: lightgreen;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    @include fadeInEase();
+    @include fadeInEase3();
     
     .my-plan-box {
         height: 50%;
@@ -37,9 +35,7 @@
             width: 70%;
             height: 90%;
             border: 1px solid white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flexCenter();
         }
     }
 }

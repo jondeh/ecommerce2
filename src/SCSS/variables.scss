@@ -28,6 +28,11 @@ $time3: 550ms;
 
 $headerHeight: 10vh;
 
+@mixin heightWithHeader() {
+    margin-top: $headerHeight;
+    height: calc(90vh - #{$headerHeight});
+}
+
 @keyframes fadeIn {
     0% {opacity: 0}
     100% {opacity: 1}
@@ -39,7 +44,7 @@ $headerHeight: 10vh;
     animation-timing-function: ease;
 }
 
-@mixin fadeInEase() {
+@mixin fadeInEase3() {
     animation: fadeIn;
     animation-duration: $time3;
     animation-timing-function: ease;

@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+.footer-container {
+    .footer-header {
+        height: $headerHeight;
+        @include flexCenter();
+    }
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background: transparent;
+    position: relative;
+    // padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        margin: 0;
+        font-size: 1.5em;
+    }
+}
+
+.footer-nav-bar {
+    border: 1px solid white;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-blog-nav {
+    height: 22%;
+    border: 1px solid white;
+}
+
+.social-media-nav {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .header-container {
-    height: 10vh;
+    height: $headerHeight;
     width: 100%;
     max-width: 100%;
     background: transparent;

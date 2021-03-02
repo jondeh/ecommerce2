@@ -1,7 +1,6 @@
 @import './variables.scss';
 
 .who-question-container {
-    display: grid;
     height: 80%;
     display: flex;
     justify-content: space-evenly;
@@ -9,6 +8,5 @@
     div {
         border: 1px solid black;
     }
-    animation: fadeIn;
-    animation-duration: 250ms;
+    @include fadeInEase1();
 }

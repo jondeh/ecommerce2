@@ -9,13 +9,14 @@
     @include fadeInEase1();
 
     .home-question-address {
-        height: 45%;
+        height: 42%;
         width: 90%;
     }
 
     .home-question-size {
-        height: 45%;
+        height: 42%;
         width: 90%;
+        overflow: auto;
         h3 {
             @include fadeInEase1();
         }
