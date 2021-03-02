@@ -27,6 +27,7 @@ export const AppProvider = ({ children }) => {
     setEmailQuestion(false);
   }, [location]);
 
+  console.log("emailQuestion", emailQuestion)
   return (
     <AppContext.Provider
       value={{

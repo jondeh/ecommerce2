@@ -26,11 +26,11 @@ $time1: 250ms;
 $time2: 400ms;
 $time3: 550ms;
 
-$headerHeight: 10vh;
+$headerHeight: 12vh;
 
 @mixin heightWithHeader() {
     margin-top: $headerHeight;
-    height: calc(90vh - #{$headerHeight});
+    height: calc(88vh - #{$headerHeight});
 }
 
 @keyframes fadeIn {

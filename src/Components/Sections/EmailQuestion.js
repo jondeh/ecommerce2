@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import '../../SCSS/EmailQuestion.scss';
 import { AppContext } from '../../context/AppContext';
 import { UserContext } from '../../context/UserContext';
@@ -22,10 +22,12 @@ const EmailQuestion = () => {
         }
     }
 
+    console.log("emailInput", emailInput)
+
     return (
         <div className={`email-question-container-${emailQuestion}`}>
             Great! We're retrieving your custom box. Put in your email so we can save your progress!
-            <input onChange={(e) => setEmailInput(e.target.value)}></input>
+            <input value={emailInput} onChange={(e) => setEmailInput(e.target.value)}></input>
             <Button 
                 onClick={handleClick}
                 variant="contained">OK</Button>

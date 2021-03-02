@@ -5,7 +5,7 @@ module.exports = {
     register: async (req, res) => {
         console.log("req.body", req.body)
         const db = req.app.get("db");
-        const { email, password } = req.body;
+        const { email, password, productAnswer, homeAnswer, whoAnswer, bugAnswer, sprayerAnswer } = req.body;
         const emailResult = await db.auth.get_user_email(email);
         console.log("emailResult", emailResult)
         if (emailResult[0]) {
@@ -17,7 +17,12 @@ module.exports = {
             // firstName,
             // lastName,
             email,
-            password: hash
+            password: hash,
+            productAnswer,
+            homeAnswer,
+            whoAnswer,
+            bugAnswer,
+            sprayerAnswer,
         })
         delete user[0].password;
         req.session.user = user[0];

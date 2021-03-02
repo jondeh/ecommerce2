@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../../context/AppContext';
+import { UserContext } from '../../context/UserContext';
 import { useHistory } from 'react-router-dom';
 import '../../SCSS/Customize.scss';
 import { Button } from '@material-ui/core';
@@ -22,6 +23,7 @@ const Customize = () => {
     const [sprayerAnswer, setSprayerAnswer] = useState(null);
     const [addressState, setAddressState] = useState(null);
     const { isSurvey, setIsSurvey, emailQuestion, setEmailQuestion } = useContext(AppContext);
+    const { setAnswers } = useContext(UserContext);
     const [surveyNum, setSurveyNum] = useState(0);
     
     useEffect(() => {
@@ -71,9 +73,9 @@ const Customize = () => {
             }
             break;
         case "get-plan":
-            // console.log("HIT", isSurvey)
-            // setIsSurvey(false)
-            // push('/my-plan')
+            setAnswers({
+                productAnswer, homeAnswer, whoAnswer, bugAnswer, sprayerAnswer
+            })
             setEmailQuestion(true)
             break;
         }
