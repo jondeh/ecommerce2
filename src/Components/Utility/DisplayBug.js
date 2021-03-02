@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import { AppContext } from '../../context/AppContext';
+// import { AppContext } from '../../context/AppContext';
 
 import '../../SCSS/DisplayBug.scss';
 
-const DisplayBug = ({ thisBug, bugSuggestions }) => {
-    const { addBug } = useContext(AppContext);
+const DisplayBug = ({ thisBug, bugAnswer, addBug }) => {
+    // const { addBug } = useContext(AppContext);
 
     const [testStyle, setTestStyle] = useState(
-        {background: (bugSuggestions) && 
-            bugSuggestions.includes(thisBug.bug) ? "lightgreen" : null}
+        {background: (bugAnswer) && 
+            bugAnswer.includes(thisBug.bug) ? "lightgreen" : null}
     )
 
     const testClick = () => {

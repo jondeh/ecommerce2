@@ -6,35 +6,17 @@ import { useHistory } from 'react-router-dom';
 export const AppContext = createContext(null);
 
 export const AppProvider = ({ children }) => {
+  // const [productAnswer, setProductAnswer] = useState(null);
+  // const [houseAnswer, setHouseAnswer] = useState(null);
+  // const [whoAnswer, setWhoAnswer] = useState(null);
+  // const [bugAnswer, setBugAnswer] = useState(null);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [isSurvey, setIsSurvey] = useState(true);
   const [addressState, setAddressState] = useState(null);
-  const [bugSuggestions, setBugSuggestions] = useState(["ants", "spiders"]);
-  const [currentOption, setCurrentOption] = useState(null);
+  // const [bugSuggestions, setBugSuggestions] = useState(["ants", "spiders"]);
+  const [cart, setCart] = useState([]);
+
   const { push } = useHistory();
-
-//   useEffect(() => {
-//     console.log("DING DING DING");
-//     if (addressState) {
-//       setBugSuggestions(states[addressState])
-//     }
-//   }, [addressState])
-
-  const addBug = (bug) => {
-    let newSuggestions = bugSuggestions.map(e => e)
-
-    setBugSuggestions(() => {
-      let bugIndex = newSuggestions.findIndex(e => e === bug)
-
-      if (bugIndex === -1) {
-        return [...newSuggestions, bug]
-      } else {
-        let finalSuggestions = [...newSuggestions]
-        finalSuggestions.splice(bugIndex, 1)
-        return [...finalSuggestions]
-      }
-    })
-  }
 
   const handleMenuClick = (route) => {
     setMobileMenuVisible(false)
@@ -45,6 +27,14 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        // productAnswer,
+        // setProductAnswer,
+        // whoAnswer,
+        // setWhoAnswer,
+        // houseAnswer,
+        // setHouseAnswer,
+        // bugAnswer,
+        // setBugAnswer,
         mobileMenuVisible,
         setMobileMenuVisible,
         handleMenuClick,
@@ -52,11 +42,9 @@ export const AppProvider = ({ children }) => {
         setIsSurvey,
         addressState,
         setAddressState,
-        bugSuggestions,
-        setBugSuggestions,
-        addBug,
-        currentOption,
-        setCurrentOption,
+        // bugSuggestions,
+        // setBugSuggestions,
+        // addBug,
 
       }}
     >

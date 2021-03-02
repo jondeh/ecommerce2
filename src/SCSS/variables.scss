@@ -22,13 +22,31 @@ $baseBlue10: #5D76A9; // Grizzlies Blue
 $baseBlue11: #E1EBEE; // Marian Blue
 $baseBlue12: #B0C4DE; // Light Steel Blue / Background
 
-@keyframes fadeIn {
-    0% {opacity: 0}
-    100% {opacity: 1}
-}
-
 $time1: 250ms;
 $time2: 400ms;
 $time3: 550ms;
 
 $headerHeight: 10vh;
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@mixin fadeInEase1() {
+    animation: fadeIn;
+    animation-duration: $time1;
+    animation-timing-function: ease;
+}
+
+@mixin fadeInEase() {
+    animation: fadeIn;
+    animation-duration: $time3;
+    animation-timing-function: ease;
+}
+
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

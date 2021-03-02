@@ -3,21 +3,15 @@
 .customize-container {
     &-true {
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10vh;
-        animation: fadeIn;
-        animation-duration: $time3;
+        padding-top: $headerHeight;
+        @include flexCenter();
+        @include fadeInEase();
     }
     &-false {
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10vh;
-        animation: fadeIn;
-        animation-duration: $time3;
+        padding-top: $headerHeight;
+        @include flexCenter();
+        @include fadeInEase();
     }
 }
 
@@ -26,12 +20,12 @@
     height: 90%;
     width: 90%;
     background: white;
+    position: relative;
     &-true {
         height: 90%;
         width: 90%;
         background: white;
-        animation: fadeIn;
-        animation-duration: $time3;    
+        @include fadeInEase();    
     }
     &-false {
         height: 90%;
@@ -39,10 +33,20 @@
         background: white;
         opacity: 0;
         transition-duration: $time3;
+        animation-timing-function: ease;
     }
 }
 
 .customize-button-container {
+    // border: 1px solid black;
     display: flex;
     justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    button {
+        width: 44%;
+        transition-duration: $time3;
+    }
 }

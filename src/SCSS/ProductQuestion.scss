@@ -7,19 +7,20 @@
     justify-content: space-evenly;
     align-items: center;
     animation: fadeIn;
-    animation-duration: 250ms;
+    animation-duration: $time1;
     font-size: 14px;
     .option-container {
         display: flex;
-        width: 100%;
+        justify-content: space-between;
+        width: 90%;
         height: 25%;
-        justify-content: space-evenly;
-        transition-duration: 250ms;
+        transition-duration: $time1;
     
         .option-picture {
             height: 100%;
             width: 33%;
             border: 1px solid black;
+            @include flexCenter();
         }
     
         .option-text {

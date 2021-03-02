@@ -20,16 +20,16 @@ const sampleBugs = [
     {bug: "voles", image: null}, 
     {bug: "silverfish", image: null}]
 
-const BugQuestion = ({ surveyNum, setSurveyNum }) => {
-    const { bugSuggestions } = useContext(AppContext);
+const BugQuestion = ({ surveyNum, setSurveyNum, bugAnswer, addBug }) => {
+    // const { bugAnswer } = useContext(AppContext);
 
     useEffect(() => {
-        console.log("BugQuestion suggestions", bugSuggestions)
-    }, [bugSuggestions])
+        console.log("BugQuestion suggestions", bugAnswer)
+    }, [bugAnswer])
 
 
     const displayBugs = sampleBugs.map((e,i) => {
-        return <DisplayBug {...{thisBug: e, bugSuggestions}} key={i} />
+        return <DisplayBug {...{thisBug: e, bugAnswer, addBug}} key={i} />
     })
 
     const gridStyle = {
