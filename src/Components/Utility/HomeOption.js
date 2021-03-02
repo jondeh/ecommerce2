@@ -7,7 +7,7 @@ const HomeOption = ({ option, text, homeAnswer,  handleHomeClick }) => {
 
     useEffect(() => {
         setMyStyle({background: homeAnswer === option && "lightgreen"})
-    }, [homeAnswer]);
+    }, [homeAnswer, option]);
 
     return (
         <div className="option" onClick={() => handleHomeClick(option)} style={myStyle}>
