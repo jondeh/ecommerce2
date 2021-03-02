@@ -35,14 +35,18 @@ export const UserProvider = ({ children }) => {
           .catch(({ message }) => console.log(message))
       };
 
-      const register = (body) => {
+      const register = (body, myPlan) => {
         console.log("body", body)
         axios
           .post("/auth/register", body)
           .then(({ data }) => {
             console.log("data", data)
             setUser(data)
-            push("/")
+            if (myPlan) {
+              push("/my-plan")
+            } else {
+              push("/")
+            }
           })
           .catch(({ message }) => console.log(message))
       };

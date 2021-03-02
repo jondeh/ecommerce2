@@ -14,11 +14,11 @@ const EmailQuestion = () => {
 
     const handleClick = () => {
         if (emailInput.includes("@")) {
-            register({email: emailInput, password: "password"})
-            setIsSurvey(false)
+            register({email: emailInput, password: "password"}, "my-plan")
+            // setIsSurvey(false)
             setGetAnswers(null)
             setEmailInput('')
-            push('/my-plan')
+            // push('/my-plan')
         }
     }
 
