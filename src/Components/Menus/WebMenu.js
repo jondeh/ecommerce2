@@ -6,6 +6,7 @@ import "../../SCSS/WebMenu.scss";
 import { positions, withStyles } from "@material-ui/core";
 import { UserContext } from '../../context/UserContext';
 import { useHistory } from 'react-router-dom';
+import {IoMdArrowDropdown} from 'react-icons/io';
 
 const StyledMenu = withStyles({
   paper: {
@@ -80,6 +81,7 @@ const MenuDemo = ({ user }) => {
         // onMouseOut={handleClose}
       >
         {user.email}
+        <IoMdArrowDropdown />
       </Button>
       <StyledMenu
         // className={classes.root}

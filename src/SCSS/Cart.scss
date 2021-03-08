@@ -9,9 +9,51 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    button {
-        text-transform: lowercase;
-        font-family: $font1;
-        color: $textColor1;
+  
+    .cart-titles {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        h3 {
+            margin: 0;
+        }
+    }
+    .cart-body {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+    }
+    .cart-main {
+        height: 98%;
+        max-height: 98%;
+        // border-right: 3px solid whitesmoke;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0px;
+        // border: 2px solid purple;
+    }
+
+    .cost-button-container {
+        width: 55%;
+        height: 45%;
+        min-height: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        // border: 2px solid orange;
+        button {
+            margin-top: 8px;
+            text-transform: lowercase;
+            font-family: $font1;
+            color: white;
+            border-radius: 15px;
+            background: green;
+            width: 60%;
+        }
     }
 }

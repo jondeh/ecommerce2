@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import '../../SCSS/Header.scss';
 import { AppContext } from '../../context/AppContext';
 import { UserContext } from '../../context/UserContext';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
 
@@ -18,8 +18,9 @@ import {ImCancelCircle} from 'react-icons/im';
 
 const Header = ({ mobile }) => {
     const { push } = useHistory();
+    const location = useLocation();
     const { user, logout } = useContext(UserContext);
-    const {mobileMenuVisible, setMobileMenuVisible, webAuthVisible, setWebAuthVisible} = useContext(AppContext);
+    const {mobileMenuVisible, setMobileMenuVisible, webAuthVisible, setWebAuthVisible } = useContext(AppContext);
 
     const handleMobileMenuClick = () => {
         setMobileMenuVisible(!mobileMenuVisible);
@@ -38,9 +39,16 @@ const Header = ({ mobile }) => {
         
     }
 
+    const headerStyle = {
+        background: mobile && 'white',
+        boxShadow: location.pathname === "/" ? "none" : null,
+    }
+
+    console.log("LOCATION", location);
+
     return (
         <div 
-            style={{background: (mobile) && "white"}}
+            style={headerStyle}
             className="header-container"> 
             <LogoTitle {...{mobile}}/>
             {

@@ -12,7 +12,16 @@ export const AppProvider = ({ children }) => {
   const [isSurvey, setIsSurvey] = useState(true);
   const [addressState, setAddressState] = useState(null);
   const [emailQuestion, setEmailQuestion] = useState(false);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([
+    {name: "jitterbox smart DIY pest protection", 
+    description: "pest control subscription - custom plan",
+    price: 35,
+    image: null}
+  ]);
+  const [subTotal, setSubTotal] = useState(cart.reduce((acc, val) => {
+    return acc += val.price
+  }, 0));
+  const [tax, setTax] = useState((subTotal * .0485).toFixed());
   const [getAnswers, setGetAnswers] = useState(null);
   const [addOnQuestion, setAddOnQuestion] = useState(false);
   const [webAuthVisible, setWebAuthVisible] = useState(false);
@@ -30,6 +39,18 @@ export const AppProvider = ({ children }) => {
     setEmailQuestion(false);
     setWebAuthVisible(false);
   }, [location]);
+
+  useEffect(() => {
+    setSubTotal(() => {
+      return cart.reduce((acc, val) => {
+        return acc += val.price
+      }, 0)
+    })
+  }, [cart])
+
+  useEffect(() => {
+    setTax((subTotal * .0485).toFixed())
+  }, [subTotal])
 
   console.log("emailQuestion", emailQuestion)
   return (
@@ -58,6 +79,12 @@ export const AppProvider = ({ children }) => {
         setAddOnQuestion,
         webAuthVisible,
         setWebAuthVisible,
+        cart, 
+        setCart,
+        subTotal,
+        setSubTotal,
+        tax,
+        setTax,
 
       }}
     >

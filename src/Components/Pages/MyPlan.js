@@ -70,8 +70,8 @@ const MyPlan = () => {
 
     
     const handleBuy = () => {
-        setAddOnQuestion(true);
-        // push('/cart')
+        // setAddOnQuestion(true);
+        push('/cart')
     };
     
     const gridStyle = {
@@ -98,9 +98,10 @@ const MyPlan = () => {
                 <div className="my-plan-box" style={gridStyle}>
                     {mappedData}
                 </div>
+                <span className="price">$35</span>
             <Button 
                 onClick={handleBuy}
-                variant="contained">BUY NOW</Button>
+                variant="contained">add to cart</Button>
             </div>
             <div className="my-plan-schedule-container">
                 <h3>plan details</h3>

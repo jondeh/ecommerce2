@@ -1,7 +1,26 @@
 @import './variables.scss';
 
 .cart-cost-container {
-    border: 1px solid black;
-    width: 75%;
-    height: 35%;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    // width: 55%;
+    // height: 35%;
+    // min-height: 35%;
+    height: 100%;
+    width: 100%;
+    // margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: $font2;
+    .money {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px 5px;
+    }
+    .total {
+        font-size: 1.15em;
+        font-weight: bold;
+    }
 }

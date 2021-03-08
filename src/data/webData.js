@@ -41,3 +41,30 @@ export const dummyProducts = {
         image: null,
     },
 }
+
+export const dummyAddOns = {
+    advion: {
+        name: 'ant bait',
+        description: 'ant bait description',
+        image: null,
+        price: 9,
+    },
+    lemexa: {
+        name: 'bed bug dust',
+        description: 'bed bug dust description',
+        image: null,
+        price: 5,
+    },
+    roachGel: {
+        name: 'roach gel',
+        description: 'roach gel description',
+        image: null,
+        price: 19,
+    },
+    mouseTrap: {
+        name: 'mouse trap',
+        description: 'mouse trap description',
+        image: null,
+        price: 3,
+    },
+}

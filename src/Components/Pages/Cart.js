@@ -6,6 +6,7 @@ import { Button } from '@material-ui/core';
 import '../../SCSS/Cart.scss';
 import { useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
+import AddOns from '../Sections/AddOns';
 
 const Cart = () => {
     const [priceId, setPriceId] = useState('price_1IR7TAL0ktef83td1e9vzgH0')
@@ -40,9 +41,23 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            <CartItems />
-            <CartCost />
-            <Button onClick={handleSessionClick} variant="contained">CHECKOUT</Button>
+            <div className="cart-titles">
+                <h3>cart</h3>
+                <h3>add-ons</h3>
+            </div>
+            <div className="cart-body">
+                <div className="cart-main">
+                    {/* <h3>Cart</h3> */}
+                    <CartItems />
+                    <div className="cost-button-container">
+                        <CartCost />
+                        <Button 
+                            onClick={handleSessionClick} variant="contained">CHECKOUT
+                        </Button>
+                    </div>
+                </div>
+                <AddOns />
+            </div>
         </div>
     )
 }
