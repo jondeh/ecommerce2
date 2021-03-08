@@ -11,15 +11,24 @@
         position: absolute;
         width: 100%;
         // border: 10px solid white;
-        border-radius: 5px;
-        background: whitesmoke;
+        border-radius: 15px;
+        background: white;
         z-index: 3;
         transition-duration: $time2;
         animation: fadeIn;
         transition-duration: $time3;
         animation-duration: $time2;
+        padding: 5vh;
+        color: $textColor1;
+        font-family: $font1;
+        .box-icon {
+            transform: rotate(360deg);
+        }
         input {
-            width: 65%;
+            @include inputStyle();
+            height: 2em;
+            width: 55%;
+            padding-left: 6px;
         }
         button {
             font-family: $font1;

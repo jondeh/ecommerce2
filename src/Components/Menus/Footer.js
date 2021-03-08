@@ -27,9 +27,9 @@ const Footer = () => {
                 {/* <div className="footer-blog-nav-description">natural lawn tips and tricks</div> */}
             </div>
             <div className="social-media-nav">
-                <FaFacebookF color={"darkslategray"} size={35} />
-                <FaInstagram color={"darkslategray"} size={35} />
-                <FaTwitter color={"darkslategray"} size={35} />
+                <FaFacebookF color={"white"} size={35} />
+                <FaInstagram color={"white"} size={35} />
+                <FaTwitter color={"white"} size={35} />
             </div>
         </div>
     )

@@ -13,7 +13,9 @@ const SprayerOption = ({ sprayerAnswer, setSprayerAnswer, option, text}) => {
 
     return (
         <div className="option" style={myStyle}>
-            <div onClick={handleClick} className="option-image"> {option} </div>
+            <div onClick={handleClick} className="option-image"> 
+            
+            </div>
             <div onClick={handleClick} className="option-text"> {text} </div>
         </div>
     )

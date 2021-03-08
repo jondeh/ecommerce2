@@ -13,11 +13,11 @@ const sampleBugs = [
     {bug: "ants", image: <Ant />}, 
     {bug: "spiders", image: <Spider />}, 
     {bug: "wasps", image: <Wasp />}, 
-    {bug: "mice", image: null}, 
+    {bug: "centipedes", image: null}, 
     {bug: "cockroaches", image: null}, 
     {bug: "scorpions", image: null}, 
     {bug: "moths", image: null}, 
-    {bug: "voles", image: null}, 
+    {bug: "millipedes", image: null}, 
     {bug: "silverfish", image: null}]
 
 const BugQuestion = ({ surveyNum, setSurveyNum, bugAnswer, addBug }) => {
