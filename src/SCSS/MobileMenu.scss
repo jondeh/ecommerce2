@@ -34,83 +34,42 @@
   }
 }
 
+.mm-top-container {
+  // box-shadow: $shadow1;
+  border-bottom: 1px solid white;
+  background: whitesmoke;
+  // border-radius: 5px;
+}
+.mm-middle-container {
+  // border: 1px solid grey;
+  // box-shadow: $shadow1;
+  background: whitesmoke;
+  // border-radius: 5px;
+}
+
 
 .mm-bottom-container {
-    background: lightgrey;
+    border-top: 1px solid white;
+    background: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    button {
+      font-family: $font1;
+      color: $textColor1;
+      text-transform: lowercase;
+    }
 }
 
-// .mobile-menu {
-//   height: 100%;
-//   border: 2px solid black;
-// }
-
-// .mobile-menu-top {
-//   height: 42.5%;
-//   width: 100%;
-//   background: lightgreen;
-//   .mobile-menu-top-option {
-//     height: 33.3%;
-//     width: 100%;
-//     // padding: 0em 1em;
-//     border: 1px solid black;
-//     display: flex;
-//     justify-content: flex-start;
-//     align-items: center;
-//     .mobile-menu-top-left {
-//         height: 3em;
-//         width: 3em;
-//         border: 1px solid black;
-//         margin: 0em 2em;
-//     }
-//     .mobile-menu-top-right {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-evenly;
-//         height: 100%;
-//         h4 {
-//             margin: 0;
-//             text-align: left;
-//         }
-//     }
-//   }
-// }
-
-// .mobile-menu-middle {
-//   height: 42.5%;
-//   width: 100%;
-//   background: lightyellow;
-//   display: flex;
-//   .mobile-menu-middle-column {
-//     width: 50%;
-//     height: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     .column-option {
-//         border: 1px solid black;
-//         height: 20%;
-//         width: 100%;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//     }
-//   }
-// }
-
-// .mobile-menu-bottom {
-//   height: 15%;
-//   width: 100%;
-//   background: teal;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   button {
-//       border-radius: 15%;
-//       height: 80%;
-//       width: 80%;
-//   }
-// }
+@media only screen and (min-width: $size2) {
+    
+  .mobile-menu {
+    &-true {
+      display: none;
+    }
+    &-false {
+      display: none;
+    }
+  }
+}

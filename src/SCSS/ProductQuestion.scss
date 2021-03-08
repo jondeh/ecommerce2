@@ -9,24 +9,58 @@
     animation: fadeIn;
     animation-duration: $time1;
     font-size: 14px;
+    color: $textColor1;
     .option-container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 90%;
         height: 25%;
         transition-duration: $time1;
+        border: 1px solid white;
+        padding-right: 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        overflow: hidden;
     
         .option-picture {
             height: 100%;
             width: 33%;
-            border: 1px solid black;
+            border: 1px solid white;
+            background: white;
             @include flexCenter();
+            .option-pic-row {
+                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                span {
+                    @include buttonStyle1();
+                    font-size: 1.4em;
+                    color: $baseBlue;
+                    margin-left: 2px;
+                }
+            }
         }
     
         .option-text {
             width:50%;
             max-width:50%;
             overflow: auto;
+            font-size: .9em;
+            font-family : $font1;
+            text-align: right;
         }
     }
 }
+
+@media only screen and (min-width: $size2) { 
+    .product-question-container {
+        .option-container {
+            .option-text {
+                text-align: center;
+                text-align: right;
+            }
+        }
+    }
+  }

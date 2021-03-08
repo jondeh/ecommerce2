@@ -1,41 +1,101 @@
 @import './variables.scss';
 
 .my-plan-container {
-    @include heightWithHeader();
+    // border: 2px dotted blue;
+    // @include heightWithHeader();
+    margin-top: $headerHeight;
     width: 100%;
-    background: lightgreen;
+    background: whitesmoke;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     @include fadeInEase3();
-    
-    .my-plan-box {
-        height: 50%;
-        width: 90%;
-        border: 1px solid black;
-        display: grid;
-        // grid-template-rows: repeat(4, 1fr)
+    font-family: $font1;
+    color: $textColor1;
+    button {
+        text-transform: lowercase;
+        font-family: $font1;
+        color: $textColor1;
+    }
+    .my-plan-box-container {
+        // border: 2px solid purple;
+        height: 90%;
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        // background: $blue11;
+        .my-plan-box {
+            // border: 3px solid yellow;
+            box-shadow: $shadow1;
+            height: $boxHeight;
+            width: $boxHeight;
+            display: grid;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+        }
     }
     
     .my-plan-box-row {
-        border: 1px solid black;
+        border: 1px solid whitesmoke;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
 
-        .row-left {
-            width: 15%;
-            height: 90%;
-            border: 1px solid white;
+        .row-left {                 // Height & width in-line
+            // border: 3px solid whitesmoke;
+            border-radius: 15px;
+            @include flexCenter();
         }
 
         .row-right {
             width: 70%;
             height: 90%;
-            border: 1px solid white;
+            // border: 1px solid white;
             @include flexCenter();
+            justify-content: flex-end;
         }
     }
+}
+
+@media only screen and (min-width: $size2) {
+    .my-plan-container {
+        font-family: $font1;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;    
+        align-items: flex-start; 
+        padding-top: 8vh;
+
+        .my-plan-box-container {
+            min-height: 70vh;
+            justify-content: space-between;
+            padding: 8px;
+            h3 {
+                margin: 0;
+            }
+            border-radius: 15px;
+            .my-plan-box {
+                font-size: .8em;
+                // height: 60%;
+                // width: 30%;
+                // border: 2px dotted orange;
+                .my-plan-box-row {
+                    .row-right {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+
+        .my-plan-schedule-container {
+            // border: 2px solid green;
+            min-height: 90%;
+            width: 60%;
+        }
+    } 
 }

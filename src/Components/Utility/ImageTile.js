@@ -2,19 +2,19 @@ import React, { useState, useEffect, useContext } from 'react';
 
 // import { AppContext } from '../../context/AppContext';
 
-import '../../SCSS/DisplayBug.scss';
+import '../../SCSS/ImageTile.scss';
 
-const DisplayBug = ({ thisBug, bugAnswer, addBug }) => {
+const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
     // const { addBug } = useContext(AppContext);
 
     const [testStyle, setTestStyle] = useState(
         {background: (bugAnswer) && 
-            bugAnswer.includes(thisBug.bug) ? "lightgreen" : null}
+            bugAnswer.includes(thisBug.bug) ? '#ACE1AF' : null}
     )
 
     const testClick = () => {
         addBug(thisBug.bug)
-        setTestStyle({background: !testStyle.background && "lightgreen"})
+        setTestStyle({background: !testStyle.background && '#ACE1AF'})
     }
 
     return (
@@ -33,4 +33,4 @@ const DisplayBug = ({ thisBug, bugAnswer, addBug }) => {
     )
 }
 
-export default DisplayBug;
+export default ImageTile;

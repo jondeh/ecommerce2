@@ -3,7 +3,9 @@ import { Button } from '@material-ui/core';
 import { UserContext } from '../../context/UserContext';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
+import TextOverlay from '../Utility/TextOverlay';
 
+import GoogleMap from '../Utility/GoogleMap';
 import '../../SCSS/LandingPage.scss';
 // import { pageSection } from '../../data/webData';
 
@@ -25,6 +27,7 @@ const LandingPage = () => {
 
     return (
         <div className="landing-page">
+            <TextOverlay />
             <video
                 id="landing-video" 
                 className="landing-video" 
@@ -35,9 +38,11 @@ const LandingPage = () => {
                     <source src={video1}></source>
             </video>
             <div className="funnel-start">
+                <h1>let's get started</h1>
                 <Button 
                     onClick={() => handleClick(user)} variant="contained">
-                        {user ? "MY PLAN" : 'LETS GET STARTED'}
+                        see my plan
+                        {/* {user ? "MY PLAN" : 'LETS GET STARTED'} */}
                 </Button>
             </div>
         </div>

@@ -2,4 +2,9 @@
 
 .checkout-container {
     @include heightWithHeader();
+    button {
+        text-transform: lowercase;
+        font-family: $font1;
+        color: $textColor1;
+    }
 }

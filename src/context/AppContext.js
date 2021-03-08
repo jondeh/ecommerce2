@@ -13,7 +13,9 @@ export const AppProvider = ({ children }) => {
   const [addressState, setAddressState] = useState(null);
   const [emailQuestion, setEmailQuestion] = useState(false);
   const [cart, setCart] = useState([]);
-  const [getAnswers, setGetAnswers] = useState(null)
+  const [getAnswers, setGetAnswers] = useState(null);
+  const [addOnQuestion, setAddOnQuestion] = useState(false);
+  const [webAuthVisible, setWebAuthVisible] = useState(false);
 
   const { push } = useHistory();
 
@@ -24,7 +26,9 @@ export const AppProvider = ({ children }) => {
   }
 
   useEffect(() => {
+    setAddOnQuestion(false);
     setEmailQuestion(false);
+    setWebAuthVisible(false);
   }, [location]);
 
   console.log("emailQuestion", emailQuestion)
@@ -49,7 +53,11 @@ export const AppProvider = ({ children }) => {
         emailQuestion,
         setEmailQuestion,
         getAnswers,
-        setGetAnswers
+        setGetAnswers,
+        addOnQuestion,
+        setAddOnQuestion,
+        webAuthVisible,
+        setWebAuthVisible,
 
       }}
     >

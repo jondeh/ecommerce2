@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+.text-overlay-container {
+    position: absolute;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    @include flexCenter();
+    padding: 0px 1em;
+    height: 70vh;
+    font-family: $font1;
+    letter-spacing: .01em;
+    span {
+        @include slideFade1();
+        transition-duration: $time3;
+    }
+    .span- {
+        &true {         // Text that is showing
+            display: inline;
+        }
+        &false {        // Text that is hidden
+            display: none;
+        }
+    }
+}
+
+@media only screen and (min-width: $size2) {
+    .text-overlay-container {
+        height: 80vh;
+        padding: 0px 2em;
+        font-size: 3.5em;
+    }
+}

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 const SprayerOption = ({ sprayerAnswer, setSprayerAnswer, option, text}) => {
-    const [myStyle, setMyStyle] = useState({background: sprayerAnswer === option && "lightgreen"});
+    const [myStyle, setMyStyle] = useState({background: sprayerAnswer === option && "#ACE1AF"});
 
     const handleClick = () => {
         setSprayerAnswer(option)
     };
 
     useEffect(() => {
-        setMyStyle({background: sprayerAnswer === option && "lightgreen"})
+        setMyStyle({background: sprayerAnswer === option && "#ACE1AF"})
     }, [sprayerAnswer]);
 
     return (

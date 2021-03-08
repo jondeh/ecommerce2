@@ -1,0 +1,98 @@
+@import './variables.scss';
+
+.section-container {
+    border: 2px solid white;
+    min-height: $sectionSize;
+    margin-bottom: 5vh;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: $shadow1;
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: $sectionHeader;
+        background: whitesmoke;
+        border-bottom: 1px solid whitesmoke;
+        padding: 0px 10px;
+        font-family: $font2;
+        font-size: 1.3em;
+        text-transform: lowercase;
+        .box-name {
+            display: flex;
+            align-items: flex-end;
+            // border: 1px solid black;
+            img {
+                height: $sectionHeader / 2;
+                width: $sectionHeader / 2;
+                margin-right: .2em;
+            }
+            span {
+                // margin-top: .2em;
+            }
+        }
+    }
+    .section-products {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: $sectionSize - $sectionHeader;
+        padding-bottom: 2vh;
+        .product {
+            height: 23vh;
+            width: 23vh;
+            // border: 1px solid black;
+            font-size: .8em;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .product-image {
+                // border: 1px solid black;
+                height: 83%;
+                width: 83%;
+                min-height: 83%;
+                min-width: 83%;
+                box-shadow: $shadow1;
+                border-radius: 5px;
+                @include flexCenter();
+                .dummy-circle {
+                    height: 80%;
+                    width: 80%;
+                    border-radius: 50%;
+                    background: $baseGreen;
+                    @include flexCenter();
+                }
+            }
+            .product-name {
+                // border: 1px solid orange;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5px;
+                span {
+                    // border: 1px solid purple;
+                    width: 60%;
+                    text-align: center;
+                    text-transform: capitalize;
+                }
+                .info-icon {
+                    margin-right: 8px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    @include flexCenter();
+                    transition-duration: $time1;
+                    &:hover {
+                        background: $baseBlue3;
+                        // color: lightgrey;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $size2) {
+    
+}

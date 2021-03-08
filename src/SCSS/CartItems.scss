@@ -1,0 +1,10 @@
+@import './variables.scss';
+
+.cart-items-container {
+    border: 1px solid black;
+    width: 75%;
+    max-height: 35%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,8 @@
+@import './variables.scss';
+
+.success-container {
+    @include heightWithHeader();
+    width: 100%;
+    background: whitesmoke;
+    @include flexCenter();
+}

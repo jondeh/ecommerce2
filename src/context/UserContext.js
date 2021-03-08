@@ -72,6 +72,8 @@ export const UserProvider = ({ children }) => {
         .catch(({ message }) => console.log(message))
     };
 
+   
+
   //   const getUser = () => {
   //     axios
   //       .get("/auth/user")

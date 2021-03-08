@@ -13,10 +13,10 @@ const LogoTitle = ({ mobile }) => {
 
     return (
         <h2 
-            // contentEditable
+            className="logo-title"
             style={{color: mobile ? "darkgrey" : "white"}}
             onClick={handleLogoClick}>
-                jitterbo<span style={{color: "green"}}>x</span>
+                <div><span>x</span>obrettij</div>
         </h2>
     );
 };

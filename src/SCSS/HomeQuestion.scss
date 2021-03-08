@@ -4,19 +4,63 @@
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     @include fadeInEase1();
+    @include textStyle1();
 
     .home-question-address {
-        height: 42%;
+        // height: 42%;
+        // border: 1px solid black;
         width: 90%;
+        button {
+            @include fadeInEase1();
+            transition-duration: $time3;
+            background: none;
+            border-color: $baseGreen;
+            max-height: 3.5em;
+            overflow: auto;
+            color: $textColor1;
+            // color: grey;
+            // font-weight: 600;
+            // @include textStyle1();
+            // box-shadow: $shadow2;
+            position: relative;
+            padding-left: 2.7em;
+            text-align: right;
+            &:hover {
+                .edit-icon {
+                    border-color: rgb(182, 182, 182);
+                    color: rgb(182, 182, 182);
+                }
+            }
+            .edit-icon {
+                transition-duration: $time3;
+                font-size: 2em;
+                margin: 0px 10px 0px 0px;
+                // border: 2px solid $baseBlue3;
+                // border: 2px solid $textColor1;
+                border: 2px solid lightgrey;
+                border-radius: 5px;
+                // color: $baseBlue3;
+                // color: $textColor1;
+                color: lightgrey;
+                position: absolute;
+                left: 5px;
+                // box-shadow: $shadow3;
+            }
+        }
+        
+        .add-input-container {
+            @include fadeInEase1();
+            // border: 1px solid black;
+        }
     }
 
     .home-question-size {
-        height: 42%;
+        // border: 1px solid black;
+        height: 70%;
         width: 90%;
-        overflow: auto;
         h3 {
             @include fadeInEase1();
         }
@@ -32,8 +76,22 @@
     display: flex;
     justify-content: space-evenly;
     div {
-        @include flexCenter();
-        border: 1px solid black;
-        transition-duration: $time1;
+        cursor: pointer;
+        // transition-duration: 0;
+        transition-duration: $time-5;
+        @include hoverShadow2();
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 2.5px;
+        border-radius: 10px;
+        .home-size-text {
+            // position: absolute;
+            // bottom: 10%;
+            font-size: .75em;
+            // color: black;
+            color: $textColor1;
+            font-weight: bold;
+        }
     }
 }

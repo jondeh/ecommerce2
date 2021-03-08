@@ -4,4 +4,14 @@
     @include heightWithHeader();
     @include fadeInEase3();
     background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    button {
+        text-transform: lowercase;
+        font-family: $font1;
+        color: $textColor1;
+    }
 }

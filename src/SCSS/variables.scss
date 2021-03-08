@@ -1,4 +1,4 @@
-$baseGreen: #ACE1AF; // Celadon
+$baseGreen1: #ACE1AF; // Celadon
 $baseGreen2: lightgreen; // Lightgreen
 $baseGreen3: #8FBC8B; // Dark Sea Green
 $baseGreen4: #71BC78; // Fern
@@ -9,24 +9,56 @@ $baseGreen8: #DADD98; // Green Earth
 $baseGreen9: #A9BA9D; // Laurel Green
 $baseGreen10: #3EB489; // Mint
 
-$baseBlue: #F0F8FF; // AliceBlue
-$baseBlue2: #6CB4EE; // Argentinian Blue
-$baseBlue3: #7CB9E8; // Aero
-$baseBlue4: #72A0C1; // Air Superiority Blue / Icons
-$baseBlue5: #89CFF0; // Baby blue
-$baseBlue6: #5072A7; // Blue Yonder
-$baseBlue7: #6699CC; // Blue-Gray
-$baseBlue8: #4B9CD3; // Carolina Blue
-$baseBlue9: #B9D9EB; // Columbia Blue / Background
-$baseBlue10: #5D76A9; // Grizzlies Blue
-$baseBlue11: #E1EBEE; // Marian Blue
-$baseBlue12: #B0C4DE; // Light Steel Blue / Background
+// $baseGreen: $baseGreen5; // MAIN GREEN //
+$baseGreen: $baseGreen1; // MAIN GREEN //
 
+$blue1: #F0F8FF; // AliceBlue
+$blue2: #6CB4EE; // Argentinian Blue
+$blue3: #7CB9E8; // Aero
+$blue4: #72A0C1; // Air Superiority Blue / Icons
+$blue5: #89CFF0; // Baby blue
+$blue6: #5072A7; // Blue Yonder // +
+$blue7: #6699CC; // Blue-Gray
+$blue8: #4B9CD3; // Carolina Blue
+$blue9: #B9D9EB; // Columbia Blue / Background
+$blue10: #5D76A9; // Grizzlies Blue
+$blue11: #E1EBEE; // Marian Blue
+$blue12: #B0C4DE; // Light Steel Blue / Background
+
+$baseBlue: $blue6; // Header/Footer - Main Blue
+// $baseBlue: $blue11; 
+// $baseBlue: $blue12; // Overlay Blue
+$baseBlue2: $blue4; // Some icons - Secondary Blue
+$baseBlue3: $blue12; // Some icons - Another Secondary Blue
+
+$textColor1: darkslategray;
+
+
+$time-5: 50ms;
 $time1: 250ms;
 $time2: 400ms;
 $time3: 550ms;
 
+$size1: 360px;
+$size2: 768px;
+// $size3: 360px;
+
+$sectionSize: 40vh;
+$sectionHeader: 8vh;
+
+$font1: 'Raleway', sans-serif;
+$font2: 'Yanone Kaffeesatz', sans-serif;
+$font3: 'Raleway', sans-serif;
+$font4: 'Raleway', sans-serif;
+$font5: 'Raleway', sans-serif;
+
+$shadow1: 0px 1px 5px grey;
+$shadow2: 0px 1px 5px $textColor1;
+$shadow3: .5px .5px 2px $textColor1;
+$shadow4: 0px 0px 4px grey;
+
 $headerHeight: 12vh;
+$boxHeight: 45vh;
 
 @mixin heightWithHeader() {
     margin-top: $headerHeight;
@@ -36,6 +68,41 @@ $headerHeight: 12vh;
 @keyframes fadeIn {
     0% {opacity: 0}
     100% {opacity: 1}
+}
+
+@keyframes spin1 {
+    0% {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes slide1 {
+    0% {transform: translateX(-100px)}
+    100% {transform: translateX(0px)}
+}
+
+@keyframes slideFade1 {
+    0% {
+        transform: translateY(-80px);
+        opacity: 0;
+        color: darkgreen;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+        color: white;
+    }
+}
+
+@mixin slideIn1() {
+    animation: slide1;
+    animation-duration: $time3;
+    animation-timing-function: linear;
+}
+
+@mixin slideFade1() {
+    animation: slideFade1;
+    animation-duration: $time3;
+    animation-timing-function: linear;
 }
 
 @mixin fadeInEase1() {
@@ -50,8 +117,55 @@ $headerHeight: 12vh;
     animation-timing-function: ease;
 }
 
+@mixin spinAnimation1() {
+    animation: spin1;
+    animation-duration: $time1;
+    animation-timing-function: linear;
+}
+
 @mixin flexCenter() {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@mixin textStyle1() {
+    font-family: $font1;
+    color: $textColor1;
+}
+
+@mixin textStyle2() {
+    font-family: $font2;
+    color: $textColor1;
+    font-size: 1.3em;
+}
+
+@mixin buttonStyle1() {
+    @include textStyle1();
+    text-transform: lowercase;
+}
+
+@mixin inputStyle() {
+    height: 1.7em;
+    border: none;
+    box-shadow: $shadow1;
+    transition-duration: $time3;
+    border-radius: 3px;
+    &:focus {
+        transform: scaleX(1.1);
+    }
+}
+
+@mixin hoverShadow1() {
+    &:hover {
+        box-shadow: $shadow1;
+    }
+}
+
+@mixin hoverShadow2() {
+    &:hover {
+        // transition-duration: $time-5;
+        box-shadow: $shadow4;
+    }
 }

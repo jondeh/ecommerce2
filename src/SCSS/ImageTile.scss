@@ -7,19 +7,27 @@
     span {
         font-size: 11px;
         font-weight: bold;
+        font-family: $font1;
     }
     .bug-image {
+        cursor: pointer;
         @include flexCenter();
         font-size: 16px;
         font-size: 2em;
-        border: 2px solid whitesmoke;
+        border: 2px solid white;
         height: 2em;
         max-height: 2em;
         width: 2em;
         max-width: 2em;
-        background: whitesmoke;
-        // background: $baseGreen;
-        color: $baseBlue4;
+        // background: white;
+        // background: $baseGreen3;
+        // background: $baseGreen7;
+        // background: $baseGreen10;
+        color: $baseBlue2;
+        // color: $baseBlue10;
+        // color: $baseBlue11;
+        // color: $baseBlue12;
         transition-duration: 250ms;
+        border-radius: 15px;
     }
 }

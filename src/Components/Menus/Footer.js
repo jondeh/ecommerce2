@@ -24,12 +24,12 @@ const Footer = () => {
             </div>
             <div className="footer-blog-nav">
                 <div className="footer-blog-nav-picture"></div>
-                <div className="footer-blog-nav-description">natural lawn tips and tricks</div>
+                {/* <div className="footer-blog-nav-description">natural lawn tips and tricks</div> */}
             </div>
             <div className="social-media-nav">
-                <FaFacebookF size={35} />
-                <FaInstagram size={35} />
-                <FaTwitter size={35} />
+                <FaFacebookF color={"darkslategray"} size={35} />
+                <FaInstagram color={"darkslategray"} size={35} />
+                <FaTwitter color={"darkslategray"} size={35} />
             </div>
         </div>
     )

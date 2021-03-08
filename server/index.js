@@ -4,11 +4,13 @@ const express = require("express"),
     massive = require("massive"),
     app = express(),
     path = require('path'),
+    stripe = require('stripe')(process.env.STRIPE_SECRET),
     { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 
 // Controllers
 
 const authCtrl = require("./controllers/authController");
+const payCtrl = require("./controllers/payController");
 
 // Middleware
 app.use(express.json());
@@ -50,3 +52,9 @@ app.post("/auth/user", authCtrl.register);
 
 // User Endpoints
 // app.get("/api/users", userCtrl.getUsers);
+
+// Payment Endpoints
+
+// app.post('/pay', payCtrl.pay);
+// app.get('/secret', payCtrl.secret);
+app.post('/create-checkout-session', payCtrl.session);

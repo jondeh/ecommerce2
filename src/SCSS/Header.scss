@@ -21,4 +21,43 @@
         color: white;
         font-weight: 1000;
     }
+    .web-sign-in {
+        display: none;
+    }
+}
+
+.menu-icon {
+    &:focus {
+        @include spinAnimation1();
+    }
+}
+
+@media only screen and (min-width: $size2) {
+    .menu-icon {
+        display: none;
+    }  
+    
+    .header-container {
+            font-family: $font1;
+            font-size: .9em;
+            font-weight: bold;
+            color: white;
+            // padding: 0vh 32vh;
+            padding: 0vh 17vw;
+        .web-sign-in {
+            // font-size: .7em;
+            margin-top: .9em;
+            font-weight: bold;
+            display: inline;
+            // background: none;
+            border: none;
+            color: white;
+            text-transform: lowercase;
+        }
+        .web-user-email {
+            margin-top: .9em;
+        }
+    }
+
+    
 }

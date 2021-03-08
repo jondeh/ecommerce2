@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.web-menu {
+    display: none;
+    position: relative;
+    button {
+        text-transform: lowercase;
+        color: white;
+        font-family: $font1;
+    }
+}
+
+.styled-menu {
+    // font-family: $font2;
+    color: blue;
+}
+
+@media only screen and (min-width: $size2) {
+    .web-menu {
+        display: block;
+    }
+}

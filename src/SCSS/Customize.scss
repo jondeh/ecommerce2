@@ -6,24 +6,36 @@
         @include flexCenter();
         @include fadeInEase3();
         position: relative;
+        width: 100%;
+        background: whitesmoke;
     }
     &-false {
         @include heightWithHeader();
         @include flexCenter();
         @include fadeInEase3();
         position: relative;
+        width: 100%;
     }
 }
 
 .questions-container {
-    border: 1px solid black;
+    // border: 1px solid grey;
+    box-shadow: $shadow1;
     height: 90%;
     width: 90%;
-    background: white;
+    border-radius: 15px;
+    background: whitesmoke;
     position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    .qc-description {
+        font-size: .85em;
+        margin: 10px 15px 0px 15px;
+        color: $textColor1;
+        text-align: left;
+        font-family: $font1;
+    }
     &-true {
         height: 90%;
         width: 90%;
@@ -52,5 +64,14 @@
     button {
         width: 44%;
         transition-duration: $time3;
+        background: whitesmoke;
+        // font-family: $font1;
+        @include buttonStyle1();
+    }
+}
+
+@media only screen and (min-width: $size2) {
+    .questions-container {
+        width: 40%;
     }
 }

@@ -2,21 +2,28 @@ import React, { useState, useEffect, useContext } from 'react';
 
 import { AppContext } from '../../context/AppContext';
 
-const ProductOption = ({ image, description, option, productAnswer, setProductAnswer }) => {
+const ProductOption = ({ id, image, description, option, productAnswer, setProductAnswer }) => {
 
-    const [myStyle, setMyStyle] = useState({background: productAnswer === option && "lightgreen"});
+    const [myStyle, setMyStyle] = useState({boxShadow: productAnswer === option && "0px 0px 5px 2px #ACE1AF"});
 
     const handleClick = () => {
         setProductAnswer(option)
     };
 
     useEffect(() => {
-        setMyStyle({background: productAnswer === option && "lightgreen"})
+        setMyStyle({boxShadow: productAnswer === option && "0px 0px 5px 2px #ACE1AF"})
     }, [productAnswer]);
 
     return (
         <div className="option-container" onClick={handleClick} style={myStyle}>
-            <div className="option-picture">{image}</div>
+            <div className="option-picture">
+                {id ? 
+                <div className="option-pic-row">
+                    {image[0]}
+                    <span>+</span>
+                    {image[1]}
+                </div> : image}
+            </div>
             <div className="option-text">{description}</div>
         </div>
     )

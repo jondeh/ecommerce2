@@ -2,9 +2,10 @@
 
 .bug-question-grid {
     display: grid;
-    height: 80%;
+    height: 70%;
     @include fadeInEase1();
     // width: 90%;
+    // border: 1px solid blue;
 }
 
 

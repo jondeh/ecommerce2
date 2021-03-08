@@ -1,0 +1,44 @@
+@import './variables.scss';
+
+.google-find-container {
+    // border: 3px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    input {
+        @include inputStyle();
+        padding-left: 5px;
+    }
+}
+
+.autocomplete-dropdown-container {
+    margin-top: .5em;
+    width: 98%;
+    box-shadow: $shadow1;
+    transition-duration: $time3;
+    border-radius: 5px;
+    z-index: 5;
+    position: absolute;
+    top: 100%;
+}
+
+.suggestion-item--active {
+    border: 2px solid whitesmoke;
+    background: $baseGreen;
+    border-radius: 5px;
+    background: $baseBlue3;
+    // transition-duration: $time1;
+}
+
+.suggestion-item {
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
+}
+
+@media only screen and (min-width: $size2) {
+    .autocomplete-dropdown-container {
+        width: 75%;
+    }
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import '../../SCSS/BugQuestion.scss';
 import { AppContext } from '../../context/AppContext';
 
-import DisplayBug from '../Utility/DisplayBug';
+import DisplayBug from '../Utility/ImageTile';
 
 import { GiAnt as Ant} from 'react-icons/gi';
 import { FaSpider as Spider } from 'react-icons/fa';
