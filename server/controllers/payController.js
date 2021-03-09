@@ -14,7 +14,7 @@ module.exports = {
                 line_items: [       // Put add-ons in here
                     {price: priceId, quantity: 1},
                 ],
-                success_url: "http://localhost:3000/#/success/{CHECKOUT_SESSION_ID}",
+                success_url: "https://jitterbox/success/{CHECKOUT_SESSION_ID}",
                 cancel_url: "http://localhost:8585",
             });
     
