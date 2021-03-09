@@ -15,7 +15,7 @@ module.exports = {
                     {price: priceId, quantity: 1},
                 ],
                 success_url: "https://getjitterbox.com/success/{CHECKOUT_SESSION_ID}",
-                cancel_url: "http://localhost:8585",
+                cancel_url: "https://getjitterbox.com",
             });
     
             res.send({
