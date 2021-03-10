@@ -4,7 +4,7 @@ import {AiFillInfoCircle} from 'react-icons/ai';
 import {BsInfoCircle} from 'react-icons/bs';
 
 const ScheduleSection = ({ boxName, boxDate, boxItems, boxImage }) => {
-    console.log("ScheduleSection Props:", boxName, boxItems, boxDate);
+    // console.log("ScheduleSection Props:", boxName, boxItems, boxDate);
 
     const mappedItems = boxItems.map((item, i) => {
         return (

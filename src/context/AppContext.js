@@ -31,7 +31,7 @@ export const AppProvider = ({ children }) => {
   const handleMenuClick = (route) => {
     setMobileMenuVisible(false)
     push(route)
-    console.log("hi")
+    // console.log("hi")
   }
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export const AppProvider = ({ children }) => {
     setTax((subTotal * .0485).toFixed())
   }, [subTotal])
 
-  console.log("emailQuestion", emailQuestion)
+  // console.log("emailQuestion", emailQuestion)
   return (
     <AppContext.Provider
       value={{

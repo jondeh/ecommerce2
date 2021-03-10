@@ -13,7 +13,7 @@ const TextOverlay = () => {
     useEffect(() => {
         setInterval(() => {
             setOverlayNum((overlayNum) => {
-                console.log("setOverlayNum", overlayNum++)
+                // console.log("setOverlayNum", overlayNum++)
                 return overlayNum < 4 ? overlayNum++ : 0
             })
         }, 8000)

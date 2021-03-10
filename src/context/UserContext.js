@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const json = localStorage.getItem("user");
-    console.log("json-2", json)
+    // console.log("json-2", json)
     const savedUser = JSON.parse(json);
     if (savedUser) {
       setUser(savedUser)
@@ -27,16 +27,16 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const json = JSON.stringify(user)
-    console.log("json-1", json)
+    // console.log("json-1", json)
     localStorage.setItem("user", json)
   }, [user]);
 
   const login = (body) => {
-      console.log("body", body)
+      // console.log("body", body)
       axios
         .post("/auth/login", body)
         .then(({ data }) => {
-          console.log("login data", data)
+          // console.log("login data", data)
           setUser(data)
           push("/")
         })
@@ -45,11 +45,11 @@ export const UserProvider = ({ children }) => {
 
     const register = (body, myPlan) => {
       body = {...body, ...answers}
-      console.log("register body", body)
+      // console.log("register body", body)
       axios
         .post("/auth/register", body)
         .then(({ data }) => {
-          console.log("data", data)
+          // console.log("data", data)
           setUser(data)
           if (myPlan) {
             push("/my-plan")
@@ -61,12 +61,12 @@ export const UserProvider = ({ children }) => {
     };
 
     const logout = () => {
-      console.log("logout hit")
+      // console.log("logout hit")
       axios
         .post("/auth/logout")
         .then(() => {
           setUser(null)
-          console.log("hit 2")
+          // console.log("hit 2")
           push("/")
         })
         .catch(({ message }) => console.log(message))

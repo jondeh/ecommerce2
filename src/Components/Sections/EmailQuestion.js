@@ -23,7 +23,7 @@ const EmailQuestion = () => {
         }
     }
 
-    console.log("emailInput", emailInput)
+    // console.log("emailInput", emailInput)
 
     return (
         <div className={`email-question-container-${emailQuestion}`}>

@@ -80,7 +80,7 @@ const MyPlan = () => {
     
     const mappedPlan = plan.map((section, i) => {
         // const { name, items, date } = section;
-        console.log("section", section)
+        // console.log("section", section)
         return <ScheduleSection key={i} {...{...section}}/>
     })
 
