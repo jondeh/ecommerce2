@@ -14,8 +14,9 @@ module.exports = {
                 line_items: [       // Put add-ons in here
                     {price: priceId, quantity: 1},
                 ],
-                success_url: "https://getjitterbox.com/success/{CHECKOUT_SESSION_ID}",
-                cancel_url: "https://getjitterbox.com/success/1",
+                // success_url: "https://getjitterbox.com/success/{CHECKOUT_SESSION_ID}",
+                success_url: "https://getjitterbox.com/my-plan",
+                cancel_url: "https://getjitterbox.com/cart",
             });
     
             res.send({

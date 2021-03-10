@@ -16,12 +16,6 @@ const Cart = () => {
         // let newPriceId = JSON.stringify(priceId)
         console.log("CREATE CHECKOUT SESSION FRONTEND: ", priceId)
         return axios.post('/create-checkout-session', {
-            // headers: {
-            //     "Content-Type": "application/json"
-            // },
-            // body: JSON.stringify({
-            //     priceId: priceId
-            // })
             priceId
         }).then((result) => {
             console.log("result1", result)

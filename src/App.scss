@@ -20,6 +20,7 @@
     font-family: 'Lobster';
     unicode-bidi:bidi-override; // Reverses text so first-letter selector can grab the "last" letter of the backwards text in the div.
     direction:rtl;
+    font-size: $fontSize1 * 2;
   }
 
   div::first-letter {

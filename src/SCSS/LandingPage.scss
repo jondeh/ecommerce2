@@ -37,7 +37,7 @@
             font-family: $font2;
             color: white;
             font-weight: 800;
-            font-size: 1.5em;
+            font-size: $fontSize1 * 3;
             text-transform: lowercase;
         }
     }
