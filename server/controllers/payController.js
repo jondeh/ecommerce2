@@ -24,6 +24,7 @@ module.exports = {
         } catch (e) {
             res.status(400);
             return res.send({
+                priceId,
                 error: {
                     message: e.message,
                 }

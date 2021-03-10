@@ -13,7 +13,8 @@ const Cart = () => {
     const stripe = useStripe();
 
     const createCheckoutSession = () => {
-        let newPriceId = JSON.stringify(priceId)
+        // let newPriceId = JSON.stringify(priceId)
+        console.log("CREATE CHECKOUT SESSION FRONTEND: ", priceId)
         return axios.post('/create-checkout-session', {
             // headers: {
             //     "Content-Type": "application/json"

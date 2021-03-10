@@ -44,7 +44,7 @@ const Header = ({ mobile }) => {
         boxShadow: location.pathname === "/" ? "none" : null,
     }
 
-    console.log("LOCATION", location);
+    // console.log("LOCATION", location);
 
     return (
         <div 
