@@ -6,6 +6,7 @@ import { FaInstagram } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 
 import '../../SCSS/Footer.scss';
+import FooterHeader from './FooterHeader';
 
 const footColumn1 = ["how it works", "ingredients", "your lawn", "weed control", "free tools"]
 const footColumn2 = ["about us", "guarantee", "privacy policy", "terms of use", "our mission"]
@@ -13,7 +14,7 @@ const footColumn2 = ["about us", "guarantee", "privacy policy", "terms of use", 
 const Footer = () => {
     return (
         <div className="footer-container">
-            <div className="footer-header"><LogoTitle /></div>
+            <FooterHeader />
             
             <div className="footer-nav-bar">
                 buy - login - help

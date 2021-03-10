@@ -47,8 +47,8 @@ export default function MenuDemo1() {
           onClose={handleClose}
           PaperProps={{
             style: {
-              maxHeight: heigt * 4.5,
-              width: 200,
+              maxHeight: height * 4.5,
+              width: 400,
             },
           }}
         >

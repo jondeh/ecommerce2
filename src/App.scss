@@ -20,9 +20,8 @@
     font-family: 'Lobster';
     unicode-bidi:bidi-override; // Reverses text so first-letter selector can grab the "last" letter of the backwards text in the div.
     direction:rtl;
-    font-size: $fontSize1 * 2;
   }
-
+  
   div::first-letter {
     font-family: 'Lobster', cursive;
     // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -36,10 +35,16 @@
 }
 
 @media only screen and (min-width: $size2) {
-    
+  
   .App {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  
+  .logo-title {
+    div {
+      font-size: $fontSize1 * 1.6;
+    }
   }
 }

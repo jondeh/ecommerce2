@@ -3,7 +3,7 @@
 .text-overlay-container {
     position: absolute;
     color: white;
-    font-size: 2.5em;
+    font-size: $fontSize1 * 2.5;
     font-weight: bold;
     @include flexCenter();
     padding: 0px 1em;
@@ -28,6 +28,6 @@
     .text-overlay-container {
         height: 80vh;
         padding: 0px 2em;
-        font-size: 3.5em;
+        font-size: $fontSize1 * 4.5;
     }
 }

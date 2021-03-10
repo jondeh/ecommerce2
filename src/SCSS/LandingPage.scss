@@ -37,7 +37,7 @@
             font-family: $font2;
             color: white;
             font-weight: 800;
-            font-size: $fontSize1 * 3;
+            font-size: $fontSize1 * 2;
             text-transform: lowercase;
         }
     }
@@ -60,6 +60,7 @@
             
             button {
                 width: 20%;
+                font-size: $fontSize1 * 3;
                 // background: $baseGreen;
                 // font-family: $font2;
                 // color: white;
