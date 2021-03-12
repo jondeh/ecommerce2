@@ -1,65 +1,35 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AppContext } from "../../context/AppContext";
 import { UserContext } from "../../context/UserContext";
-import { useHistory } from "react-router-dom";
+import { CustomContext } from "../../context/CustomContext";
+// import { useHistory } from "react-router-dom";
 import "../../SCSS/Customize.scss";
 import { Button } from "@material-ui/core";
 import { states } from "../../data/webData";
 
 import BugQuestion from "../Sections/BugQuestion";
 import WhoQuestion from "../Sections/WhoQuestion";
-import ProductQuestion from "../Sections/ProductQuestion";
+// import ProductQuestion from "../Sections/ProductQuestion";
 import HomeQuestion from "../Sections/HomeQuestion";
 import SprayerQuestion from "../Sections/SprayerQuestion";
-import EmailQuestion from "../Sections/EmailQuestion";
+// import EmailQuestion from "../Sections/EmailQuestion";
 
 const Customize = () => {
-  const { push } = useHistory();
-  const [productAnswer, setProductAnswer] = useState(null);
-  const [homeAnswer, setHomeAnswer] = useState(null);
-  const [whoAnswer, setWhoAnswer] = useState("hi");
-  const [bugAnswer, setBugAnswer] = useState(["ants", "spiders"]);
-  const [sprayerAnswer, setSprayerAnswer] = useState(null);
-  const [addressState, setAddressState] = useState(null);
-  const { isSurvey, setIsSurvey, emailQuestion, setEmailQuestion } = useContext(
-    AppContext
-  );
+  const { 
+    isSurvey, 
+    setEmailQuestion } = useContext(AppContext);
   const { setAnswers } = useContext(UserContext);
+  const {  
+          homeAnswer, setHomeAnswer,
+          whoAnswer, setWhoAnswer,
+          bugAnswer, setBugAnswer,
+          sprayerAnswer, setSprayerAnswer,
+          addressState, setAddressState,
+          addBug,
+          addressCity, setAddressCity,
+        } = useContext(CustomContext);
   const [surveyNum, setSurveyNum] = useState(0);
 
-  useEffect(() => {
-    if (homeAnswer) {
-        console.log("homeAnswer", homeAnswer);
-        let homeAnswerArr = homeAnswer[0].split(',');
-        console.log("homeAnswerArr", homeAnswerArr)
-        let homeState = homeAnswerArr[homeAnswerArr.length-2].trim().toLowerCase();
-        console.log("homeState", homeState)
-      setAddressState(homeAnswerArr[homeAnswerArr.length-2].trim().toLowerCase());
-    }
-  }, [homeAnswer]);
-
-  useEffect(() => {
-    console.log("DING DING DING");
-    if (addressState) {
-      setBugAnswer(states[addressState]);
-    }
-  }, [addressState]);
-
-  const addBug = (bug) => {
-    let newSuggestions = bugAnswer.map((e) => e);
-
-    setBugAnswer(() => {
-      let bugIndex = newSuggestions.findIndex((e) => e === bug);
-
-      if (bugIndex === -1) {
-        return [...newSuggestions, bug];
-      } else {
-        let finalSuggestions = [...newSuggestions];
-        finalSuggestions.splice(bugIndex, 1);
-        return [...finalSuggestions];
-      }
-    });
-  };
 
   const handleClick = (type, comp) => {
     switch (type) {
@@ -79,9 +49,9 @@ const Customize = () => {
         break;
       case "get-plan":
         setAnswers({
-          productAnswer,
-          homeAnswer,
+          // productAnswer,
           whoAnswer,
+          homeAnswer,
           bugAnswer,
           sprayerAnswer,
         });
@@ -91,30 +61,30 @@ const Customize = () => {
   };
 
   const surveyPosition = [
+    // {
+    //   component: (
+    //     <ProductQuestion
+    //       {...{ productAnswer, setProductAnswer, handleClick }}
+    //     />
+    //   ),
+    //   description: "What are you interested in?",
+    // },
     {
-      component: (
-        <ProductQuestion
-          {...{ productAnswer, setProductAnswer, handleClick }}
-        />
-      ),
-      description: "What are you interested in?",
+      component: <WhoQuestion {...{ whoAnswer, setWhoAnswer, handleClick }} />,
+      description: <p>A little about who you're protecting:</p>,
     },
     {
       component: (
         <HomeQuestion {...{ homeAnswer, setHomeAnswer, handleClick }} />
       ),
-      description: "Next, a little bit about your house.",
-    },
-    {
-      component: <WhoQuestion {...{ whoAnswer, setWhoAnswer, handleClick }} />,
-      description: "A little bit about who you're protecting.",
+      description: <p>Next, a little bit about your house.</p>,
     },
     {
       component: (
         <BugQuestion {...{ bugAnswer, setBugAnswer, handleClick, addBug }} />
       ),
       description:
-        "People in XYZ typically have these pests.  Select the pests you need help with.",
+        <p>People in <span className="address-city">{addressCity}</span> typically have these pests.  Select the pests you need help with.</p>,
     },
     {
       component: (
@@ -122,7 +92,7 @@ const Customize = () => {
           {...{ sprayerAnswer, setSprayerAnswer, handleClick }}
         />
       ),
-      description: "Do you already have a sprayer?",
+      description: <p>Do you already have a sprayer?</p>,
     },
   ];
 
@@ -141,11 +111,12 @@ const Customize = () => {
               PREVIOUS
             </Button>
           )}
+
           {surveyNum >= surveyPosition.length - 1 ? (
             <Button variant="contained" onClick={() => handleClick("get-plan")}>
               GET PLAN
             </Button>
-          ) : [productAnswer, homeAnswer, whoAnswer, bugAnswer, sprayerAnswer][
+          ) : [whoAnswer, homeAnswer, bugAnswer, sprayerAnswer][
               surveyNum
             ] === null ? (
             <Button

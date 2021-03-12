@@ -29,8 +29,9 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    // font-size: 18px;
     .qc-description {
-        font-size: .85em;
+        // font-size: $fontSize1 * 1.5;
         margin: 10px 15px 0px 15px;
         color: $textColor1;
         text-align: left;
@@ -70,8 +71,24 @@
     }
 }
 
+.address-city {
+    text-transform: capitalize;
+}
+
 @media only screen and (min-width: $size2) {
     .questions-container {
         width: 40%;
+        // font-size: 30px;
+
+    }
+    .customize-button-container {
+        button {
+            width: 44%;
+            transition-duration: $time3;
+            background: whitesmoke;
+            // font-family: $font1;
+            @include buttonStyle1();
+            font-size: 1em;
+        }
     }
 }

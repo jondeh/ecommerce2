@@ -15,6 +15,7 @@ const StyledMenu = withStyles({
     // background: "#ACE1AF", // celadon
     background: "white", 
     boxShadow: ".5px .7px 4px grey",
+    width: "15em",
   },
 })((props) => (
   <Menu
@@ -43,7 +44,11 @@ const StyledMenuItem = withStyles((theme) => ({
     fontFamily: "Raleway",
     // color: "#ACE1AF", // celadon
     color: "darkslategrey",
-    // border: '1px solid #ACE1AF'
+    // border: '1px solid #ACE1AF',
+    display: "flex",
+    justifyContent: "center",
+    width: "100%",
+    fontSize: "1.5em",
   },
 }))(MenuItem);
 

@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 26px;
+    // font-size: .7em;
     padding: 0 1em;
     position: absolute;
     z-index: 2;
@@ -17,7 +17,7 @@
     top: 0;
     box-shadow: $shadow1;
     h2 {
-        font-size: 24px;
+        // font-size: 24px;
         font-family: 'Lato', sans-serif;
         color: white;
         font-weight: 1000;
@@ -40,13 +40,13 @@
     
     .header-container {
             font-family: $font1;
-            font-size: .9em;
+            // font-size: .9em;
             font-weight: bold;
             color: white;
             // padding: 0vh 32vh;
             padding: 0vh 17vw;
         .web-sign-in {
-            // font-size: .7em;
+            font-size: .8em;
             margin-top: .9em;
             font-weight: bold;
             display: inline;
@@ -57,6 +57,7 @@
         }
         .web-user-email {
             margin-top: .9em;
+            font-size: 1em;
         }
     }
 

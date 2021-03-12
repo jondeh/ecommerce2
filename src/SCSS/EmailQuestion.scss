@@ -26,14 +26,20 @@
         }
         input {
             @include inputStyle();
-            height: 2em;
+            // height: 3em;
             width: 55%;
-            padding-left: 6px;
+            padding-left: 1em;
+            font-size: .9em;
+            font-family: $font1;
         }
         button {
-            font-family: $font1;
-            color: $textColor1;
-            text-transform: lowercase;
+            @include buttonStyle1();
+            font-size: 1em;
+            width: 20%;
+            padding: .4em 0;
+            // font-family: $font1;
+            // color: $textColor1;
+            // text-transform: lowercase;
         }
         // transform: translateY(110%);
     }

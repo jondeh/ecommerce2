@@ -10,6 +10,7 @@
   min-height: 100vh;
   min-width: 100%;
   position: relative;
+  font-size: 18px;
 }
 
 .logo-title {
@@ -40,11 +41,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 25px;
   }
   
   .logo-title {
     div {
-      font-size: $fontSize1 * 1.6;
+      font-size: $fontSize1 * 1.1;
     }
   }
 }

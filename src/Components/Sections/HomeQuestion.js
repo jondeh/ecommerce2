@@ -29,6 +29,36 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
 
   console.log("address", address)
 
+  const mappedHomeOptions = homeOptions.map((e,i) => {
+    return (
+      <HomeOption
+        key={i}
+        {...{
+          option: i,
+          homeAnswer: homeAnswer && homeAnswer[1],
+          setHomeAnswer,
+          handleHomeClick,
+          text: e.text,
+        }}
+      />
+    ); 
+  })
+
+  // {homeOptions.map((e, i) => {
+  //   return (
+  //     <HomeOption
+  //       key={i}
+  //       {...{
+  //         option: i,
+  //         homeAnswer: homeAnswer && homeAnswer[1],
+  //         setHomeAnswer,
+  //         handleHomeClick,
+  //         text: e.text,
+  //       }}
+  //     />
+  //   );
+  // })}
+
   return (
     <div className="home-question-container">
       <div className="home-question-address">
@@ -50,7 +80,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
           <h3>Approximately how many square feet is your home?</h3>
 
           <div className="home-question-size-options">
-            {homeOptions.map((e, i) => {
+            {/* {homeOptions.map((e, i) => {
               return (
                 <HomeOption
                   key={i}
@@ -63,7 +93,8 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
                   }}
                 />
               );
-            })}
+            })} */}
+            {mappedHomeOptions}
           </div>
         </div>
       ) : (

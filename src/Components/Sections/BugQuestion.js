@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import '../../SCSS/BugQuestion.scss';
 import { AppContext } from '../../context/AppContext';
 
-import DisplayBug from '../Utility/ImageTile';
+import ImageTile from '../Utility/ImageTile';
 
 import { GiAnt as Ant} from 'react-icons/gi';
 import { FaSpider as Spider } from 'react-icons/fa';
@@ -29,7 +29,7 @@ const BugQuestion = ({ surveyNum, setSurveyNum, bugAnswer, addBug }) => {
 
 
     const displayBugs = sampleBugs.map((e,i) => {
-        return <DisplayBug {...{thisBug: e, bugAnswer, addBug}} key={i} />
+        return <ImageTile {...{thisBug: e, bugAnswer, addBug}} key={i} />
     })
 
     const gridStyle = {

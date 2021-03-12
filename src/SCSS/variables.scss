@@ -149,7 +149,8 @@ $boxHeight: 45vh;
 }
 
 @mixin inputStyle() {
-    height: 1.7em;
+    // font-size: .9em;
+    height: 2em;
     border: none;
     box-shadow: $shadow1;
     transition-duration: $time3;

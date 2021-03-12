@@ -5,13 +5,18 @@
     flex-direction: column;
     text-transform: lowercase;
     span {
-        font-size: 11px;
+        // font-size: .7em;
+        font-size: 8px;
         font-weight: bold;
         font-family: $font1;
+        @include textStyle1();
     }
     .bug-image {
         cursor: pointer;
-        @include flexCenter();
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         font-size: 16px;
         font-size: 2em;
         border: 2px solid white;
@@ -29,5 +34,17 @@
         // color: $baseBlue12;
         transition-duration: 250ms;
         border-radius: 15px;
+        .bug-image-container {
+            height: 50%;
+        }
+    }
+}
+
+
+@media only screen and (min-width: $size2) {
+    .display-bug {
+        span {
+            font-size: .3em;
+        }
     }
 }

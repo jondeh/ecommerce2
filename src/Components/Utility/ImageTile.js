@@ -19,16 +19,15 @@ const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
 
     return (
         <div className="display-bug">
-            <div className={`display-bug`}>
-                <span>{thisBug.bug}</span>
-                <div className="bug-image" onClick={testClick} style={testStyle}>
+                <div 
+                    className="bug-image" 
+                    onClick={testClick} 
+                    style={testStyle}>
                     <div className="bug-image-container">
-                    {thisBug.image}
-
+                        {thisBug.image}
                     </div>
+                    <span>{thisBug.bug}</span>
                 </div>
-                <span></span>
-            </div>
         </div>
     )
 }

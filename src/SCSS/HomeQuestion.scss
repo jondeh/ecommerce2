@@ -28,6 +28,7 @@
             position: relative;
             padding-left: 2.7em;
             text-align: right;
+            font-size: .8em;
             &:hover {
                 .edit-icon {
                     border-color: rgb(182, 182, 182);
@@ -76,20 +77,21 @@
     display: flex;
     justify-content: space-evenly;
     div {
-        cursor: pointer;
-        // transition-duration: 0;
-        transition-duration: $time-5;
         @include hoverShadow2();
+        cursor: pointer;
+        transition-duration: $time-5;
         display: flex;
         flex-direction: column;
+        align-items: center;
         position: relative;
-        padding: 2.5px;
+        // padding: .5em;
+        justify-content: center;
         border-radius: 10px;
+        height: 13vh;
+        width: 13vh;
+        
         .home-size-text {
-            // position: absolute;
-            // bottom: 10%;
             font-size: .75em;
-            // color: black;
             color: $textColor1;
             font-weight: bold;
         }

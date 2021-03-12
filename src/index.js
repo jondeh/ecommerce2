@@ -5,6 +5,7 @@ import App from './App';
 import { HashRouter, BrowserRouter } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import { UserProvider } from './context/UserContext';
+import { CustomProvider } from './context/CustomContext';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import ScrollToTop from './Components/ScrollToTop';
@@ -21,9 +22,11 @@ ReactDOM.render(
       <Elements stripe={stripePromise}>
         <UserProvider>
           <AppProvider>
-            <ScrollToTop>
-              <App />
-            </ScrollToTop>
+            <CustomProvider>
+              <ScrollToTop>
+                <App />
+              </ScrollToTop>
+            </CustomProvider>
           </AppProvider>
         </UserProvider>
       </Elements>
