@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import Logo from './Logo';
 
 const LogoTitle = ({ mobile }) => {
     const { push } = useHistory();
@@ -12,12 +13,13 @@ const LogoTitle = ({ mobile }) => {
     }
 
     return (
-        <h2 
-            className="logo-title"
-            style={{color: mobile ? "darkgrey" : "white"}}
-            onClick={handleLogoClick}>
-                <div><span>x</span>obrettij</div>
-        </h2>
+        // <h2 
+        //     className="logo-title"
+        //     style={{color: mobile ? "darkgrey" : "white"}}
+        //     onClick={handleLogoClick}>
+        //         <div><span>x</span>obrettij</div>
+        // </h2>
+        <Logo />
     );
 };
 

@@ -9,7 +9,7 @@ import { Button } from '@material-ui/core';
 // Components
 
 import Auth from '../Pages/Auth';
-import LogoTitle from '../Utility/LogoTitle';
+import Logo from '../Utility/Logo';
 import WebMenu from './WebMenu'
 
 import {IoIosMenu} from 'react-icons/io';
@@ -50,7 +50,7 @@ const Header = ({ mobile }) => {
         <div 
             style={headerStyle}
             className="header-container"> 
-            <LogoTitle {...{mobile}}/>
+            <Logo {...{mobile}}/>
             {
                 mobile ? 
                 <ImCancelCircle 

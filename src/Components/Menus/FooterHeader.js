@@ -1,15 +1,13 @@
 import React from 'react';
-import LogoTitle from '../Utility/LogoTitle';
-import { useLocation } from 'react-router-dom';
+import Logo from '../Utility/Logo';
 
 import '../../SCSS/Footer.scss';
 
 const FooterHeader = () => {
-    const location = useLocation();
 
     return (
         <div className="footer-header">
-            <LogoTitle />
+            <Logo />
         </div>
     )
 }

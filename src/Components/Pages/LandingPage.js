@@ -4,6 +4,7 @@ import { UserContext } from '../../context/UserContext';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import TextOverlay from '../Utility/TextOverlay';
+import Logo from '../Utility/Logo';
 
 import GoogleMap from '../Utility/GoogleMap';
 import '../../SCSS/LandingPage.scss';
