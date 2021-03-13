@@ -8,28 +8,41 @@ export const CustomProvider = ({ children }) => {
   const [whoAnswer, setWhoAnswer] = useState(null);
   const [whoPets, setWhoPets] = useState([])
   const [homeAnswer, setHomeAnswer] = useState(null);
-  const [bugAnswer, setBugAnswer] = useState(["ants", "spiders"]);
+  const [bugAnswer, setBugAnswer] = useState(null);
   const [sprayerAnswer, setSprayerAnswer] = useState(null);
   const [addressState, setAddressState] = useState(null);
   const [addressCity, setAddressCity] = useState(null);
+  const [surveyNum, setSurveyNum] = useState(0);
+  const [farthestIndex, setFarthestIndex] = useState(0);
+
+  useEffect(() => {
+    console.log("HIT 1")
+    if (surveyNum > farthestIndex) {
+      setFarthestIndex(surveyNum);
+    }
+  }, [surveyNum])
 
   useEffect(() => {
     if (homeAnswer) {
-        console.log("homeAnswer", homeAnswer);
+        // console.log("homeAnswer", homeAnswer);
         let homeAnswerArr = homeAnswer[0].split(',');
-        console.log("homeAnswerArr", homeAnswerArr)
+        // console.log("homeAnswerArr", homeAnswerArr)
         let homeState = homeAnswerArr[homeAnswerArr.length-2].trim().toLowerCase();
         let homeCity = homeAnswerArr[homeAnswerArr.length-3].trim().toLowerCase();
-        console.log("homeState", homeState)
+        // console.log("homeState", homeState)
       setAddressState(homeState);
       setAddressCity(homeCity);
     }
   }, [homeAnswer]);
 
   useEffect(() => {
-    console.log("DING DING DING");
+    // console.log("DING DING DING");
     if (addressState) {
-      setBugAnswer(states[addressState]);
+      if (states[addressState]) {
+        setBugAnswer(states[addressState]);
+      } else {
+        setBugAnswer(["ants", "spiders"]);
+      }
     }
   }, [addressState]);
 
@@ -50,17 +63,20 @@ export const CustomProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    console.log("HIT 2", surveyNum, farthestIndex)
+    setSurveyNum(0);
+    setFarthestIndex(0);
     setWhoAnswer(null);
     setWhoPets([]);
     setHomeAnswer(null);
-    setBugAnswer(["ants", "spiders"]);
+    setBugAnswer(null);
     setSprayerAnswer(null);
     setAddressState(null);
     setAddressCity(null);
   }, [location]);
 
   const handlePetClick = (myPet) => {
-    console.log("myPet", myPet)
+    // console.log("myPet", myPet)
     let petsArr = [...whoPets];
     let petIndex = petsArr.findIndex((e) => e === myPet)
     if (petIndex === -1) {
@@ -72,7 +88,7 @@ export const CustomProvider = ({ children }) => {
     setWhoPets(petsArr);
 };
 
-  console.log("whoAnswer", whoAnswer)
+  // console.log("whoAnswer", whoAnswer)
 
   return (
     <CustomContext.Provider
@@ -86,6 +102,8 @@ export const CustomProvider = ({ children }) => {
         addBug,
         handlePetClick,
         addressCity, setAddressCity,
+        surveyNum, setSurveyNum,
+        farthestIndex, setFarthestIndex,
 
       }}
     >

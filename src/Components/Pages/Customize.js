@@ -12,6 +12,7 @@ import WhoQuestion from "../Sections/WhoQuestion";
 // import ProductQuestion from "../Sections/ProductQuestion";
 import HomeQuestion from "../Sections/HomeQuestion";
 import SprayerQuestion from "../Sections/SprayerQuestion";
+import CustomWhere from '../Utility/CustomWhere';
 // import EmailQuestion from "../Sections/EmailQuestion";
 
 const Customize = () => {
@@ -27,8 +28,9 @@ const Customize = () => {
           addressState, setAddressState,
           addBug,
           addressCity, setAddressCity,
+          surveyNum, setSurveyNum,
         } = useContext(CustomContext);
-  const [surveyNum, setSurveyNum] = useState(0);
+  // const [surveyNum, setSurveyNum] = useState(0);
 
 
   const handleClick = (type, comp) => {
@@ -98,6 +100,7 @@ const Customize = () => {
 
   return (
     <div className={`customize-container-${isSurvey}`}>
+      <CustomWhere {...{surveyPosition, surveyNum}}/>
       <div className={`questions-container`}>
         <span className="qc-description">{surveyPosition[surveyNum].description}</span> <br />
         {isSurvey ? surveyPosition[surveyNum].component : null}
