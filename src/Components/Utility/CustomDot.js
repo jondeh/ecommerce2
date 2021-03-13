@@ -13,8 +13,26 @@ const CustomDot = ({ location, index }) => {
      } = useContext(CustomContext);
     
     const dotStyle = {
+            // WHITE RING - CELADON DOT //
+
+        // background: index <= farthestIndex ? '#ACE1AF' : '#B0C4DE',
+        // border: surveyNum === index && '.5em solid whitesmoke',
+
+            // CELADON RING - WHITE DOT //
+
+        // background: surveyNum === index ? "whitesmoke" : index < farthestIndex ? '#ACE1AF' : '#B0C4DE',
+        // border: surveyNum === index && '.5em solid #9aca9c',
+
+            // SLIGHTLY DARKER RING - CELADON DOT //
+
         background: index <= farthestIndex ? '#ACE1AF' : '#B0C4DE',
-        border: surveyNum === index && '.5em solid #B0C4DE',
+        border: surveyNum === index && '.5em solid #9aca9c',
+
+            // CELADON RING - DARK BLUE DOT //
+
+        // background: surveyNum === index ? "#5D76A9" : index < farthestIndex ? '#ACE1AF' : '#B0C4DE',
+        // border: surveyNum === index && '.5em solid #ACE1AF',
+
         cursor: index <= farthestIndex ? "pointer" : "auto",
         height: "1.5em",
         width: "1.5em",
