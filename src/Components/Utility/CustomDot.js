@@ -26,7 +26,12 @@ const CustomDot = ({ location, index }) => {
             // SLIGHTLY DARKER RING - CELADON DOT //
 
         background: index <= farthestIndex ? '#ACE1AF' : '#B0C4DE',
-        border: surveyNum === index && '.5em solid #9aca9c',
+        border: surveyNum === index && '.45em solid #9aca9c',
+
+            // RADIAL GRADIENT //
+
+        // background: index <= farthestIndex ? 'radial-gradient(darkgreen, #ACE1AF)' : '#B0C4DE',
+        // border: surveyNum === index && '.5em solid #9aca9c',
 
             // CELADON RING - DARK BLUE DOT //
 
@@ -34,8 +39,8 @@ const CustomDot = ({ location, index }) => {
         // border: surveyNum === index && '.5em solid #ACE1AF',
 
         cursor: index <= farthestIndex ? "pointer" : "auto",
-        height: "1.5em",
-        width: "1.5em",
+        // height: "1.5em",
+        // width: "1.5em",
     };
 
     const handleNavClick = () => {

@@ -6,6 +6,7 @@ import { CustomContext } from "../../context/CustomContext";
 import "../../SCSS/Customize.scss";
 import { Button } from "@material-ui/core";
 import { states } from "../../data/webData";
+// import {IoArrowForwardCircleSharp, IoArrowBackCircleSharp} from 'react-icons/io5';
 
 import BugQuestion from "../Sections/BugQuestion";
 import WhoQuestion from "../Sections/WhoQuestion";
@@ -109,10 +110,14 @@ const Customize = () => {
             <Button variant="contained" onClick={() => handleClick("previous")}>
               PREVIOUS
             </Button>
+            // <IoArrowBackCircleSharp size={35} />
+
           ) : (
             <Button variant="contained" disabled>
               PREVIOUS
             </Button>
+            // <IoArrowBackCircleSharp size={35} />
+
           )}
 
           {surveyNum >= surveyPosition.length - 1 ? (
@@ -129,10 +134,12 @@ const Customize = () => {
             >
               NEXT
             </Button>
+            // <IoArrowForwardCircleSharp />
           ) : (
             <Button variant="contained" onClick={() => handleClick("next")}>
               NEXT
             </Button>
+            // <IoArrowForwardCircleSharp />
           )}
         </div>
       </div>
