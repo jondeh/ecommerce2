@@ -14,6 +14,8 @@ import WhoQuestion from "../Sections/WhoQuestion";
 import HomeQuestion from "../Sections/HomeQuestion";
 import SprayerQuestion from "../Sections/SprayerQuestion";
 import CustomWhere from '../Utility/CustomWhere';
+import CustomColumn from '../Sections/CustomizeColumn';
+import CustomizeColumn from "../Sections/CustomizeColumn";
 // import EmailQuestion from "../Sections/EmailQuestion";
 
 const Customize = () => {
@@ -87,7 +89,7 @@ const Customize = () => {
         <BugQuestion {...{ bugAnswer, setBugAnswer, handleClick, addBug }} />
       ),
       description:
-        <p>People in <span className="address-city">{addressCity}</span> typically have these pests.  Select the pests you need help with.</p>,
+        <p>People in <span className="address-city">{addressCity}</span> typically see these pests.  Select the pests you need help with.</p>,
     },
     {
       component: (
@@ -101,7 +103,9 @@ const Customize = () => {
 
   return (
     <div className={`customize-container-${isSurvey}`}>
-      <CustomWhere {...{surveyPosition, surveyNum}}/>
+      <CustomizeColumn>
+        <CustomWhere {...{surveyPosition, surveyNum}}/>
+      </CustomizeColumn>
       <div className={`questions-container`}>
         <span className="qc-description">{surveyPosition[surveyNum].description}</span> <br />
         {isSurvey ? surveyPosition[surveyNum].component : null}
@@ -143,6 +147,9 @@ const Customize = () => {
           )}
         </div>
       </div>
+      <CustomizeColumn>
+        <div className="div1"></div>
+      </CustomizeColumn>
     </div>
   );
 };

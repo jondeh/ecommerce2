@@ -37,6 +37,11 @@
         .bug-image-container {
             height: 50%;
         }
+        &:hover {
+            filter: brightness(110%);
+            // filter: invert(15%);
+            // filter: sepia(100%);
+        }
     }
 }
 

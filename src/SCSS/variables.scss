@@ -73,6 +73,7 @@ $boxHeight: 45vh;
 
 .open {
     clip-path: inset(-20% -20% -20% -20%);
+    pointer-events: all;
 }
 
 @mixin heightWithHeader() {
