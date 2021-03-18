@@ -1,10 +1,11 @@
 @import './variables.scss';
 
 .header-container {
+    // @include fadeInEase1();
     height: $headerHeight;
+    background: $baseBlue;
     width: 100%;
     max-width: 100%;
-    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,18 +13,18 @@
     padding: 0 1em;
     position: absolute;
     z-index: 2;
-    transition-duration: $time2;
+    // transition-duration: $time2;
+    // transition-duration: background 1000ms;
     // border: 1px solid red;
     top: 0;
     box-shadow: $shadow1;
+    transition: background-color $time2 ease;
+    
     h2 {
         // font-size: 24px;
         font-family: 'Lato', sans-serif;
         color: white;
         font-weight: 1000;
-    }
-    .web-sign-in {
-        display: none;
     }
 }
 
@@ -34,32 +35,16 @@
 }
 
 @media only screen and (min-width: $size2) {
+
+
     .menu-icon {
         display: none;
     }  
     
     .header-container {
-            font-family: $font1;
-            // font-size: .9em;
-            font-weight: bold;
-            color: white;
-            // padding: 0vh 32vh;
-            padding: 0vh 17vw;
-        .web-sign-in {
-            font-size: .8em;
-            margin-top: .9em;
-            font-weight: bold;
-            display: inline;
-            // background: none;
-            border: none;
-            color: white;
-            text-transform: lowercase;
-        }
-        .web-user-email {
-            margin-top: .9em;
-            font-size: 1em;
-        }
+        font-family: $font1;
+        font-weight: bold;
+        color: white;
+        padding: 0vh 17vw;
     }
-
-    
 }

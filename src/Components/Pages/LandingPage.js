@@ -11,6 +11,7 @@ import '../../SCSS/LandingPage.scss';
 // import { pageSection } from '../../data/webData';
 
 import video1 from '../../data/media/sampleVideo1.mp4';
+import video2 from '../../data/media/playing-with-kids.mp4';
 
 const LandingPage = () => {
     const { user } = useContext(UserContext);
@@ -26,6 +27,10 @@ const LandingPage = () => {
         };
     };
 
+    // const handleEnded = () => {
+    //     console.log('ENDED')
+    // }
+
     return (
         <div className="landing-page">
             <TextOverlay />
@@ -33,9 +38,12 @@ const LandingPage = () => {
                 id="landing-video" 
                 className="landing-video" 
                 autoPlay 
-                playsInline={true} 
+                playsInline={true}
+                // onEnded={handleEnded} 
+                loop={true}
                 muted 
-                loop={true}>
+                >
+                    {/* <source src={video2}></source> */}
                     <source src={video1}></source>
             </video>
             <div className="funnel-start">

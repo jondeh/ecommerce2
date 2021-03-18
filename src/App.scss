@@ -1,10 +1,9 @@
 @import './SCSS/variables.scss';
 
-
 .App {
   box-sizing: border-box;
   text-align: center;
-  background: whitesmoke;
+  // background: whitesmoke;
   background: $baseBlue;
   overflow: hidden;
   min-height: 100vh;

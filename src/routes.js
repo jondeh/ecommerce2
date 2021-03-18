@@ -10,6 +10,7 @@ import Auth from './Components/Pages/Auth';
 import Register from './Components/Pages/Register';
 import Success from './Components/Pages/Success';
 import Test from './Components/Test';
+import HowTo from './Components/Pages/HowTo';
 
 export default (
     <Switch>
@@ -20,7 +21,8 @@ export default (
         <Route exact path='/cart' component={ Cart } />
         <Route exact path='/auth' component={ Auth } />
         <Route exact path='/register' component={ Register } />
-        <Route path='/success/:sessionId' component={ Success } />
+        <Route path='/success/:sessionId' component={ MyPlan } />
         <Route exact path="/test" component={ Test } />
+        <Route exact path="/how-to" component={ HowTo } />
     </Switch>
 )

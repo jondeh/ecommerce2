@@ -33,16 +33,19 @@ $baseBlue: $blue10; // Header/Footer - Main Blue
 $baseBlue2: $blue4; // Some icons - Secondary Blue
 $baseBlue3: $blue12; // Some icons - Another Secondary Blue
 
+$whiteSmokeHover: rgb(228, 228, 228);
+
 $textColor1: #2f4f4f;
 
 
-$time-5: 50ms;
+$time-5: 125ms;
 $time1: 250ms;
 $time2: 400ms;
 $time3: 550ms;
 
 $size1: 360px;
 $size2: 768px;
+$size3: 1399px;
 // $size3: 360px;
 
 $fontSize1: 1em;
@@ -60,9 +63,17 @@ $shadow1: 0px 1px 5px grey;
 $shadow2: 0px 1px 5px $textColor1;
 $shadow3: .5px .5px 2px $textColor1;
 $shadow4: 0px 0px 4px grey;
+$shadow5: 0px 1px 5px $whiteSmokeHover;
+$shadow6: 0px 1px 5px $baseGreen;
+$shadow7: 1px 2px 20px 0px grey;
+$shadow8: 0px -1px 5px grey;
 
 $headerHeight: 12vh;
 $boxHeight: 45vh;
+
+.open {
+    clip-path: inset(-20% -20% -20% -20%);
+}
 
 @mixin heightWithHeader() {
     margin-top: $headerHeight;
@@ -72,6 +83,19 @@ $boxHeight: 45vh;
 @keyframes fadeIn {
     0% {opacity: 0}
     100% {opacity: 1}
+}
+
+@keyframes backgroundFadeIn {
+    // 0% {background-color: $blue4}
+    0% {background-color: transparent}
+    100% {background-color: auto}
+}
+
+
+@mixin fadeInBackground() {
+    animation: backgroundFadeIn;
+    animation-duration: 100ms;
+    animation-timing-function: linear;
 }
 
 @keyframes spin1 {
@@ -120,6 +144,7 @@ $boxHeight: 45vh;
     animation-duration: $time3;
     animation-timing-function: ease;
 }
+
 
 @mixin spinAnimation1() {
     animation: spin1;

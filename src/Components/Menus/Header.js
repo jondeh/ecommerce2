@@ -11,6 +11,8 @@ import { Button } from '@material-ui/core';
 import Auth from '../Pages/Auth';
 import Logo from '../Utility/Logo';
 import WebMenu from './WebMenu'
+import WebNav from './WebNav';
+import WebAuth from './WebAuth';
 
 import {IoIosMenu} from 'react-icons/io';
 import {ImCancelCircle} from 'react-icons/im';
@@ -24,33 +26,26 @@ const Header = ({ mobile }) => {
 
     const handleMobileMenuClick = () => {
         setMobileMenuVisible(!mobileMenuVisible);
+        let webMenu = document.getElementById("mobile-menu");
+        webMenu.classList.toggle("open");
     };
 
-    const handleSignIn = () => {
-        push('/auth')
-        // setWebAuthVisible(!webAuthVisible);
-    }
-
-    const testClick = () => {
-        logout()
-    }
-
-    const handleClose = () => {
-        
-    }
-
     const headerStyle = {
-        background: mobile && 'white',
-        boxShadow: location.pathname === "/" ? "none" : null,
+        // background: mobile && '#5D76A9',
+        background: mobile ? "#5D76A9" : location.pathname === '/' ? "transparent" : location.pathname === '/customize' ? "#B0C4DE" : null,
+
+        boxShadow: location.pathname === "/" || location.pathname === "/customize" ? "none" : null,
     }
 
-    // console.log("LOCATION", location);
 
     return (
         <div 
-            style={headerStyle}
-            className="header-container"> 
+            className="header-container"
+            style={headerStyle}> 
+
             <Logo {...{mobile}}/>
+            <WebNav />
+            
             {
                 mobile ? 
                 <ImCancelCircle 
@@ -62,22 +57,7 @@ const Header = ({ mobile }) => {
                     color={mobile ? "white" : "white"}  
                     onClick={handleMobileMenuClick} />
             }
-            {
-                user ? 
-                    <WebMenu {...{user}}/>
-                // <div onClick={testClick} className="web-user-email"> {user.email} </div> 
-                : <>
-                <Button
-                    aria-controls="simple-menu"
-                    aria-haspopup="true"
-                    className="web-sign-in" 
-                    onClick={handleSignIn}>sign in
-                </Button>
-                </>
-            }
-            {/* {
-                webAuthVisible ? <Auth /> : null
-            } */}
+            <WebAuth />
             
         </div>
     )

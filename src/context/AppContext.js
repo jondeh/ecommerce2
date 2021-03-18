@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
   // const [whoAnswer, setWhoAnswer] = useState(null);
   // const [bugAnswer, setBugAnswer] = useState(null);
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const [mobileAuthVisible, setMobileAuthVisible] = useState(false);
   const [isSurvey, setIsSurvey] = useState(true);
   const [addressState, setAddressState] = useState(null);
   const [emailQuestion, setEmailQuestion] = useState(false);
@@ -34,10 +35,18 @@ export const AppProvider = ({ children }) => {
     // console.log("hi")
   }
 
+  const closeMobileMenu = () => {
+    setMobileMenuVisible(!mobileMenuVisible);
+    let webMenu = document.getElementById("mobile-menu");
+    webMenu.classList.remove("open");
+  }
+
   useEffect(() => {
+    closeMobileMenu();
     setAddOnQuestion(false);
     setEmailQuestion(false);
     setWebAuthVisible(false);
+    setMobileAuthVisible(false);
   }, [location]);
 
   useEffect(() => {
@@ -85,6 +94,8 @@ export const AppProvider = ({ children }) => {
         setSubTotal,
         tax,
         setTax,
+        mobileAuthVisible, setMobileAuthVisible,
+        closeMobileMenu,
 
       }}
     >

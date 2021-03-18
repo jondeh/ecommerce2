@@ -1,0 +1,45 @@
+@import './variables.scss';
+
+.web-auth-container {
+    display: none;
+}
+
+.web-sign-in {
+    display: none;
+}
+
+@media only screen and (min-width: $size2) {
+    .web-auth-container {
+        display: flex;
+        min-width: 30%;
+        // margin-left: 4%;
+        margin-left: auto;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        button {
+            background: none;
+            // border: none;
+            box-shadow: none;
+            font-family: $font1;
+            font-size: 1em;
+            text-transform: lowercase; 
+        }
+    }
+      
+    #web-sign-in {
+        // font-size: .8em;
+        // margin-top: .9em;
+        font-weight: bold;
+        display: inline;
+        // background: none;
+        border: none;
+        color: white;
+        text-transform: lowercase;
+    }
+
+    .web-user-email {
+        margin-top: .9em;
+        font-size: 1em;
+    }
+}

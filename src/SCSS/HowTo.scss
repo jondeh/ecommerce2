@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.how-to-container {
+    margin-top: $headerHeight;
+    height: calc(88vh - #{$headerHeight});
+    // border: 5px solid orange;
+    background: whitesmoke;
+    width: 100%;
+    // transition-duration: background 10s;
+}
+
+@media only screen and (min-width: $size2) {
+
+}

@@ -14,10 +14,11 @@ const StyledSVG = styled(ImportedComponent)`
 
 const Logo = () => {
     const { push } = useHistory();
-    const { mobileMenuVisible, setMobileMenuVisible } = useContext(AppContext);
+    const { mobileMenuVisible, setMobileMenuVisible, closeMobileMenu } = useContext(AppContext);
 
     const handleLogoClick = () => {
         setMobileMenuVisible(false);
+        closeMobileMenu();
         push('/');
     }
 

@@ -1,24 +1,47 @@
 @import './variables.scss';
 
-.web-menu {
-    display: none;
-    position: relative;
+.web-menu-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 90%;
+    background: whitesmoke;
+    border-radius: 15px;
+    color: white;
+    // height: 0%;
+    overflow: hidden;
+    transition-duration: .5s;
+    clip-path: inset(0% 0% 100% 0%);
+    box-shadow: $shadow7;
     button {
-        font-size: $fontSize1 * 1;
-        text-transform: lowercase;
-        color: white;
-        font-family: $font1;
+        cursor: pointer;
+        transition-duration: $time-5;
+        padding: 1.2em 0em;
+        color: black;
+        border: 1px solid $whiteSmokeHover;
+        // border: 1px solid $baseGreen;
+        &:hover {
+            z-index: 1;
+            box-shadow: $shadow5;
+            box-shadow: $shadow6;
+            // border-color: $whiteSmokeHover;
+            // background: $whiteSmokeHover;
+            border-color: $baseGreen;
+            background: $baseGreen;
+        }
+        &:focus {
+            outline: none;
+            background: $baseGreen;
+        }
+    }
+    &:nth-child(1) {
+        border: none;
     }
 }
 
-.styled-menu {
-    // font-family: $font2;
-    
-    color: blue;
-}
+
 
 @media only screen and (min-width: $size2) {
-    .web-menu {
-        display: block;
-    }
+
 }

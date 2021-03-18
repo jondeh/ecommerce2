@@ -1,37 +1,58 @@
 @import './variables.scss';
 
 .mobile-menu {
-  &-true {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    // height: 100vh;
-    // max-height: 100vh;
-    height: calc(100vh - #{$headerHeight});
-    width: 100%;
-    background: grey;
-    z-index: 5;
-    position: absolute;
-    // left: -100%;
-    // transform: translateX(100%);
-    animation: fadeIn;
-    transition-duration: $time2;
-    animation-duration: $time2;
-    padding-top: $headerHeight;
-  }
-  &-false {
-    position: absolute;
-    opacity: 0;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    height: 100vh;
-    max-height: 100vh;
-    width: 100%;
-    background: grey;
-    z-index: 4;
-    transform: translateX(100%);
-    transition-duration: $time2;
-    padding-top: $headerHeight;
-  }
+  display: grid;
+  // flex-direction: column;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100vh;
+  width: 100%;
+
+  // max-height: 100vh;
+  // height: calc(100vh - #{$headerHeight});
+  background: grey;
+  z-index: 5;
+  position: absolute;
+  // left: -100%;
+  // transform: translateX(100%);
+  animation: fadeIn;
+  transition-duration: $time2;
+  animation-duration: $time2;
+  padding-top: $headerHeight;
+  // border: 3px solid purple;
+  transition: all .8s ease-in-out;
+  clip-path: inset(0% 0% 0% 100%);
+  position: absolute;
+}
+
+.mobile-menu-body {
+  @include heightWithHeader();
+  // border: 5px solid blue;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.body2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  // border: 5px solid orange;
+}
+
+.invisible {
+  opacity: 0;
+  // display: none;
+}
+.visible {
+  opacity: 1; 
+  // display: none;
 }
 
 .mm-top-container {

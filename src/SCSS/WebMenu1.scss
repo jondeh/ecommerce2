@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+
+.nav-auth-container {
+    border: 5px solid orange;
+    position: relative;
+    min-width: 20%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    button {
+        font-size: $fontSize1 * 1;
+        text-transform: lowercase;
+        color: white;
+        font-family: $font1;
+    }
+}
+
+@media only screen and (min-width: $size2) {
+    // .nav-menu {
+    //     display: block;
+    // }
+}

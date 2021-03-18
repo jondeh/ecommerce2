@@ -4,14 +4,19 @@ import { AppContext } from "../../context/AppContext";
 import "../../SCSS/Auth.scss";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+// import { CSSTransition } from 'react-transition-group';
 import Header from '../Menus/Header';
 
-const Auth = () => {
+const Auth = ({ mobile, id }) => {
   const { push } = useHistory();
   const { user, setUser, login } = useContext(UserContext);
   const { webAuthVisible, setWebAuthVisible } = useContext(AppContext);
   const [emailInput, setEmailInput] = useState(null);
   const [passwordInput, setPasswordInput] = useState(null);
+
+  const styles = {
+    // opacity: mobile && 0,
+  };
 
   const handleLogin = () => {
     login({ email: emailInput, password: passwordInput });
@@ -30,6 +35,16 @@ const Auth = () => {
     push("/customize");
   };
 
+  // const handleEnter = () => {
+  //   let webMenu = document.getElementById("auth-container-id");
+  //   webMenu.classList.add("open");
+  // }
+
+  // const handleLeave = () => {
+  //   let webMenu = document.getElementById("auth-container-id");
+  //   webMenu.classList.remove("open");
+  // }
+
   // const handleOffClick = () => {
   //   if (webAuthVisible) {
   //     setWebAuthVisible(false);
@@ -37,8 +52,12 @@ const Auth = () => {
   // };
 
   return (
-    <div 
+    <div
+      // style={styles} 
       // onClick={handleOffClick}
+      // onMouseEnter={handleEnter}
+      // onMouseLeave={handleLeave}
+      // id={id ? id : "auth-container-id"}
       className="auth-container">
       {/* <Header /> */}
       <div className="auth-box">

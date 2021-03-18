@@ -1,36 +1,97 @@
 @import './variables.scss';
 
-.auth-container {         // with route
-    @include heightWithHeader();
-    width: 100%;
-    background: white;
+.auth-container {           // with drop down menu
     @include flexCenter();
+    @include heightWithHeader();
+    // position: absolute;
+    width: 100%;
+    background: whitesmoke;
     padding: 0px 8px;
     color: $textColor1;
-    position: relative;
-    input {
-        margin-right: .5em;
-        // border: 1px solid white;;
-        // box-shadow: $shadow1;
-        @include inputStyle();
-        padding-left: .5em;
-    }
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    // z-index: 100;
+    // overflow: hidden;
+    // transition: clip-path .5s ease-out;
+    // clip-path: inset(0% 0% 0% 100%);
+}
+
+.open2 {
+    z-index: 500;
+    clip-path: inset(0% 0% 0% 0%);
 }
 
 // .auth-container {           // with drop down menu
-//     height: 100vh;
-//     width: 100%;
+//     position: absolute;
+//     height: 50vh;
+//     width: 200%;
+//     right: 0;
+//     top: 100%;
 //     background: transparent;
 //     @include flexCenter();
 //     padding: 0px 8px;
 //     color: $textColor1;
 //     position: absolute;
-//     left: 0;
-//     top: 0;
+//     // left: 0;
+//     // top: 0;
 //     z-index: 3;
+//     overflow: hidden;
+//     transition: clip-path .5s ease-out;
+//     clip-path: inset(0% 0% 0% 100%);
+//     box-shadow: $shadow7;
+// }
+// .auth-box {                 // with drop down menu
+//     border: 1px solid white;
+//     // padding: 8px;
+//     background: whitesmoke;
+//     border-radius: 15px;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     box-shadow: $shadow1;
+//     position: relative;
+//     // z-index: 101;
+//     button {
+//         @include buttonStyle1();
+//         background: white;
+//     }
+//     @include fadeInEase3();
+//     h3 {
+        
+//     }
+//     .email-container {
+//         width: 95%;
+//         // border: 1px solid black;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//     }
+//     .password-container {
+//         width: 95%;
+//         // border: 1px solid black;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//     }
+//     .register {
+//         width: 95%;
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-evenly;
+//         font-size: .85em;
+//         button {
+//             @include buttonStyle1();
+//             background: white;
+//         }
+//     }
+//     padding: 8px 4px;
 // }
 
-.auth-box {
+.auth-box {                  // with routes
     border: 1px solid white;
     // padding: 8px;
     background: whitesmoke;
@@ -42,7 +103,7 @@
     align-items: center;
     box-shadow: $shadow1;
     position: relative;
-    z-index: 4;
+    // z-index: 4;
     button {
         @include buttonStyle1();
         background: white;
@@ -81,24 +142,64 @@
 }
 
 @media only screen and (min-width: $size2) {
-    .auth-container {
-        // height: 100vh;
-        // background: transparent;
+    .auth-container {           // with drop down menu
+        position: relative;
+        // right: -50%;
+        // top: 100%;
+        background: whitesmoke;
+        @include flexCenter();
+        padding: 0px 8px;
+        color: $textColor1;
         // position: absolute;
         // left: 0;
         // top: 0;
         // z-index: 3;
-        // border: 1px solid blue;
-        // margin-top: 0;
-        background: whitesmoke;
+        // overflow: hidden;
+        // transition: clip-path .5s ease-out;
+        // clip-path: inset(0% 0% 100% 0%);
+        // box-shadow: $shadow7;
     }
  
-    .auth-box {
+    .auth-box {                  // with route
         // position: absolute;
         // right: $headerHeight;
         // top: $headerHeight;
         width: 30%;
         background: white;
         box-shadow: $shadow1;
+    }
+
+    // .auth-box {                     // with drop down
+    //     // position: absolute;
+    //     // right: $headerHeight;
+    //     // top: $headerHeight;
+    //     h3 {
+    //         margin: 0;
+    //         display: none;
+    //     }
+    //     h4 {
+    //         margin: 0;
+    //         display: none;
+    //     }
+
+    //     height: 100%;
+    //     width: 100%;
+    //     background: white;
+    //     box-shadow: $shadow1;
+    // }
+}
+
+@media only screen and (min-width: $size3) {
+    .auth-container {
+    }
+    .auth-box {
+        align-items: center;
+        h3 {
+            display: block;
+        }
+
+        h4 {
+            display: block;
+        }
     }
 }

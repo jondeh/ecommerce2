@@ -4,7 +4,7 @@
     &-true {
         @include heightWithHeader();
         @include flexCenter();
-        @include fadeInEase3();
+        // @include fadeInEase3();
         position: relative;
         width: 100%;
         background: whitesmoke;
@@ -12,7 +12,7 @@
     &-false {
         @include heightWithHeader();
         @include flexCenter();
-        @include fadeInEase3();
+        // @include fadeInEase3();
         position: relative;
         width: 100%;
     }
@@ -49,6 +49,7 @@
         opacity: 0;
         transition-duration: $time3;
         animation-timing-function: ease;
+        @include fadeInEase3();    
     }
 }
 
