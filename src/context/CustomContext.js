@@ -1,6 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 import { useHistory, useLocation } from 'react-router-dom';
 import { states } from "../data/webData";
+import axios from 'axios';
 
 export const CustomContext = createContext(null);
 export const CustomProvider = ({ children }) => {
@@ -14,6 +15,13 @@ export const CustomProvider = ({ children }) => {
   const [addressCity, setAddressCity] = useState(null);
   const [surveyNum, setSurveyNum] = useState(0);
   const [farthestIndex, setFarthestIndex] = useState(0);
+  const [propData, setPropData] = useState(null);
+  const [homeLoad, setHomeLoad] = useState(false);
+  const [latLng, setLatLng] = useState(null);
+  const [address, setAddress] = useState("");
+  const [didAPICallFail, setDidAPICallFail] = useState(false);
+
+
 
   useEffect(() => {
     console.log("HIT 1")
@@ -24,15 +32,12 @@ export const CustomProvider = ({ children }) => {
 
   useEffect(() => {
     if (homeAnswer) {
-        // console.log("homeAnswer", homeAnswer);
-        let homeAnswerArr = homeAnswer[0].split(',');
-        // console.log("homeAnswerArr", homeAnswerArr)
+        let homeAnswerArr = homeAnswer.split(',');
         let homeState = homeAnswerArr[homeAnswerArr.length-2].trim().toLowerCase();
         let homeCity = homeAnswerArr[homeAnswerArr.length-3].trim().toLowerCase();
-        // console.log("homeState", homeState)
       setAddressState(homeState);
       setAddressCity(homeCity);
-    }
+    };
   }, [homeAnswer]);
 
   useEffect(() => {
@@ -45,6 +50,56 @@ export const CustomProvider = ({ children }) => {
       }
     }
   }, [addressState]);
+
+  const getPropData = (address) => {
+
+    if (address) {
+      let homeAnswerArr = address.split(',');
+      
+      // console.log("homeAnswerArr", homeAnswerArr);
+      let streetAddress = homeAnswerArr.shift();
+      // console.log("streetAddress", streetAddress);
+      homeAnswerArr.pop();
+      let region = homeAnswerArr.join('')
+      // console.log("region", region);
+      let url = `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/basicprofile?address1=${streetAddress}&address2=${region}`;
+
+      let headers = {
+        'apikey': '3e6d99be50758186ec9a3ed0b3bbb25e',
+        'accept': 'application/json'
+      }
+
+      axios.get(url, {headers})
+      .then(res => {
+        let propData = res.data.property.map((e,i) => {
+          return {
+            sizeData: e.building.size,
+            summaryData: e.building.summary,
+            constructionData: e.building.construction,
+            lotData: e.lot,
+            interiorData: e.building.interior,
+            parkingData: e.building.parking,
+          };
+        });
+        setHomeAnswer(address)
+        setPropData(propData)
+        setHomeLoad(false);
+        setDidAPICallFail(false);
+      }).catch(err => {
+        console.log("ERROR: ", err);
+        setDidAPICallFail(true);
+        setHomeLoad(false);
+      });
+    };
+  }
+  
+  useEffect(() => {
+    console.log("HIT")
+    if (address) {
+      setHomeLoad(true);
+      getPropData(address)
+    }
+  }, [address]);
 
   const addBug = (bug) => {
     let newSuggestions = bugAnswer.map((e) => e);
@@ -76,7 +131,6 @@ export const CustomProvider = ({ children }) => {
   }, [location]);
 
   const handlePetClick = (myPet) => {
-    // console.log("myPet", myPet)
     let petsArr = [...whoPets];
     let petIndex = petsArr.findIndex((e) => e === myPet)
     if (petIndex === -1) {
@@ -87,8 +141,6 @@ export const CustomProvider = ({ children }) => {
 
     setWhoPets(petsArr);
 };
-
-  // console.log("whoAnswer", whoAnswer)
 
   return (
     <CustomContext.Provider
@@ -104,6 +156,13 @@ export const CustomProvider = ({ children }) => {
         addressCity, setAddressCity,
         surveyNum, setSurveyNum,
         farthestIndex, setFarthestIndex,
+        propData, setPropData,
+        getPropData,
+        homeLoad, setHomeLoad,
+        latLng, setLatLng,
+        address, setAddress,
+        didAPICallFail,
+        
 
       }}
     >

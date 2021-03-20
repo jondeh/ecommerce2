@@ -1,7 +1,14 @@
 @import './SCSS/variables.scss';
 
-.App {
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+.App {
+  // box-sizing: border-box;
   text-align: center;
   // background: whitesmoke;
   background: $baseBlue;
@@ -33,6 +40,18 @@
     // color: white;
   }  
 }
+
+// #place-marker {
+//   fill: blue;
+// }
+
+// svg {             // Use to change text outline of logo
+//   g {
+//     path {
+//       stroke: $baseBlue;
+//     }
+//   }
+// }
 
 @media only screen and (min-width: $size2) {
   

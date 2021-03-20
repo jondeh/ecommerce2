@@ -6,7 +6,7 @@
     // position: absolute;
     width: 100%;
     background: whitesmoke;
-    padding: 0px 8px;
+    padding: 2vh 1vh;
     color: $textColor1;
     // position: absolute;
     // left: 0;
@@ -14,6 +14,7 @@
     // z-index: 100;
     // overflow: hidden;
     // transition: clip-path .5s ease-out;
+    // border: 5px dotted orange;
     // clip-path: inset(0% 0% 0% 100%);
 }
 
@@ -97,6 +98,7 @@
     background: whitesmoke;
     border-radius: 15px;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -148,7 +150,7 @@
         // top: 100%;
         background: whitesmoke;
         @include flexCenter();
-        padding: 0px 8px;
+        // padding: 0px 8px;
         color: $textColor1;
         // position: absolute;
         // left: 0;

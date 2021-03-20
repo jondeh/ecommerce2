@@ -1,0 +1,90 @@
+@import '../../../../SCSS/variables.scss';
+
+    .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 13.5em;
+        width: 13.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        $time: 1.8s;
+
+        h3 {
+            font-size: 1.4em;
+            animation: flashColor calc(#{$time} * 2) linear infinite alternate;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-weight: 1000;
+            color: darkgreen;
+        }
+
+        #spin1 {
+            animation: bugOrbit $time infinite ease-in-out;
+        }
+        #spin2 {
+            animation: bugOrbit $time infinite ease-in-out;
+            // animation-delay: calc(#{$time} / 9);
+            opacity: .75;
+        }
+        #spin3 {
+            animation: bugOrbit $time infinite ease-in-out;
+            // animation-delay: calc(#{$time} / 4.5);
+            opacity: .5;
+        }
+        #spin4 {
+            // animation-delay: calc(#{$time} / 3);
+            opacity: .25;
+        }
+        .spin-circle {
+            animation: bugOrbit $time infinite ease-in-out;
+            svg {
+                height: 1.9em;
+                width: 1.9em;
+                position: absolute;
+                transform: rotate(90deg);
+                border-radius: 50%;
+                filter: sepia(1);
+            }
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+
+            h1 {
+                font-size: 3em;
+                z-index: 100;
+                color: black;
+            }
+        }
+    }
+
+
+@keyframes bugOrbit {
+    from { 
+        transform: rotate(0deg);
+    }
+    to   { 
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes flashColor {
+    from {
+        filter: brightness(1);
+        // color: $baseBlue;
+    }
+    to {
+        // color: $baseGreen;
+        filter: brightness(.5);
+    }
+}
+
+@media only screen and (min-width: $size2) {
+
+}

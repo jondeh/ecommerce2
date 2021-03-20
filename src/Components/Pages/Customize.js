@@ -107,7 +107,8 @@ const Customize = () => {
         <CustomWhere {...{surveyPosition, surveyNum}}/>
       </CustomizeColumn>
       <div className={`questions-container`}>
-        <span className="qc-description">{surveyPosition[surveyNum].description}</span> <br />
+        <span className="qc-description">{surveyPosition[surveyNum].description}</span> 
+        {/* <br /> */}
         {isSurvey ? surveyPosition[surveyNum].component : null}
         <div className="customize-button-container">
           {surveyNum > 0 ? (

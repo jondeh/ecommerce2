@@ -1,0 +1,36 @@
+<svg width="375" height="282" viewBox="0 0 375 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1">
+<g id="house-shadow" opacity="0.4">
+<path id="Vector" opacity="0.7" d="M333.75 281.2H39.09L41.13 143.18L125.4 129.23H244.54L331.71 139.11L333.75 281.2Z" fill="url(#paint0_linear)"/>
+</g>
+<path id="structure" d="M329.67 279.46H43.17L45.21 144.92L125.67 130.97H245.99L327.63 140.85L329.67 279.46Z" fill="#EEEEEE"/>
+<path id="left-roof" d="M131.5 176.3H23.4L39.09 130.97H131.5V176.3Z" fill="#6C63FF"/>
+<path id="left-lower-roof" d="M132.08 176.3H23.4V180.95H132.08V176.3Z" fill="#6C63FF"/>
+<path id="right-roof" d="M239.01 176.3H347.11L331.42 130.97H239.01V176.3Z" fill="#6C63FF"/>
+<g id="roof-shading">
+<path id="Vector_2" opacity="0.1" d="M131.5 176.3H23.4L39.09 130.97H131.5V176.3Z" fill="black"/>
+<path id="Vector_3" opacity="0.1" d="M239.01 176.3H347.11L331.42 130.97H239.01V176.3Z" fill="black"/>
+</g>
+<path id="right-lower-roof" d="M238.43 180.95H347.11V176.3H238.43V180.95Z" fill="#6C63FF"/>
+<path id="chimney" d="M152.42 80.41H132.08V122.25H152.42V80.41Z" fill="#535461"/>
+<path id="structure-core" d="M248.6 279.46H121.91V120.22L185.26 75.18L248.6 120.22V279.46Z" fill="white"/>
+<path id="door" d="M201.23 225.99H169.27V279.46H201.23V225.99Z" fill="#535461"/>
+<g id="windows">
+<path id="left-window" opacity="0.5" d="M111.16 199.26H52.46V235.87H111.16V199.26Z" fill="#6C63FF"/>
+<path id="right-window" opacity="0.5" d="M318.64 199.26H259.94V235.87H318.64V199.26Z" fill="#6C63FF"/>
+<path id="upper-window" opacity="0.5" d="M214.61 144.05H155.91V180.66H214.61V144.05Z" fill="#6C63FF"/>
+</g>
+<path id="upper-window-sill" d="M218.09 177.47H152.42V183.86H218.09V177.47Z" fill="#535461"/>
+<path id="tip-roof" d="M257.13 134.27L185.44 78.83L116.06 134.23L110.62 127.42L185.36 67.75L262.46 127.38L257.13 134.27Z" fill="#6C63FF"/>
+<path id="door-handle" d="M196.59 255.05C197.871 255.05 198.91 254.011 198.91 252.73C198.91 251.449 197.871 250.41 196.59 250.41C195.309 250.41 194.27 251.449 194.27 252.73C194.27 254.011 195.309 255.05 196.59 255.05Z" fill="#E0E0E0"/>
+<path id="left-window-sill" d="M114.64 232.68H48.97V239.07H114.64V232.68Z" fill="#535461"/>
+<path id="right-window-sill" d="M322.12 232.68H256.45V239.07H322.12V232.68Z" fill="#535461"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="186.42" y1="281.2" x2="186.42" y2="129.23" gradientUnits="userSpaceOnUse">
+<stop stop-color="#808080" stop-opacity="0.25"/>
+<stop offset="0.54" stop-color="#808080" stop-opacity="0.12"/>
+<stop offset="1" stop-color="#808080" stop-opacity="0.1"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,24 +1,30 @@
 import React, { Component } from "react";
-import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
+import { GoogleApiWrapper, Map, Marker, InfoWindow, Circle } from "google-maps-react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
+import customMarker from '../../data/media/place-marker.svg';
+import '../../SCSS/Google.scss';
 
 export class MapContainer extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
     mapCenter: {
-      lat: 49.282,
-      lng: -123,
+      lat: props.latLng.lat,
+      lng: props.latLng.lng,
     },
   };
+  }
+  
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
-      showingInfoWindow: true,
+      // showingInfoWindow: true,
     });
 
   onMapClicked = (props) => {
@@ -29,10 +35,6 @@ export class MapContainer extends Component {
       });
     }
   };
-
-  handleChange = address => {
-    this.setState({ address });
-  };
  
   handleSelect = address => {
     geocodeByAddress(address)
@@ -41,48 +43,33 @@ export class MapContainer extends Component {
       .catch(error => console.error('Error', error));
   };
 
+  style = {
+    height: "100%",
+    width: "90%",
+  }
+
+  containerStyle = {
+    // width: "90%",
+    marginLeft: "5%",
+    marginRight: "5%",
+  }
+
   render() {
     return (
       <div className="google-map">
-          <PlacesAutocomplete
-        value={this.state.address}
-        onChange={this.handleChange}
-        onSelect={this.handleSelect}
-      >
-        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-          <div>
-            <input
-              {...getInputProps({
-                placeholder: 'Search Places ...',
-                className: 'location-search-input',
-              })}
-            />
-            <div className="autocomplete-dropdown-container">
-              {loading && <div>Loading...</div>}
-              {suggestions.map(suggestion => {
-                const className = suggestion.active
-                  ? 'suggestion-item--active'
-                  : 'suggestion-item';
-                // inline style for demonstration purpose
-                const style = suggestion.active
-                  ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                  : { backgroundColor: '#ffffff', cursor: 'pointer' };
-                return (
-                  <div
-                    {...getSuggestionItemProps(suggestion, {
-                      className,
-                      style,
-                    })}
-                  >
-                    <span>{suggestion.description}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-      </PlacesAutocomplete>
         <Map
+          style={this.style}
+          containerStyle={this.containerStyle}
+          zoom={19}
+          draggable={false}
+          mapType={'satellite'}
+          // mapTypeControl={false}
+          // zoomControl={false}
+          // scaleControl={false}
+          // streetViewControl={false}
+          // rotateControl={false}
+          // fullscreenControl={false}
+          disableDefaultUI={true}
           initialCenter={{
             lat: this.state.mapCenter.lat,
             lng: this.state.mapCenter.lng,
@@ -92,15 +79,36 @@ export class MapContainer extends Component {
             lng: this.state.mapCenter.lng,
           }}
           google={this.props.google}
-          onClick={this.onMapClicked}
+          // onClick={this.onMapClicked}
         >
           <Marker
             position={{
               lat: this.state.mapCenter.lat,
               lng: this.state.mapCenter.lng,
             }}
-            onClick={this.onMarkerClick}
+            // onClick={this.onMarkerClick}
             name={"Current location"}
+            // opacity={.5}
+            icon={{
+              url: customMarker,
+              // anchor: new google.maps.Point(32,32),
+              // scaledSize: new google.maps.Size(64,64)
+          }}
+          />
+          <Circle
+            radius={35}
+            center={{
+              lat: this.state.mapCenter.lat,
+              lng: this.state.mapCenter.lng,
+            }}
+            // onMouseover={() => console.log('mouseover')}
+            // onClick={() => console.log('click')}
+            // onMouseout={() => console.log('mouseout')}
+            strokeColor='#5D76A9'
+            strokeOpacity={.9}
+            strokeWeight={5}
+            fillColor='#ACE1AF'
+            fillOpacity={0.4}
           />
 
           <InfoWindow
