@@ -25,7 +25,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
 
   const handleHomeClick = (option) => {
     console.log("homeClickAddress", address)
-    setHomeAnswer([address ? address : editAddress, option]);
+    // setHomeAnswer([address ? address : editAddress, option]);
   };
 
   const handleEditClick = () => {
