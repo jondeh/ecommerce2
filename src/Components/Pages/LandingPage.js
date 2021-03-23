@@ -4,11 +4,10 @@ import { UserContext } from '../../context/UserContext';
 import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import TextOverlay from '../Utility/TextOverlay';
-import Logo from '../Utility/Logo';
+import MainSection from '../Sections/MainSection';
 
-import GoogleMap from '../Utility/GoogleMap';
 import '../../SCSS/LandingPage.scss';
-// import { pageSection } from '../../data/webData';
+import { pageSections } from '../../data/webData';
 
 import video1 from '../../data/media/sampleVideo1.mp4';
 import video2 from '../../data/media/playing-with-kids.mp4';
@@ -27,9 +26,10 @@ const LandingPage = () => {
         };
     };
 
-    // const handleEnded = () => {
-    //     console.log('ENDED')
-    // }
+    const mappedSections = pageSections.map((section, i) => {
+        const { objType, text, image, imageAlt } = section;
+        return <MainSection key={i} {...{ objType, text, image, imageAlt, index: i }}/>
+    });
 
     return (
         <div className="landing-page">
@@ -54,6 +54,7 @@ const LandingPage = () => {
                         {/* {user ? "MY PLAN" : 'LETS GET STARTED'} */}
                 </Button>
             </div>
+            {mappedSections}
         </div>
     )
 }

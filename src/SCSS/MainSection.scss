@@ -1,0 +1,57 @@
+@import './variables.scss';
+
+.main-section {
+    height: 80vh;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    .section-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        p {
+            font-size: 14px;
+            text-align: justify;
+        }
+    
+        img {
+           height: 50%;
+           width: 90%; 
+           border-radius: 15px;
+        }
+    }
+
+    
+}
+
+@media only screen and (min-width: $size2) {
+    .main-section {
+        height: 65vh;
+        .section-body {
+            flex-direction: row;
+            justify-content: space-evenly;
+            img {
+                height: 40vh;
+                width: 60vh;
+            }
+            p {
+                font-size: 1em;
+                width: 30%;
+            }
+        }
+        .section-body.right {
+            flex-direction: row-reverse;
+        }
+    }
+}
