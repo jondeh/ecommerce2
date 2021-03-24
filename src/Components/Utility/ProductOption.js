@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useContext } from 'react';
-
 import { AppContext } from '../../context/AppContext';
+import {colors} from '../../data/variables';
+const { primary, secondary, accent, textColor, altBlue} = colors;
 
 const ProductOption = ({ id, image, description, option, productAnswer, setProductAnswer }) => {
 
-    const [myStyle, setMyStyle] = useState({boxShadow: productAnswer === option && "0px 0px 5px 2px #ACE1AF"});
+    const [myStyle, setMyStyle] = useState({boxShadow: productAnswer === option && `0px 0px 5px 2px ${accent}`});
 
     const handleClick = () => {
         setProductAnswer(option)
     };
 
     useEffect(() => {
-        setMyStyle({boxShadow: productAnswer === option && "0px 0px 5px 2px #ACE1AF"})
+        setMyStyle({boxShadow: productAnswer === option && `0px 0px 5px 2px ${accent}`})
     }, [productAnswer]);
 
     return (

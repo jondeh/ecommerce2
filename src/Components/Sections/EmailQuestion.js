@@ -5,6 +5,8 @@ import { UserContext } from '../../context/UserContext';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { HiOutlineMailOpen } from 'react-icons/hi';
+import {colors} from '../../data/variables';
+const { primary, secondary, accent, textColor} = colors;
 
 
 const EmailQuestion = () => {
@@ -28,7 +30,7 @@ const EmailQuestion = () => {
     return (
         <div className={`email-question-container-${emailQuestion}`}>
             Great! We're retrieving your custom box. Put in your email so we can save your progress!
-            <HiOutlineMailOpen size={85} color={"#ACE1AF"} className="box-icon" />
+            <HiOutlineMailOpen size={85} color={accent} className="box-icon" />
             <input placeholder="email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)}></input>
             <Button 
                 onClick={handleClick}

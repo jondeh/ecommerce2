@@ -14,24 +14,25 @@
     @include fadeInEase3();
     
     video {
-        height: 70vh;
+        height: 80vh;
         object-fit: cover;
         overflow: hidden;
     }
 
     .funnel-start {
         @include flexCenter();
-        h1 {
+        h1, h2 {
             font-family: $font1;
             display: none;
             color: darkgreen;
             font-weight: bold;
         }
-        height: 20vh;
+        height: 12vh;
         width: 100%;
+        transition-duration: $time3;
         button {
             z-index: 3;
-            transition-duration: $time3;
+            // transition-duration: $time3;
             width: 60%;
             background: $baseGreen;
             font-family: $font2;
@@ -39,6 +40,16 @@
             font-weight: 800;
             font-size: $fontSize1 * 1.4;
             text-transform: lowercase;
+            outline: none;
+            font-family: $mainFont;
+            font-size: .8em;
+            font-weight: 800;
+            padding: .7em;
+            border-radius: 2em;
+            border: .1em solid white;
+            &:hover {
+                filter: brightness(1.2);
+            }
         }
     }
 }
@@ -47,20 +58,21 @@
     
     .landing-page {
         height: auto;
-
+        
         .funnel-start {
-            height: 50vh;
+            height: 20vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding-bottom: 10%;
-            h1 {
+            justify-content: center;
+            // padding-bottom: 10%;
+            // top: 60vh;
+            h1, h2 {
                 display: inline;
             }
             
             button {
-                width: 20%;
-                font-size: $fontSize1 * 2.2;
+                max-width: 20%;
+                font-size: $fontSize1 * 1.2;
                 // background: $baseGreen;
                 // font-family: $font2;
                 // color: white;

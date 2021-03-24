@@ -23,6 +23,27 @@ export const pageSections = [
     }, 
 ];
 
+export const howToSections = [
+    {
+        objType: "Professional results - DIY price",
+        text: "Pest control companies make it sound harder than it is - pest control is easy.  It shouldn't be $500/year.  With Jitterbox, your getting home protection for $35 per box.",
+        image: stockBox,
+        imageAlt: "Expert instruction with every box",
+    }, 
+    {
+        objType: "Your plan is made for you",
+        text: "SPOILER ALERT - we don't recommend spraying every 3 months like Pest Control companies offer. You should concentrate treatment around the bugs schedule, not the technician. Your Plan is based on how we treat our own homes. We’ve found the best bang for the buck is more like this: 1- Late Feb-March: Control early emergence and hit pests when they are at their weakest after winter. 2- May: Control later emerging pests/ants/spiderlings/forming nests. 3- July:  peak summer- to when spiders, flies, wasps, and mosquitos are at their highest levels. 4- September to eliminate them before they find their winter hiding places in your home.",
+        image: grass,
+        imageAlt: "Created for you",
+    },
+    {
+        objType: "We know things happen, cancel any time",
+        text: "You can update at any time to address new pests as they appear or to cut back when those pests are taken care of. And no contracts. If your bugs disappear forever (fingers crossed), you can cancel at anytime.",
+        image: stockGardening,
+        imageAlt: "Customized to your needs",
+    }, 
+]
+
 export const states2 = [
     {state: 'ut', bugs: ["ants", "spiders", "wasps"]},
     {state: 'wa', bugs: ["ants", "spiders"]},

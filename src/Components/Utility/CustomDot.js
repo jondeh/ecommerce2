@@ -1,8 +1,13 @@
 import React, { useContext } from 'react';
 import '../../SCSS/CustomWhere.scss';
 import { CustomContext } from '../../context/CustomContext';
+import { colors } from '../../data/variables';
+import { GiHummingbird } from 'react-icons/gi';
+
+const { primary, secondary, accent, textColor, altBlue, accent2} = colors;
 
 const CustomDot = ({ location, index }) => {
+
     const {
         whoAnswer, setWhoAnswer,
         homeAnswer, setHomeAnswer,
@@ -25,8 +30,8 @@ const CustomDot = ({ location, index }) => {
 
             // SLIGHTLY DARKER RING - CELADON DOT //
 
-        background: index <= farthestIndex ? '#ACE1AF' : '#B0C4DE',
-        border: surveyNum === index && '.45em solid #9aca9c',
+        background: index <= farthestIndex ? accent : altBlue,
+        // border: surveyNum === index && `.45em solid ${accent}`,
 
             // RADIAL GRADIENT //
 
@@ -54,7 +59,7 @@ const CustomDot = ({ location, index }) => {
     
     return (
         <div className="dot" style={dotStyle} onClick={handleNavClick}>
-            
+            {surveyNum === index && <GiHummingbird />}
         </div>
     );
 };

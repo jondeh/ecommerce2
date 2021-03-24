@@ -6,6 +6,12 @@
 }
 
 .dot {
+    @include flexCenter();
+    svg {
+        @include fadeInEase1();
+        font-size: 1em;
+        color: white;
+    }
     transition-duration: $time1;
 }
 

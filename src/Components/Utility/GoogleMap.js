@@ -4,6 +4,9 @@ import PlacesAutocomplete from "react-places-autocomplete";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import customMarker from '../../data/media/place-marker.svg';
 import '../../SCSS/Google.scss';
+import { colors } from '../../data/variables';
+
+const { primary, secondary, accent, textColor, altBlue} = colors;
 
 export class MapContainer extends Component {
   constructor(props) {
@@ -104,10 +107,10 @@ export class MapContainer extends Component {
             // onMouseover={() => console.log('mouseover')}
             // onClick={() => console.log('click')}
             // onMouseout={() => console.log('mouseout')}
-            strokeColor='#5D76A9'
+            strokeColor={primary}
             strokeOpacity={.9}
             strokeWeight={5}
-            fillColor='#ACE1AF'
+            fillColor={accent}
             fillOpacity={0.4}
           />
 

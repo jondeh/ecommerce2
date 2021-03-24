@@ -2,13 +2,44 @@
 
 .how-to-container {
     margin-top: $headerHeight;
-    height: calc(88vh - #{$headerHeight});
+    min-height: calc(88vh - #{$headerHeight});
     // border: 5px solid orange;
     background: whitesmoke;
     width: 100%;
-    // transition-duration: background 10s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    .how-to-main {
+        height: calc(88vh - #{$headerHeight});
+        display: flex;
+        padding: 4vh 0vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        video {
+            outline: none;
+            border-radius: 20px;
+            width: 80%;
+        }
+    }
+}
+
+.how-to-section {
+    height: calc(88vh - #{$headerHeight});
+    display: flex;
+    padding: 4vh 0vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 @media only screen and (min-width: $size2) {
-
+    .how-to-container {
+        .how-to-main {
+            video {
+                width: 50%;
+            }
+        }
+    }
 }

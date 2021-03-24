@@ -1,20 +1,26 @@
 import React, { useState, useEffect, useContext } from 'react';
 
 // import { AppContext } from '../../context/AppContext';
-
+import { colors } from '../../data/variables';
 import '../../SCSS/ImageTile.scss';
+const { primary, secondary, accent, textColor} = colors;
 
 const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
     // const { addBug } = useContext(AppContext);
 
+    // const colorGreen = '#ACE1AF'
+    // const colorGreen = "#76ff76"
+    // const colorGreen = "#00ff7f"
+    
+
     const [testStyle, setTestStyle] = useState(
         {background: (bugAnswer) && 
-            bugAnswer.includes(thisBug.bug) ? '#ACE1AF' : null}
+            bugAnswer.includes(thisBug.bug) ? accent : null}
     )
 
     const testClick = () => {
         addBug(thisBug.bug)
-        setTestStyle({background: !testStyle.background && '#ACE1AF'})
+        setTestStyle({background: !testStyle.background && accent})
     }
 
     return (

@@ -17,10 +17,31 @@
     button {
         cursor: pointer;
         transition-duration: $time-5;
-        padding: 1.2em 0em;
+        padding: .8em 1em;
         color: black;
         border: 1px solid $whiteSmokeHover;
         // border: 1px solid $baseGreen;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .web-menu-button-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: right;
+        }
+        .web-menu-text {
+            font-family: $mainFont;
+            font-size: .7em;
+            font-weight: 700;
+        }
+        .web-menu-subtext {
+            font-family: $mainFont;
+            font-size: .7em;
+        }
+        svg {
+            font-size: 1.4em;
+        }
         &:hover {
             z-index: 1;
             box-shadow: $shadow5;
@@ -29,10 +50,18 @@
             // background: $whiteSmokeHover;
             border-color: $baseGreen;
             background: $baseGreen;
+            color: white;
+            svg {
+                fill: white;
+            }
         }
         &:focus {
             outline: none;
             background: $baseGreen;
+            color: white;
+            svg {
+                fill: white;
+            }
         }
     }
     &:nth-child(1) {

@@ -4,13 +4,18 @@ import {IoMdArrowDropdown} from 'react-icons/io';
 import WebMenu from './WebMenu';
 import '../../SCSS/WebNav.scss';
 import { useHistory } from 'react-router-dom';
+import { GiHummingbird, GiArchiveResearch } from 'react-icons/gi';
+import { BiPackage } from 'react-icons/bi';
+import { AiFillStar } from 'react-icons/ai';
+import {colors} from '../../data/variables';
+const { primary, secondary, accent, textColor, altBlue} = colors;
 
 const WebNav = () => {
     let id = "web-nav-id";
     const { push } = useHistory();
 
     const webNavStyle = {
-        width: "150%",
+        width: "125%",
     }
 
     const handleEnter = () => {
@@ -29,11 +34,11 @@ const WebNav = () => {
     }
     const handleProducts = () => {
         handleLeave();
-
+        
     }
     const handleGetStarted = () => {
         handleLeave();
-        
+        push('/customize')
     }
     const handleReviews = () => {
         handleLeave();
@@ -42,10 +47,10 @@ const WebNav = () => {
     
     
     const webNavData = [
-        {text: "see how it works", onClick: handleSeeHowItWorks},
-        {text: "products", onClick: handleProducts},
-        {text: "get started", onClick: handleGetStarted},
-        {text: "reviews", onClick: handleReviews},
+        {text: "get started", subText: "IT", onClick: handleGetStarted, image: <GiHummingbird color={accent} /> },
+        {text: "see how it works", subText: "SEE", onClick: handleSeeHowItWorks, image: <GiArchiveResearch color={accent} /> },
+        {text: "products", subText: "HOW", onClick: handleProducts, image: <BiPackage color={accent} /> },
+        {text: "reviews", subText: "WORKS", onClick: handleReviews, image: <AiFillStar color={"gold"} /> },
     ];
 
     return (

@@ -1,18 +1,26 @@
 
-$baseGreen1: #ACE1AF; // Celadon
+// $baseGreen1: #ACE1AF; // Celadon
+$baseGreen1: #4bdd53; // Celadon Bright
 // $baseGreen100: #9aca9c; // Celadon (darker)
 $baseGreen2: lightgreen; // Lightgreen
 $baseGreen3: #8FBC8B; // Dark Sea Green
 $baseGreen4: #71BC78; // Fern
-$baseGreen5: #98FB98; // Pale Green
+$baseGreen5: #76ff76; // Pale Green // Ty's choice
+// $baseGreen5: #76ff76; // Pale Green // Ty's choice
+// $baseGreen5: #98FB98; // Pale Green
 $baseGreen6: #50C878; // Paris Green
 $baseGreen7: #D0F0C0; // Tea Green
 $baseGreen8: #DADD98; // Green Earth
 $baseGreen9: #A9BA9D; // Laurel Green
 $baseGreen10: #3EB489; // Mint
+$baseGreen11: #00CE0B; 
+$baseGreen12: mediumseagreen; 
 
+// $baseGreen: $baseGreen1; // MAIN GREEN //
 // $baseGreen: $baseGreen5; // MAIN GREEN //
-$baseGreen: $baseGreen1; // MAIN GREEN //
+// $baseGreen: $baseGreen5; // MAIN GREEN //
+// $baseGreen: $baseGreen11; // MAIN GREEN //
+$baseGreen: $baseGreen12; // MAIN GREEN //
 
 $blue1: #F0F8FF; // AliceBlue
 $blue2: #6CB4EE; // Argentinian Blue
@@ -27,16 +35,32 @@ $blue10: #5D76A9; // Grizzlies Blue
 $blue11: #E1EBEE; // Marian Blue
 $blue12: #B0C4DE; // Light Steel Blue / Background
 
+$grey1: darkslategrey;
+
+$red1: #6E0D25;
+$red2: #A13034;
+$red3: #6E0D25;
+$red4: #6E0D25;
+$red5: #6E0D25;
+$red6: #6E0D25;
+$red7: #6E0D25;
+$red8: #6E0D25;
+$red9: #6E0D25;
+$red10: #6E0D25;
+
 // $baseBlue: $blue6; // Header/Footer - Main Blue
-$baseBlue: $blue10; // Header/Footer - Main Blue
+// $baseBlue: $blue10; // Header/Footer - Main Blue
+$baseBlue: $grey1; // Header/Footer - Main Blue
 // $baseBlue: $blue11; 
 // $baseBlue: $blue12; // Overlay Blue
 $baseBlue2: $blue4; // Some icons - Secondary Blue
 $baseBlue3: $blue12; // Some icons - Another Secondary Blue
 
 $whiteSmokeHover: rgb(228, 228, 228);
+// $whiteSmokeHover: #f5f5f5;
 
 $textColor1: #2f4f4f;
+$textColor2: black;
 
 
 $time-5: 125ms;
@@ -45,8 +69,8 @@ $time2: 400ms;
 $time3: 550ms;
 
 $size1: 360px;
-$size3: 768px;
-$size2: 1399px;
+$size2: 768px;
+$size3: 1399px;
 // $size3: 360px;
 
 $fontSize1: 1em;
@@ -54,9 +78,13 @@ $fontSize1: 1em;
 $sectionSize: 40vh;
 $sectionHeader: 8vh;
 
-$font1: 'Raleway', sans-serif;
+$font1: 'Regular', Arial, sans-serif;
+$font4: 'Raleway', sans-serif;
 $font2: 'Yanone Kaffeesatz', sans-serif;
 $font3: 'Roboto Helvetica', arial, sans-serif;
+$font5: 'Poppins', sans-serif;
+
+$mainFont: $font5;
 
 $shadow1: 0px 1px 5px grey;
 $shadow2: 0px 1px 5px $textColor1;

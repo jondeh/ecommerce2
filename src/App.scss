@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // font-family: $mainFont;
 }
 
 .App {
@@ -39,6 +40,14 @@
     color: $baseGreen;
     // color: white;
   }  
+}
+
+#jitterbo {
+  
+}
+
+#last-letter {
+  fill: $baseGreen;
 }
 
 // #place-marker {

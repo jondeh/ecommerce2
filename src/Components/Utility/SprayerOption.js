@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import {colors} from '../../data/variables';
+const { primary, secondary, accent, textColor, altBlue} = colors;
 
 const SprayerOption = ({ sprayerAnswer, setSprayerAnswer, option, text}) => {
-    const [myStyle, setMyStyle] = useState({background: sprayerAnswer === option && "#ACE1AF"});
+    const [myStyle, setMyStyle] = useState({background: sprayerAnswer === option && accent});
 
     const handleClick = () => {
         setSprayerAnswer(option)
     };
 
     useEffect(() => {
-        setMyStyle({background: sprayerAnswer === option && "#ACE1AF"})
+        setMyStyle({background: sprayerAnswer === option && accent})
     }, [sprayerAnswer]);
 
     return (

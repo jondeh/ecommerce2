@@ -4,7 +4,7 @@ import { AppContext } from '../../context/AppContext';
 import { UserContext } from '../../context/UserContext';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-
+import {colors} from '../../data/variables';
 
 // Components
 
@@ -17,6 +17,7 @@ import WebAuth from './WebAuth';
 import {IoIosMenu} from 'react-icons/io';
 import {ImCancelCircle} from 'react-icons/im';
 
+const { primary, secondary, accent, textColor, altBlue} = colors;
 
 const Header = ({ mobile }) => {
     const { push } = useHistory();
@@ -32,9 +33,9 @@ const Header = ({ mobile }) => {
 
     const headerStyle = {
         // background: mobile && '#5D76A9',
-        background: mobile ? "#5D76A9" : location.pathname === '/' ? "transparent" : location.pathname === '/customize' ? "#B0C4DE" : null,
+        background: mobile ? primary : location.pathname === '/' ? "transparent" : location.pathname === '/customize' ? altBlue : primary,
 
-        boxShadow: location.pathname === "/" || location.pathname === "/customize" ? "none" : null,
+        // boxShadow: location.pathname === "/" || location.pathname === "/customize" ? "none" : null,
     }
 
 
@@ -43,7 +44,7 @@ const Header = ({ mobile }) => {
             className="header-container"
             style={headerStyle}> 
 
-            <Logo {...{mobile}}/>
+            <Logo {...{mobile, location}}/>
             <WebNav />
             
             {

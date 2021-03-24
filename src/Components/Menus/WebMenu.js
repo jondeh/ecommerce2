@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 import '../../SCSS/WebMenu.scss';
+import {colors} from '../../data/variables';
+const { primary, secondary, accent, textColor, altBlue} = colors;
 
 const WebMenu = ({ id, data, style }) => {
 
@@ -21,7 +23,14 @@ const WebMenu = ({ id, data, style }) => {
             variant="contained" 
             key={i}
             onClick={button.onClick}
-                >{button.text}
+            >
+                <div className="web-menu-button-text">
+                    <span className="web-menu-text">{button.text}</span>
+                    {button.subText && <span className="web-menu-subtext">{button.subText}</span>}
+                    
+                </div>
+                
+                {button.image && button.image}
         </button>
 
         )

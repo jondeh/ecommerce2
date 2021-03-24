@@ -11,6 +11,7 @@ import { pageSections } from '../../data/webData';
 
 import video1 from '../../data/media/sampleVideo1.mp4';
 import video2 from '../../data/media/playing-with-kids.mp4';
+import video3 from '../../data/media/Butterflies-On-A-Flower.mp4';
 
 const LandingPage = () => {
     const { user } = useContext(UserContext);
@@ -43,11 +44,12 @@ const LandingPage = () => {
                 loop={true}
                 muted 
                 >
-                    {/* <source src={video2}></source> */}
                     <source src={video1}></source>
+                    {/* <source src={video2}></source> */}
+                    {/* <source src={video3}></source> */}
             </video>
             <div className="funnel-start">
-                <h1>let's get started</h1>
+                {/* <h1>let's get started</h1> */}
                 <Button 
                     onClick={() => handleClick(user)} variant="contained">
                         see my plan
