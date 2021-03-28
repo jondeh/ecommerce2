@@ -2,9 +2,21 @@
 
 .bug-question-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, 4.5em);
+    grid-template-rows: repeat(auto-fit, 4.5em);
     height: 70%;
+    // width: 100%;
     @include fadeInEase1();
+    justify-content: center;
     // width: 90%;
+}
+
+@media only screen and (min-width: $size2) {
+    .bug-question-grid {
+        // grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+        // grid-template-rows: repeat(auto-fill, 5em);
+        
+    }
 }
 
 

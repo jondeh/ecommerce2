@@ -188,8 +188,10 @@ $boxHeight: 45vh;
 
 
 @mixin textStyle1() {
-    font-family: $font1;
-    color: $textColor1;
+    // font-family: $font1;
+    font-family: $mainFont;
+    // color: $textColor1;
+    color: black;
 }
 
 @mixin textStyle2() {

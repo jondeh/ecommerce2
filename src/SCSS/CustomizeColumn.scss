@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+.column-container {
+    display: none;
+}
+
 @media only screen and (min-width: $size2) {
     .column-container {
         background: whitesmoke;
@@ -11,10 +15,58 @@
         align-items: center;
     }
 
-    .div1 {
-       border: 1px solid black;
-       height: 10px;
-       width: 10px; 
+    .left-column {
+        // border: 1px solid black;
+       height: 80%;
+       width: 100%; 
+       max-width: 100%; 
+       display: grid;
+       grid-template-rows: repeat(4, 1fr);
+       position: relative;
+       div {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           font-family: $mainFont;
+           font-weight: bold;
+           font-size: .8em;
+           width: 100%;
+           max-width: 100%;
+           overflow: hidden;
+           span {
+               overflow: hidden;
+               font-weight: 400;
+               text-transform: uppercase;
+               width: 90%;
+               max-width: 90%;
+               box-shadow: $shadow1;
+               padding: .3em .1em;
+               border-radius: .2em;
+               font-family: $mainFont;
+                // color: black;
+                cursor: pointer;
+                animation: slideIn .4s ease-out;
+                max-height: 2.5em;
+
+           }
+       }
     }
 
+    .div1 {
+    //    border: 1px solid black;
+       height: 100%;
+       width: 100%; 
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       div {
+           @include fadeInEase1();
+       }
+    }
+}
+
+@keyframes slideIn {
+    0% {margin-left: 100%; width: 0%}
+    // 90% {margin: 0; width: 90%;}
+    100% {margin-left: 0; width: 90%}
 }

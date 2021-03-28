@@ -33,8 +33,8 @@ const BugQuestion = ({ surveyNum, setSurveyNum, bugAnswer, addBug }) => {
     })
 
     const gridStyle = {
-        gridTemplateColumns: `repeat(3, 1fr)`,
-        gridTemplateRows: `repeat(3, 1fr)`,
+        // gridTemplateColumns: `repeat(3, 1fr)`,
+        // gridTemplateRows: `repeat(3, 1fr)`,
     }
 
     // const handleClick = () => {

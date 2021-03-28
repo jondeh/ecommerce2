@@ -47,10 +47,10 @@ const WebNav = () => {
     
     
     const webNavData = [
-        {text: "get started", subText: "IT", onClick: handleGetStarted, image: <GiHummingbird color={accent} /> },
-        {text: "see how it works", subText: "SEE", onClick: handleSeeHowItWorks, image: <GiArchiveResearch color={accent} /> },
-        {text: "products", subText: "HOW", onClick: handleProducts, image: <BiPackage color={accent} /> },
-        {text: "reviews", subText: "WORKS", onClick: handleReviews, image: <AiFillStar color={"gold"} /> },
+        {text: "get started", subText: "customize my plan", onClick: handleGetStarted, image: <GiHummingbird color={accent} /> },
+        {text: "see how it works", subText: "why Jitterbox?", onClick: handleSeeHowItWorks, image: <GiArchiveResearch color={accent} /> },
+        {text: "products", subText: "see all our products", onClick: handleProducts, image: <BiPackage color={accent} /> },
+        {text: "reviews", subText: "don't take our word for it", onClick: handleReviews, image: <AiFillStar color={"gold"} /> },
     ];
 
     return (

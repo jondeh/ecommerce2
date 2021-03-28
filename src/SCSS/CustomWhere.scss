@@ -17,14 +17,15 @@
 
 @media only screen and (min-width: $size2) {
     .custom-where-container {
-        height: 90%;
+        height: 80%;
         width: 5%;
         // border: 3px dotted orange;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+        display: grid;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-content: space-evenly;
         position: relative;
+        grid-template-rows: repeat(4, 1fr);
     }
 
     .dot-line {
@@ -34,8 +35,9 @@
         position: absolute;
         display: flex;
         align-items: center;
+        // grid-template-rows: repeat(4, 1fr);
         div {
-            height: 80%;
+            height: 100%;
             // border-right: 2px solid $baseBlue3;
             // border-top: 2px solid $baseBlue3;
             // border-bottom: 2px solid $baseBlue3;
@@ -44,9 +46,14 @@
             width: 50%;
             z-index: 0;
             box-shadow: 3px 0px 3px grey;
+            // border: 1px solid red;
 
         }
     }   
+
+    .dot-container {
+        @include flexCenter();
+    }
 
     .dot {
         // border: .1em solid grey;

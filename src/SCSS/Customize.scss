@@ -22,23 +22,29 @@
 
 .questions-container {
     box-shadow: $shadow1;
-    height: 90%;
-    width: 90%;
+    height: 95%;
+    width: 95%;
     border-radius: 15px;
     background: whitesmoke;
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: column;
     // background: yellow;
     box-sizing: border-box;
     // font-size: 18px;
+    overflow: hidden;
+    padding-top: 10px;
     .qc-description {
-        // font-size: $fontSize1 * 1.5;
-        margin: 10px 15px 0px 15px;
-        color: $textColor1;
+        // margin: 10px 15px 0px 15px;
+        // color: $textColor1;
+        color: black;
+        color: $baseGreen;
         text-align: left;
-        font-family: $font1;
+        font-family: $mainFont;
+        font-size: .9em;
+        font-weight: 700;
+        text-align: center;
     }
     &-true {
         height: 90%;
@@ -58,26 +64,53 @@
 }
 
 .customize-button-container {
-    // border: 1px solid black;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+    justify-content: flex-end;
     // position: absolute;
     // bottom: 0;
     width: 100%;
-    padding: .5em;
+    // padding: .5em;
     // z-index: 2;
     // margin-top: 2em;
+    height: 2em;
     button {
-        width: 44%;
+        width: 50%;
         transition-duration: $time3;
-        background: whitesmoke;
+        // background: whitesmoke;
         // font-family: $font1;
         @include buttonStyle1();
+        background: $baseGreen;
+        padding: 0;
+        color: white;
+        &:hover {
+            svg {
+                color: $baseGreen;
+            }
+        }
+    }
+
+    svg {
+        height: 100%;
+        font-size: 2.5em;
+        color: white;
+        animation: arrow 1s alternate infinite ease;
+    }
+}
+
+@keyframes arrow {
+    to {
+        transform: translateX(0);
+    }
+
+    from {
+        transform: translateX(1em);
     }
 }
 
 .address-city {
     text-transform: capitalize;
+    font-weight: bold;
 }
 
 @media only screen and (min-width: $size2) {
@@ -88,9 +121,9 @@
     }
     .customize-button-container {
         button {
-            width: 44%;
+            width: 50%;
             transition-duration: $time3;
-            background: whitesmoke;
+            // background: whitesmoke;
             // font-family: $font1;
             @include buttonStyle1();
             font-size: 1em;

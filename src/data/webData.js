@@ -4,19 +4,19 @@ import stockGardening from './media/stock-gardening.jpg';
 
 export const pageSections = [
     {
-        objType: "Created for you",
+        objType: "created for you",
         text: "Each Jitterbox Pest Prevention Plan is tailored to your home and neighborhood based on what your family needs.",
         image: grass,
         imageAlt: "Created for you",
     },
     {
-        objType: "Expert advice inside each box",
+        objType: "expert advice inside each box",
         text: "We've been in the industry for years - we know pests come in all shapes and sizes, and we have professional products for whatever comes your way.",
         image: stockBox,
         imageAlt: "Expert instruction with every box",
     }, 
     {
-        objType: "Customize and cancel based on YOUR needs",
+        objType: "customize and cancel based on YOUR needs",
         text: "You can update at any time to address new pests as they appear or to cut back when those pests are taken care of.  And no contracts! If your bugs disappear forever (fingers crossed!), you can cancel at any time.",
         image: stockGardening,
         imageAlt: "Customized to your needs",
@@ -25,22 +25,22 @@ export const pageSections = [
 
 export const howToSections = [
     {
-        objType: "Professional results - DIY price",
+        objType: "professional results - DIY price",
         text: "Pest control companies make it sound harder than it is - pest control is easy.  It shouldn't be $500/year.  With Jitterbox, your getting home protection for $35 per box.",
         image: stockBox,
         imageAlt: "Expert instruction with every box",
     }, 
     {
-        objType: "Your plan is made for you",
+        objType: "your plan is made for you",
         text: "SPOILER ALERT - we don't recommend spraying every 3 months like Pest Control companies offer. You should concentrate treatment around the bugs schedule, not the technician. Your Plan is based on how we treat our own homes. We’ve found the best bang for the buck is more like this: 1- Late Feb-March: Control early emergence and hit pests when they are at their weakest after winter. 2- May: Control later emerging pests/ants/spiderlings/forming nests. 3- July:  peak summer- to when spiders, flies, wasps, and mosquitos are at their highest levels. 4- September to eliminate them before they find their winter hiding places in your home.",
         image: grass,
-        imageAlt: "Created for you",
+        imageAlt: "created for you",
     },
     {
-        objType: "We know things happen, cancel any time",
+        objType: "we know things happen - cancel any time",
         text: "You can update at any time to address new pests as they appear or to cut back when those pests are taken care of. And no contracts. If your bugs disappear forever (fingers crossed), you can cancel at anytime.",
         image: stockGardening,
-        imageAlt: "Customized to your needs",
+        imageAlt: "customized to your needs",
     }, 
 ]
 

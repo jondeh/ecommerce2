@@ -6,7 +6,8 @@ import { CustomContext } from "../../context/CustomContext";
 import "../../SCSS/Customize.scss";
 import { Button } from "@material-ui/core";
 import { states } from "../../data/webData";
-// import {IoArrowForwardCircleSharp, IoArrowBackCircleSharp} from 'react-icons/io5';
+import {IoArrowForwardCircleSharp, IoArrowBackCircleSharp} from 'react-icons/io5';
+import {BsArrowRight, BsArrowLeft, BsArrowRightShort} from 'react-icons/bs';
 
 import BugQuestion from "../Sections/BugQuestion";
 import WhoQuestion from "../Sections/WhoQuestion";
@@ -16,6 +17,8 @@ import SprayerQuestion from "../Sections/SprayerQuestion";
 import CustomWhere from '../Utility/CustomWhere';
 import CustomColumn from '../Sections/CustomizeColumn';
 import CustomizeColumn from "../Sections/CustomizeColumn";
+import HouseData from '../Utility/HouseData';
+import SurveyInfo from '../Utility/SurveyInfo';
 // import EmailQuestion from "../Sections/EmailQuestion";
 
 const Customize = () => {
@@ -32,6 +35,9 @@ const Customize = () => {
           addBug,
           addressCity, setAddressCity,
           surveyNum, setSurveyNum,
+          farthestIndex,
+          latLng,
+          handleNavClick,
         } = useContext(CustomContext);
   // const [surveyNum, setSurveyNum] = useState(0);
 
@@ -76,20 +82,23 @@ const Customize = () => {
     // },
     {
       component: <WhoQuestion {...{ whoAnswer, setWhoAnswer, handleClick }} />,
-      description: <p>A little about who you're protecting:</p>,
+      description: <p>a little about who you're protecting:</p>,
+      info: <SurveyInfo {...{type: "who"}}/> ,
     },
     {
       component: (
         <HomeQuestion {...{ homeAnswer, setHomeAnswer, handleClick }} />
       ),
-      description: <p>Next, a little bit about your house.</p>,
+      description: <p>next, a little bit about your <strong>house</strong>.</p>,
+      info: <HouseData {...{latLng}}/> ,
     },
     {
       component: (
         <BugQuestion {...{ bugAnswer, setBugAnswer, handleClick, addBug }} />
       ),
       description:
-        <p>People in <span className="address-city">{addressCity}</span> typically see these pests.  Select the pests you need help with.</p>,
+      <p>your <span className="address-city">{addressCity}</span> neighbors use Jitterbox to protect against the highlighted pests.  Do you need protection from any others?</p>,
+      info: <SurveyInfo  {...{type: "bugs"}}/> ,
     },
     {
       component: (
@@ -97,13 +106,30 @@ const Customize = () => {
           {...{ sprayerAnswer, setSprayerAnswer, handleClick }}
         />
       ),
-      description: <p>Do you already have a sprayer?</p>,
+      description: <p>do you already have a sprayer?</p>,
+      info: <SurveyInfo  {...{type: "sprayer"}}/> ,
     },
   ];
 
   return (
     <div className={`customize-container-${isSurvey}`}>
-      <CustomizeColumn>
+      <CustomizeColumn {...{
+          homeAnswer, setHomeAnswer,
+          whoAnswer, setWhoAnswer,
+          bugAnswer, setBugAnswer,
+          sprayerAnswer, setSprayerAnswer,
+          addressState, setAddressState,
+          addBug,
+          addressCity, setAddressCity,
+          surveyNum, setSurveyNum,
+          }}>
+      <div className="left-column">
+        <div>{whoAnswer && <span onClick={() => handleNavClick(0)}>{whoAnswer}</span>}</div>
+        <div>{homeAnswer && <span onClick={() => handleNavClick(1)}>{homeAnswer}</span>}</div>
+        <div>{farthestIndex >= 2 && <span onClick={() => handleNavClick(2)}>{farthestIndex >= 2 && bugAnswer}</span>}</div>
+        <div>{sprayerAnswer && <span onClick={() => handleNavClick(3)}>{sprayerAnswer}</span>}</div>
+        
+      </div>
         <CustomWhere {...{surveyPosition, surveyNum}}/>
       </CustomizeColumn>
       <div className={`questions-container`}>
@@ -111,17 +137,18 @@ const Customize = () => {
         {/* <br /> */}
         {isSurvey ? surveyPosition[surveyNum].component : null}
         <div className="customize-button-container">
-          {surveyNum > 0 ? (
-            <Button variant="contained" onClick={() => handleClick("previous")}>
-              PREVIOUS
-            </Button>
-            // <IoArrowBackCircleSharp size={35} />
+          {surveyNum > 0 ? (      // PREVIOUS BUTTON
+            // <Button variant="contained" onClick={() => handleClick("previous")}>
+            //   PREVIOUS
+            // </Button>
+            <BsArrowLeft size={35}  onClick={() => handleClick("previous")}/>
 
           ) : (
-            <Button variant="contained" disabled>
-              PREVIOUS
-            </Button>
+            // <Button variant="contained" disabled>
+            //   PREVIOUS
+            // </Button>
             // <IoArrowBackCircleSharp size={35} />
+            null
 
           )}
 
@@ -129,30 +156,38 @@ const Customize = () => {
             <Button variant="contained" onClick={() => handleClick("get-plan")}>
               GET PLAN
             </Button>
-          ) : [whoAnswer, homeAnswer, bugAnswer, sprayerAnswer][
+          ) : 
+          [whoAnswer, homeAnswer, bugAnswer, sprayerAnswer][
               surveyNum
             ] === null ? (
-            <Button
-              variant="contained"
-              onClick={() => handleClick("next")}
-              disabled
-            >
-              NEXT
-            </Button>
+            // <Button
+            //   variant="contained"
+            //   onClick={() => handleClick("next")}
+            //   disabled
+            // >
+            //   NEXT
+            // </Button>
+            null
             // <IoArrowForwardCircleSharp />
           ) : (
-            <Button variant="contained" onClick={() => handleClick("next")}>
-              NEXT
+            // <Button variant="contained" onClick={() => handleClick("next")}>
+            //   NEXT
+            // </Button>
+            <Button variant="contained" onClick={() => handleClick("next")} > 
+              <BsArrowRight />
             </Button>
-            // <IoArrowForwardCircleSharp />
+           
           )}
         </div>
       </div>
       <CustomizeColumn>
-        <div className="div1"></div>
+        <div className="div1">
+          {isSurvey ? surveyPosition[surveyNum].info : null}
+        </div>
       </CustomizeColumn>
     </div>
   );
 };
+
 
 export default Customize;

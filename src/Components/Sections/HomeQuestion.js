@@ -6,12 +6,13 @@ import { Button } from "@material-ui/core";
 import GoogleFind from '../Utility/GoogleFind';
 import {FiEdit3} from 'react-icons/fi';
 import { CustomContext } from '../../context/CustomContext';
+import HouseNumbers from '../Utility/HouseNumbers';
 
 // To Do 
 import HouseData from '../Utility/HouseData';
 
 const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
-  const { getPropData, setHomeLoad, latLng, setLatLng, address, setAddress, didAPICallFail } = useContext(CustomContext);
+  const { getPropData, setHomeLoad, latLng, setLatLng, address, setAddress, didAPICallFail, propData, perimeter } = useContext(CustomContext);
   // const [address, setAddress] = useState(homeAnswer && homeAnswer[0]);
   // const [latLng, setLatLng] = useState(null);
   const [editAddress, setEditAddress] = useState("");
@@ -68,7 +69,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
   
   return (
     <div className="home-question-container">
-      {
+      {/* {
         didAPICallFail ? <div className="home-question-size">
         <h3>Approximately how many square feet is your home?</h3>
 
@@ -76,7 +77,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
           {mappedHomeOptions}
         </div>
         </div> : <HouseData {...{latLng}}/>
-      }
+      } */}
       
       <div className="home-question-address">
         {
@@ -87,11 +88,14 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
                 <GoogleFind {...{setAddress, setLatLng}}/>
             </div>
         }
-        
-        {/* <Button variant="contained" onClick={() => setAddress(addressInput)}>
-          OK
-        </Button> */}
+
       </div>
+
+      <HouseNumbers {...{propData, perimeter}}/>
+
+
+
+
       {/* {address || (homeAnswer && homeAnswer[0]) ? (
         <div className="home-question-size">
           <h3>Approximately how many square feet is your home?</h3>

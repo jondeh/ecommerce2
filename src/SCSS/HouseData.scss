@@ -15,7 +15,7 @@
     position: relative;
     // left: 100%;
     // top: 0;
-    // border: 1px solid black;
+    // border: 5px solid orange;
     height: 80%;
     width: 100%;
     // background: white;
@@ -28,22 +28,7 @@
     // padding-left: 10px;
     font-family: sans-serif;
     margin-top: .6em;
-}
-
-.house-numbers-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: .2em .7em;
-    font-size: .7em;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    .row {
-        display: flex;
-        justify-content: space-between;
-        // margin-bottom: 5px;
-        // border-bottom: 4px solid whitesmoke;
-    }
+    @include flexCenter();
 }
 
 .google-container {     // Google Map is absolutely positioned inside.

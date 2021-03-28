@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+.survey-info-container {
+    padding: .7em;
+    width: 90%;
+    font-size: .8em;
+    text-align: justify;
+    box-shadow: $shadow1;
+    border-radius: 15px;
+    // border: 1px solid blue;
+}
+
+
+
+
+
+
+@media only screen and (min-width: $size2) {
+
+}

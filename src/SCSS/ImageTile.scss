@@ -8,8 +8,10 @@
         // font-size: .7em;
         font-size: 8px;
         font-weight: bold;
-        font-family: $font1;
+        font-family: $mainFont;
         @include textStyle1();
+        color: black;
+        margin-top: .5em;
     }
     .bug-image {
         cursor: pointer;
@@ -20,22 +22,29 @@
         font-size: 16px;
         font-size: 2em;
         border: 2px solid white;
-        height: 2em;
-        max-height: 2em;
-        width: 2em;
-        max-width: 2em;
+        // height: 2em;
+        // max-height: 2em;
+        // width: 2em;
+        // max-width: 2em;
+        height: 100%;
+        width: 100%;
+        background: $blue11;
         // background: white;
         // background: $baseGreen3;
         // background: $baseGreen7;
         // background: $baseGreen10;
-        color: $baseBlue2;
+        // color: $baseBlue2;
         // color: $baseBlue10;
         // color: $baseBlue11;
         // color: $baseBlue12;
+        color: white;
         transition-duration: 250ms;
         border-radius: 15px;
         .bug-image-container {
-            height: 50%;
+            height: 40%;
+            svg {
+                font-size: 1.1em;
+            }
         }
         &:hover {
             filter: brightness(110%);

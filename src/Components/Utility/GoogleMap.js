@@ -49,6 +49,10 @@ export class MapContainer extends Component {
   style = {
     height: "100%",
     width: "90%",
+    borderRadius: "15px",
+    // border: `.5em solid ${altBlue}`,
+    border: `.1em solid whitesmoke`,
+    boxShadow: `0px 1px 5px grey`,
   }
 
   containerStyle = {

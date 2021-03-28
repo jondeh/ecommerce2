@@ -13,14 +13,10 @@
     // border: 5px dotted orange;
 
     .home-question-address {
-        // height: 42%;
         height: 15%;
-        // border: 1px solid blue;
+        // border: 3px dotted blue;
         width: 100%;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        padding-top: auto;
+        margin-top: 5%;
         button {
             @include fadeInEase1();
             transition-duration: $time3;
@@ -109,7 +105,7 @@
 @media only screen and (min-width: $size2) {
     .home-question-container {
         .home-question-address {
-            height: 12%;
+            // height: 12%;
         }
     }
 }

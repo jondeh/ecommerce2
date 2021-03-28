@@ -6,49 +6,132 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
+    span {
+        @include textStyle1();
+        margin-bottom: .3em;
+        font-size: .7em;
+        // font-family: $mainFont;
+    }
+
     div {
-        width: 90%;
-        display: flex;
-        justify-content: space-evenly;
-        .pet {
-            cursor: pointer;
-            // border: 1px solid black;
-            // padding: 8px;
-            border: 2px solid white;
-            border-radius: 5px;
-            // @include flexCenter();
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 12vh;
-            width: 12vh;
-            font-family: $font1;
-            font-size: .7em;
-            color: $textColor1;
-            transition-duration: $time1;
-        }
+        // width: 90%;
+        // display: flex;
+        // justify-content: space-evenly;
+        // .pet {
+        //     cursor: pointer;
+        //     // border: 1px solid black;
+        //     // padding: 8px;
+        //     border: 2px solid white;
+        //     border-radius: 5px;
+        //     // @include flexCenter();
+        //     display: flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        //     justify-content: center;
+        //     height: 12vh;
+        //     width: 12vh;
+        //     // font-family: $font1;
+        //     font-family: $mainFont;
+        //     font-size: .7em;
+        //     color: $textColor1;
+        //     transition-duration: $time1;
+        // }
+
     }
     .child-container {
-        @include textStyle1();
         // border: 2px solid orange;
         height: 12vh;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .yes-no-container {
             border: none;
             // border: 1px solid black;
             margin-left: 5px;
             width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             button {
-                @include buttonStyle1();
+                color: white;
+                // @include buttonStyle1();
                 // height: 6vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 5px;
+                span {
+                    margin: 0;
+                    font-size: 1.2em;
+                    letter-spacing: .1em;
+                    text-transform: lowercase;
+                }
             }
         }
     }
     @include fadeInEase1();
+    
+    .pets-container {
+        // border: 3px solid orange;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5px;
+        
+        .pet-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            .pet {
+                height: 13.5vh;
+                width: 13.5vh;
+                transition-duration: $time1;
+                border-radius: .3em;
+                background: #E1EBEE;
+                svg {
+                    font-size: 1.5em;
+                }
+                span {
+                    font-size: .8em;
+                    margin: 0;
+                }
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+            }
+        }
+
+        div {
+            border: 3px solid whitesmoke;
+        }
+    }
 }
 
 @media only screen and (min-width: $size2) {
     .yes-no-container {
         height: 50%;
+    }
+
+    .pets-container {
+        
+        .pet-grid {
+            .pet {
+                cursor: pointer;
+                svg {
+                    font-size: 2em;
+                }
+                span {
+
+                }
+            }
+        }
+
+        div {
+        }
     }
 }

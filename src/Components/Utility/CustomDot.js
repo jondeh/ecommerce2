@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import '../../SCSS/CustomWhere.scss';
 import { CustomContext } from '../../context/CustomContext';
-import { colors } from '../../data/variables';
 import { GiHummingbird } from 'react-icons/gi';
+import { colors } from '../../data/variables';
 
 const { primary, secondary, accent, textColor, altBlue, accent2} = colors;
 
@@ -15,6 +15,7 @@ const CustomDot = ({ location, index }) => {
         sprayerAnswer, setSprayerAnswer,
         surveyNum, setSurveyNum,
         farthestIndex, setFarthestIndex,
+        handleNavClick
      } = useContext(CustomContext);
     
     const dotStyle = {
@@ -48,18 +49,25 @@ const CustomDot = ({ location, index }) => {
         // width: "1.5em",
     };
 
-    const handleNavClick = () => {
-        console.log("NAV CLICK: ", index, farthestIndex)
-        if (index <= farthestIndex) {
-            setSurveyNum(index);
-        }
-    }
+    // const handleNavClick = () => {
+    //     console.log("NAV CLICK: ", index, farthestIndex)
+    //     if (index <= farthestIndex) {
+    //         setSurveyNum(index);
+    //     }
+    // }
 
     // console.log("dot location: ", surveyNum, index)
     
     return (
-        <div className="dot" style={dotStyle} onClick={handleNavClick}>
-            {surveyNum === index && <GiHummingbird />}
+        <div className="dot-container">
+            <div 
+                className="dot" 
+                style={dotStyle} 
+                onClick={() => handleNavClick(index)}>
+
+                {surveyNum === index && <GiHummingbird />}
+                
+            </div>
         </div>
     );
 };

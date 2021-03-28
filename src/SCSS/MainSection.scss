@@ -44,6 +44,7 @@
                     border-radius: 2em;
                     border: .1em solid white;
                     transition-duration: $time1;
+                    cursor: pointer;
                     &:hover {
                         filter: brightness(1.2);
                     }

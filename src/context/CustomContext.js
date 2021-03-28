@@ -20,6 +20,7 @@ export const CustomProvider = ({ children }) => {
   const [latLng, setLatLng] = useState(null);
   const [address, setAddress] = useState("");
   const [didAPICallFail, setDidAPICallFail] = useState(false);
+  const [perimeter, setPerimeter] = useState(0);
 
 
 
@@ -81,6 +82,8 @@ export const CustomProvider = ({ children }) => {
             parkingData: e.building.parking,
           };
         });
+
+        setPerimeter(Math.ceil((Math.sqrt(propData[0].sizeData.groundFloorSize)*4)*1.1))
         setHomeAnswer(address)
         setPropData(propData)
         setHomeLoad(false);
@@ -142,6 +145,14 @@ export const CustomProvider = ({ children }) => {
     setWhoPets(petsArr);
 };
 
+
+const handleNavClick = (index) => {
+  console.log("NAV CLICK: ", index, farthestIndex)
+  if (index <= farthestIndex) {
+      setSurveyNum(index);
+  }
+}
+
   return (
     <CustomContext.Provider
       value={{
@@ -162,6 +173,8 @@ export const CustomProvider = ({ children }) => {
         latLng, setLatLng,
         address, setAddress,
         didAPICallFail,
+        perimeter, setPerimeter,
+        handleNavClick,
         
 
       }}
