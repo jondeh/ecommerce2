@@ -3,7 +3,7 @@ import '../../SCSS/SurveyInfo.scss';
 
 const surveyInfoData = {
   who: (
-    <p>Everything we use is kid and pet friendly, and is the same stuff we use on our own homes.  If you have crawling children or pets the instructions we send you will be different, so that your kids aren't crawling through it.</p>
+    <p>Everything we use is kid and pet friendly, and is the same stuff we use on our own homes.  If you have crawling children or pets the instructions we send you will be different.</p>
   ),
   home: (
     <p>The amount of product you receive for every treatment is customized to your house, so you don't pay for anymore than you need to.  </p>

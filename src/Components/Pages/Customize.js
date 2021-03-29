@@ -38,6 +38,7 @@ const Customize = () => {
           farthestIndex,
           latLng,
           handleNavClick,
+          sprayerInfo, setSprayerInfo,
         } = useContext(CustomContext);
   // const [surveyNum, setSurveyNum] = useState(0);
 
@@ -66,6 +67,7 @@ const Customize = () => {
           bugAnswer,
           sprayerAnswer,
         });
+        setSprayerInfo(true);
         setEmailQuestion(true);
         break;
     }
@@ -124,10 +126,10 @@ const Customize = () => {
           surveyNum, setSurveyNum,
           }}>
       <div className="left-column">
-        <div>{whoAnswer && <span onClick={() => handleNavClick(0)}>{whoAnswer}</span>}</div>
-        <div>{homeAnswer && <span onClick={() => handleNavClick(1)}>{homeAnswer}</span>}</div>
-        <div>{farthestIndex >= 2 && <span onClick={() => handleNavClick(2)}>{farthestIndex >= 2 && bugAnswer}</span>}</div>
-        <div>{sprayerAnswer && <span onClick={() => handleNavClick(3)}>{sprayerAnswer}</span>}</div>
+        <div>{(whoAnswer && farthestIndex >= 1) && <span onClick={() => handleNavClick(0)}>{whoAnswer}</span>}</div>
+        <div>{(homeAnswer && farthestIndex >= 2) && <span onClick={() => handleNavClick(1)}>{homeAnswer}</span>}</div>
+        <div>{farthestIndex >= 3 && <span onClick={() => handleNavClick(2)}>{farthestIndex >= 3 && bugAnswer}</span>}</div>
+        <div>{(sprayerInfo && (sprayerAnswer || sprayerAnswer === 0)) && <span onClick={() => handleNavClick(3)}>{sprayerAnswer}</span>}</div>
         
       </div>
         <CustomWhere {...{surveyPosition, surveyNum}}/>

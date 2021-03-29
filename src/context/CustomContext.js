@@ -21,6 +21,7 @@ export const CustomProvider = ({ children }) => {
   const [address, setAddress] = useState("");
   const [didAPICallFail, setDidAPICallFail] = useState(false);
   const [perimeter, setPerimeter] = useState(0);
+  const [sprayerInfo, setSprayerInfo] = useState(false);
 
 
 
@@ -131,6 +132,8 @@ export const CustomProvider = ({ children }) => {
     setSprayerAnswer(null);
     setAddressState(null);
     setAddressCity(null);
+    setPropData(null);
+    setAddress("");
   }, [location]);
 
   const handlePetClick = (myPet) => {
@@ -175,6 +178,7 @@ const handleNavClick = (index) => {
         didAPICallFail,
         perimeter, setPerimeter,
         handleNavClick,
+        sprayerInfo, setSprayerInfo,
         
 
       }}
