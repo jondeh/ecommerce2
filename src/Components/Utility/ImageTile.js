@@ -14,13 +14,22 @@ const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
     
 
     const [testStyle, setTestStyle] = useState(
-        {background: (bugAnswer) && 
-            bugAnswer.includes(thisBug.bug) ? accent : null}
+        {
+            image: {background: (bugAnswer) && 
+            bugAnswer.includes(thisBug.bug) ? accent : null},
+            text: {color: (bugAnswer) && 
+                bugAnswer.includes(thisBug.bug) ? "white" : "black"},
+            paddingBottom: "25%",
+        }
     )
 
     const testClick = () => {
         addBug(thisBug.bug)
-        setTestStyle({background: !testStyle.background && accent})
+        setTestStyle(
+            {
+                image: {background: !testStyle.image.background && accent},
+                text: {color: testStyle.text.color === "black" ? "white" : "black"},
+            })
     }
 
     return (
@@ -28,11 +37,11 @@ const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
                 <div 
                     className="bug-image" 
                     onClick={testClick} 
-                    style={testStyle}>
+                    style={testStyle.image}>
                     <div className="bug-image-container">
                         {thisBug.image}
                     </div>
-                    <span>{thisBug.bug}</span>
+                    <span style={testStyle.text}>{thisBug.bug}</span>
                 </div>
         </div>
     )

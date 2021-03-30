@@ -87,7 +87,7 @@
 
 @media only screen and (min-width: $size2) {
     .my-plan-container {
-        border: 3px solid blue;
+        // border: 3px solid blue;
         font-family: $font1;
         flex-direction: row-reverse;
         justify-content: space-evenly;
@@ -96,7 +96,7 @@
         padding-top: 8vh;
 
         .my-plan-box-container {
-            border: 2px dotted green;
+            // border: 2px dotted green;
             min-height: 70vh;
             justify-content: space-between;
             padding: 8px;

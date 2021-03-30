@@ -36,15 +36,15 @@
     overflow: hidden;
     padding-top: 10px;
     .qc-description {
-        // margin: 10px 15px 0px 15px;
+        margin: 0rem 1rem;
         // color: $textColor1;
         color: black;
         color: $baseGreen;
-        text-align: left;
+        text-align: justify;
         font-family: $mainFont;
-        font-size: .9em;
+        font-size: 1rem;
         font-weight: 700;
-        text-align: center;
+        // text-align: center;
     }
     &-true {
         height: 90%;

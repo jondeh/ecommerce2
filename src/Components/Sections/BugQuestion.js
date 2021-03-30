@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import '../../SCSS/BugQuestion.scss';
 import { AppContext } from '../../context/AppContext';
 
@@ -22,8 +22,8 @@ const BugQuestion = ({ surveyNum, setSurveyNum, bugAnswer, addBug }) => {
     })
 
     const gridStyle = {
-        // gridTemplateColumns: `repeat(3, 1fr)`,
-        // gridTemplateRows: `repeat(3, 1fr)`,
+        gridTemplateColumns: `repeat(${Math.ceil(Math.sqrt(displayBugs.length))}, 1fr)`,
+        // gridTemplateRows: `repeat(${Math.ceil(Math.sqrt(displayBugs.length))}, 1fr)`,
     }
 
     // const handleClick = () => {
