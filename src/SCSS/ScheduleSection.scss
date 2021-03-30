@@ -23,8 +23,8 @@
         background: whitesmoke;
         border-bottom: 1px solid whitesmoke;
         padding: 0px 10px;
-        font-family: $font2;
-        font-size: 1.3em;
+        font-family: $mainFont;
+        font-size: 1em;
         text-transform: lowercase;
         height: 10vh;
         margin-bottom: 6vh;
@@ -129,8 +129,8 @@
             background: whitesmoke;
             border-bottom: 1px solid whitesmoke;
             padding: 0px 10px;
-            font-family: $font2;
-            font-size: 1.3em;
+            font-family: $mainFont;
+            font-size: 1em;
             text-transform: lowercase;
             .box-name {
                 display: flex;
@@ -139,7 +139,7 @@
                 img {
                     height: $sectionHeader / 2;
                     width: $sectionHeader / 2;
-                    margin-right: .25em;
+                    margin-right: .5em;
                 }
                 span {
                     // margin-top: .2em;
