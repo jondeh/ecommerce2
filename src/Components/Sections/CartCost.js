@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 
 import '../../SCSS/CartCost.scss';
 import { AppContext } from '../../context/AppContext';
+import {colors} from '../../data/variables';
+const { primary, secondary, accent, textColor, altBlue} = colors;
 
 const CartCost = () => {
     const { subTotal, setSubTotal, tax, setTax } = useContext(AppContext);
@@ -11,20 +13,20 @@ const CartCost = () => {
     return (
         <div className="cart-cost-container">
             <div className="money">
-                <div>Subtotal</div>
-                <div>${subTotal}</div>
+                <span>Subtotal</span>
+                <span>${subTotal}</span>
             </div>
             <div className="money">
-                <div>Shipping</div>
-                <div>Free</div>
+                <span>Shipping</span>
+                <span style={{color: accent}}><strong>Free</strong></span>
             </div>
             <div className="money">
-                <div>Sales Tax</div>
-                <div>${tax}</div>
+                <span>Sales Tax</span>
+                <span>${tax}</span>
             </div>
             <div className="money total">
-                <div>Total</div>
-                <div>${+subTotal + +tax}</div>
+                <span style={{color: "black"}}>Total</span>
+                <span style={{color: "black"}}>${+subTotal + +tax}</span>
             </div>
         </div>
     )

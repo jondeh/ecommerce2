@@ -36,22 +36,24 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            <div className="cart-titles">
-                <h3>cart</h3>
-                <h3>add-ons</h3>
-            </div>
+            {/* <div className="cart-titles">
+            </div> */}
             <div className="cart-body">
                 <div className="cart-main">
+                <h3>cart</h3>
                     {/* <h3>Cart</h3> */}
                     <CartItems />
                     <div className="cost-button-container">
                         <CartCost />
                         <Button 
-                            onClick={handleSessionClick} variant="contained">CHECKOUT
+                            onClick={handleSessionClick} variant="contained"><span>CHECKOUT</span>
                         </Button>
                     </div>
                 </div>
-                <AddOns />
+                <div className="cart-secondary">
+                    <h3>add-ons</h3>
+                    <AddOns />
+                </div>
             </div>
         </div>
     )

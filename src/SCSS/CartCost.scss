@@ -1,7 +1,43 @@
 @import './variables.scss';
 
+
+.cost-button-container {
+    position: fixed;
+    bottom: 10%;
+    width: 95%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #e1ebeef6;
+    background: rgba(245, 245, 245, 0.95);
+    padding: 3%;
+    // padding-bottom: 15%;
+    border-radius: 15px;
+    z-index: 3;
+    font-size: .7em;
+    // border: 2px solid orange;
+    transition-duration: $time1;
+    box-shadow: $shadow1;
+    &:hover {
+        background: rgba(245, 245, 245, 0.95);
+    }
+    button {
+        margin-top: 8px;
+        text-transform: lowercase;
+        font-family: $mainFont;
+        border-radius: 15px;
+        background: $baseGreen;
+        width: 60%;
+        span {
+            color: white;
+        }
+    }
+}
+
 .cart-cost-container {
-    border: 2px solid whitesmoke;
+    // border: 2px solid whitesmoke;
     border-radius: 5px;
     // width: 55%;
     // height: 35%;
@@ -12,7 +48,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    font-family: $font2;
+    font-family: $mainFont;
+    // box-shadow: $shadow1;
+    span {
+        transition-duration: $time3;
+    }
     .money {
         display: flex;
         justify-content: space-between;
@@ -22,5 +62,66 @@
     .total {
         font-size: 1.15em;
         font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: $size2) {
+    .cost-button-container {
+        position: relative;
+        width: 95%;
+        height: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #e1ebeef6;
+        background: rgba(245, 245, 245, 0.95);
+        padding: 3%;
+        // padding-bottom: 15%;
+        border-radius: 15px;
+        z-index: 3;
+        font-size: .7em;
+        // border: 2px solid orange;
+        transition-duration: $time1;
+        box-shadow: $shadow1;
+        &:hover {
+            background: rgba(245, 245, 245, 0.95);
+        }
+        button {
+            margin-top: 8px;
+            text-transform: lowercase;
+            font-family: $mainFont;
+            border-radius: 15px;
+            background: $baseGreen;
+            width: 60%;
+            span {
+                color: white;
+            }
+        }
+    }
+    .cart-cost-container {
+        border: 2px solid whitesmoke;
+        border-radius: 5px;
+        // width: 55%;
+        // height: 35%;
+        // min-height: 35%;
+        height: 100%;
+        width: 100%;
+        // margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-family: $font2;
+        box-shadow: $shadow1;
+        .money {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0px 5px;
+        }
+        .total {
+            font-size: 1.15em;
+            font-weight: bold;
+        }
     }
 }
