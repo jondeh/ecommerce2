@@ -94,14 +94,14 @@ const MyPlan = () => {
     return (
         <div className="my-plan-container" >
             <div className="my-plan-box-container">
-            <h3>your plan</h3>
-                <div className="my-plan-box" style={gridStyle}>
-                    {mappedData}
-                </div>
-                <span className="price">$35</span>
-            <Button 
-                onClick={handleBuy}
-                variant="contained">add to cart</Button>
+                <h3>your plan</h3>
+                    <div className="my-plan-box" style={gridStyle}>
+                        {mappedData}
+                    </div>
+                    <span className="price">$35</span>
+                <Button 
+                    onClick={handleBuy}
+                    variant="contained">add to cart</Button>
             </div>
             <div className="my-plan-schedule-container">
                 <h3>plan details</h3>

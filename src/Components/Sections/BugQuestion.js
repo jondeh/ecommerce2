@@ -7,18 +7,7 @@ import ImageTile from '../Utility/ImageTile';
 import { GiAnt as Ant} from 'react-icons/gi';
 import { FaSpider as Spider } from 'react-icons/fa';
 import { GiWaspSting as Wasp } from 'react-icons/gi';
-
-
-const sampleBugs = [
-    {bug: "ants", image: <Ant />}, 
-    {bug: "spiders", image: <Spider />}, 
-    {bug: "wasps", image: <Wasp />}, 
-    {bug: "centipedes", image: null}, 
-    {bug: "cockroaches", image: null}, 
-    {bug: "scorpions", image: null}, 
-    {bug: "moths", image: null}, 
-    {bug: "millipedes", image: null}, 
-    {bug: "silverfish", image: null}]
+import { sampleBugs } from '../../data/webData';
 
 const BugQuestion = ({ surveyNum, setSurveyNum, bugAnswer, addBug }) => {
     // const { bugAnswer } = useContext(AppContext);

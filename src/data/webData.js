@@ -1,6 +1,9 @@
 import grass from './media/grass.jpg';
 import stockBox from './media/stock-box.jpg';
 import stockGardening from './media/stock-gardening.jpg';
+import { FaSpider as Spider } from 'react-icons/fa';
+import { GiWaspSting as Wasp } from 'react-icons/gi';
+import { GiAnt as Ant} from 'react-icons/gi';
 
 export const pageSections = [
     {
@@ -22,6 +25,7 @@ export const pageSections = [
         imageAlt: "Customized to your needs",
     }, 
 ];
+
 
 export const howToSections = [
     {
@@ -55,6 +59,19 @@ export const states = {
     wa: ["ants", "spiders"],
     az: ["ants", "spiders", "cockroaches", "scorpions"],
 }
+
+
+export const sampleBugs = [
+    {bug: "ants", image: <Ant />}, 
+    {bug: "spiders", image: <Spider />}, 
+    {bug: "wasps", image: <Wasp />}, 
+    {bug: "centipedes", image: null}, 
+    {bug: "cockroaches", image: null}, 
+    {bug: "scorpions", image: null}, 
+    {bug: "moths", image: null}, 
+    {bug: "millipedes", image: null}, 
+    {bug: "silverfish", image: null},
+];
 
 export const dummyProducts = {
     insideDefense: {
