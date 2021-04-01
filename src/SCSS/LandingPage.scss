@@ -21,10 +21,11 @@
 
     .funnel-start {
         @include flexCenter();
+        background: $blue11;
         h1, h2 {
             font-family: $font1;
             display: none;
-            color: darkgreen;
+            color: $baseGreen;
             font-weight: bold;
         }
         height: 12vh;
@@ -60,10 +61,10 @@
         height: auto;
         
         .funnel-start {
-            height: 20vh;
+            height: 35vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
             // padding-bottom: 10%;
             // top: 60vh;
             h1, h2 {

@@ -12,24 +12,24 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
     const sectionStyle = {
         // background: index % 2 === 0 ? "linear-gradient(to right, white, #E1EBEE)" : "linear-gradient(to left, white, #ACE1AF)",
         // background: index % 2 === 0 ? "#E1EBEE" : "whitesmoke",
-        background: index % 2 === 0 ? accent : secondary,
+        background: index % 2 !== 0 ? accent : secondary,
         // background: index % 2 === 0 ? `linear-gradient(to right, whitesmoke, whitesmoke, #ACE1AF)` : "linear-gradient(to left, whitesmoke, whitesmoke, #ACE1AF)",
-        color: index % 2 === 0 ? "white" : null,
+        color: index % 2 !== 0 ? "white" : null,
     }
 
     const titleStyle = {
-        color: index % 2 !== 0 ? accent : null,
+        color: index % 2 === 0 ? accent : null,
     }
 
     const buttonStyle1 = {
-        background: index % 2 === 0 ? accent : null,
-        color: index % 2 === 0 ? "white" : null,
-        borderColor: index % 2 === 0 ? "white" : null,
+        background: index % 2 !== 0 ? accent : null,
+        color: index % 2 !== 0 ? "white" : null,
+        borderColor: index % 2 !== 0 ? "white" : null,
     }
 
     const buttonStyle2 = {
-        background: index % 2 !== 0 ? accent : null,
-        color: index % 2 !== 0 ? "white" : null,
+        background: index % 2 === 0 ? accent : null,
+        color: index % 2 === 0 ? "white" : null,
     }
 
     const handleSeePlan = () => {
