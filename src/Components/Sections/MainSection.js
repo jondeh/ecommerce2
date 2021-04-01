@@ -38,10 +38,11 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
 
     return (
         <div className="main-section" style={sectionStyle}>
-            <h2 style={titleStyle}>{objType}</h2>
+            <h2 className="mobile-title" style={titleStyle}>{objType}</h2>
             <div className={`section-body ${sectionPlace}`}>
                 <img src={image} alt={imageAlt} />
                 <div className="section-text">
+                <h2 className="web-title" style={titleStyle}>{objType}</h2>
                     <p>{text}</p>
                     <div className="section-button-container">
                         <button style={buttonStyle1}>see how it works</button>
