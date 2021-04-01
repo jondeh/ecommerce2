@@ -49,7 +49,8 @@ const LandingPage = () => {
                     {/* <source src={video3}></source> */}
             </video>
             <div className="funnel-start">
-                <h1>let's get started</h1>
+                <h1>three minutes will save you hundreds on pest management</h1>
+                <h5>customize your plan in four simple questions</h5>
                 <Button 
                     onClick={() => handleClick(user)} variant="contained">
                         see my plan
