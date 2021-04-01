@@ -74,6 +74,7 @@
     // z-index: 2;
     // margin-top: 2em;
     height: 2em;
+    $buttonTime: 150ms;
     button {
         width: 50%;
         transition-duration: $time3;
@@ -83,7 +84,15 @@
         background: $baseGreen;
         padding: 0;
         color: white;
+        animation: buttonSlide $buttonTime ease-in-out forwards;
+        clip-path: circle(0% at 95%, 50%);
+        span {
+            color: white;
+        }
         &:hover {
+            span {
+                color: $baseGreen;
+            }
             svg {
                 color: $baseGreen;
             }
@@ -94,7 +103,23 @@
         height: 100%;
         font-size: 2.5em;
         color: white;
-        animation: arrow 1s alternate infinite ease;
+        animation: arrow 1s alternate infinite ease-in;
+        // animation-delay: calc(#{$buttonTime} + 100ms);
+    }
+}
+
+@keyframes buttonSlide {
+    0% {
+        // margin-left: 100%; 
+        // width: 0%; 
+        clip-path: circle(50% at 75%, 50%);
+        transform: scale(0);
+    }
+    100% {
+        // margin-left: 0; 
+        // width: 50%; 
+        clip-path: circle(100% at 75%, 50%);
+        transform: scale(1);
     }
 }
 

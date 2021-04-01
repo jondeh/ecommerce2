@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../SCSS/SurveyInfo.scss';
+import { GiHummingbird } from "react-icons/gi";
 
 const surveyInfoData = {
   who: (
@@ -28,7 +29,10 @@ const SurveyInfo = ({ type }) => {
 
     return (
       <div className="survey-info-container">
-        {surveyInfoData[type]}
+        <div className="info-clip">
+          {surveyInfoData[type]}
+        </div>
+        <GiHummingbird className="info-bird" />
       </div>
     );
   };

@@ -1,13 +1,62 @@
 @import './variables.scss';
 
 .survey-info-container {
-    padding: .7em;
     width: 90%;
-    font-size: .8em;
-    text-align: justify;
+    
     box-shadow: $shadow1;
     border-radius: 15px;
+    position: relative;
+    // background: linear-gradient(to top right, whitesmoke, whitesmoke,$baseGreen);
     // border: 1px solid blue;
+    // background: blue;
+    // @include fadeInEase1();
+    // animation: diagonal;
+    // animation-duration: 100ms;
+    // overflow: hidden;
+}
+
+.info-clip {
+    box-shadow: $shadow1;
+    border-radius: 15px;
+    cursor: default;
+    position: absolute;
+    font-size: .8em;
+    text-align: justify;
+    padding: .8em;
+    // border: 1px solid red;
+    width: 100%;
+    // clip-path: inset(-10% -10% -10% -10%);
+    clip-path: inset(0% 0% 105% 105%);
+    animation: topRightIn $time3 ease-out forwards;
+    // animation-fill-mode: forwards;
+    animation-delay: 400ms;
+    // transition-duration: 10000ms;
+}
+
+@keyframes topRightIn {
+    from {
+        clip-path: inset(0% 0% 105% 105%);
+        background: $baseGreen;
+    };
+    to {
+        clip-path: inset(-5% -5% -5% -5% round 15px 15px); 
+        background: whitesmoke;
+    };
+}
+
+
+.info-bird {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotateY(-180deg) translate(-50%, -50%);
+    // border: 1px solid grey;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 2em;
+    background: whitesmoke;
+    box-shadow: $shadow1;
+    color: $baseGreen;
 }
 
 

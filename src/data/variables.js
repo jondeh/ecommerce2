@@ -7,6 +7,7 @@ let green6 = "#00CE0B";
 let green7 = "darkseagreen";
 let green8 = "mediumseagreen";
 let green9 = "lightseagreen";
+let green10 = "#54C285";
 
 let blue1 = "#5D76A9";
 let blue2 = "#72A0C1";
@@ -27,7 +28,7 @@ let red5 = "tomato";
 
 // let baseGreen = green1;
 // let baseGreen = green6;
-let baseGreen = green8;
+let baseGreen = green10;
 let baseBlue = blue1;
 let baseGray = gray1;
 

@@ -17,12 +17,13 @@ $baseGreen11: #00CE0B;
 $baseGreen12: darkseagreen; 
 $baseGreen13: mediumseagreen; 
 $baseGreen14: lightseagreen; 
+$baseGreen15: #54C285; 
 
 // $baseGreen: $baseGreen1; // MAIN GREEN //
 // $baseGreen: $baseGreen5; // MAIN GREEN //
 // $baseGreen: $baseGreen5; // MAIN GREEN //
 // $baseGreen: $baseGreen11; // MAIN GREEN //
-$baseGreen: $baseGreen13; // MAIN GREEN //
+$baseGreen: $baseGreen15; // MAIN GREEN //
 
 $blue1: #F0F8FF; // AliceBlue
 $blue2: #6CB4EE; // Argentinian Blue
@@ -149,6 +150,12 @@ $boxHeight: 45vh;
         opacity: 1;
         color: white;
     }
+}
+
+@keyframes slideIn {
+    0% {margin-left: 100%; width: 0%}
+    // 90% {margin: 0; width: 90%;}
+    100% {margin-left: 0; width: 90%}
 }
 
 @mixin slideIn1() {

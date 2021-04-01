@@ -21,11 +21,12 @@
 
     .funnel-start {
         @include flexCenter();
-        background: $blue11;
+        // background: $blue11;
+        background: rgb(238, 238, 238);
         h1, h2, h5 {
             font-family: $font1;
             display: none;
-            color: $baseGreen;
+            color: black;
             font-weight: bold;
         }
         height: 12vh;
@@ -53,6 +54,11 @@
             }
         }
     }
+}
+
+.section-page {
+    width: 100%;
+    background: whitesmoke;
 }
 
 @media only screen and (min-width: $size2) {

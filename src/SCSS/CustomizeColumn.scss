@@ -60,14 +60,6 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       div {
-           @include fadeInEase1();
-       }
     }
 }
 
-@keyframes slideIn {
-    0% {margin-left: 100%; width: 0%}
-    // 90% {margin: 0; width: 90%;}
-    100% {margin-left: 0; width: 90%}
-}

@@ -7,20 +7,20 @@ import { GiAnt as Ant} from 'react-icons/gi';
 
 export const pageSections = [
     {
-        objType: "created for you",
-        text: "Each Jitterbox Pest Prevention Plan is tailored to your home and neighborhood based on what your family needs.",
+        objType: "plug & spray",
+        text: "No guesswork. No measuring. Pest control. Ready out-of-the-box to treat your home like a pro.",
         image: grass,
         imageAlt: "Created for you",
     },
     {
-        objType: "expert advice inside each box",
-        text: "We've been in the industry for years - we know pests come in all shapes and sizes, and we have professional products for whatever comes your way.",
+        objType: "professional products DIY price",
+        text: "You don't need to pay $500/yr to get professional protection from pests.  With plans from $12/mo, we build your plan with the best products available to the pros.",
         image: stockBox,
         imageAlt: "Expert instruction with every box",
     }, 
     {
-        objType: "customize and cancel based on YOUR needs",
-        text: "You can update at any time to address new pests as they appear or to cut back when those pests are taken care of.  And no contracts! If your bugs disappear forever (fingers crossed!), you can cancel at any time.",
+        objType: "no contracts",
+        text: "No salesmen.  No gimmicks.  No contracts. Update your plan as your needs evolve.  If professional products at DIY prices.",
         image: stockGardening,
         imageAlt: "Customized to your needs",
     }, 

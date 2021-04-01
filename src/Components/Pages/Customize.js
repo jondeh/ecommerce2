@@ -156,7 +156,7 @@ const Customize = () => {
 
           {surveyNum >= surveyPosition.length - 1 ? (
             <Button variant="contained" onClick={() => handleClick("get-plan")}>
-              GET PLAN
+              <span>GET PLAN</span>
             </Button>
           ) : 
           [whoAnswer, homeAnswer, bugAnswer, sprayerAnswer][

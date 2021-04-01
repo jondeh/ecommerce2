@@ -49,15 +49,18 @@ const LandingPage = () => {
                     {/* <source src={video3}></source> */}
             </video>
             <div className="funnel-start">
-                <h1>three minutes will save you hundreds on pest management</h1>
-                <h5>customize your plan in four simple questions</h5>
+                <h1>Tailored DIY plans in less than two minutes</h1>
+                <h5>Save hundreds on professional grade pest control today</h5>
                 <Button 
                     onClick={() => handleClick(user)} variant="contained">
                         see my plan
                         {/* {user ? "MY PLAN" : 'LETS GET STARTED'} */}
                 </Button>
             </div>
-            {mappedSections}
+            <div className="section-page">
+                {mappedSections}
+            </div>
+
         </div>
     )
 }

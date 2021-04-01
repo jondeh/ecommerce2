@@ -8,19 +8,6 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
     const { push } = useHistory();
     const sectionPlace = index % 2 === 0 ? "right" : "left";
 
-
-    const sectionStyle = {
-        // background: index % 2 === 0 ? "linear-gradient(to right, white, #E1EBEE)" : "linear-gradient(to left, white, #ACE1AF)",
-        // background: index % 2 === 0 ? "#E1EBEE" : "whitesmoke",
-        background: index % 2 !== 0 ? accent : secondary,
-        // background: index % 2 === 0 ? `linear-gradient(to right, whitesmoke, whitesmoke, #ACE1AF)` : "linear-gradient(to left, whitesmoke, whitesmoke, #ACE1AF)",
-        color: index % 2 !== 0 ? "white" : null,
-    }
-
-    const titleStyle = {
-        color: index % 2 === 0 ? accent : null,
-    }
-
     const buttonStyle1 = {
         background: index % 2 !== 0 ? accent : null,
         color: index % 2 !== 0 ? "white" : null,
@@ -37,12 +24,12 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
     }
 
     return (
-        <div className="main-section" style={sectionStyle}>
-            <h2 className="mobile-title" style={titleStyle}>{objType}</h2>
+        <div className="main-section">
+            <h2 className="mobile-title">{objType}</h2>
             <div className={`section-body ${sectionPlace}`}>
                 <img src={image} alt={imageAlt} />
                 <div className="section-text">
-                <h2 className="web-title" style={titleStyle}>{objType}</h2>
+                <h2 className="web-title">{objType}</h2>
                     <p>{text}</p>
                     <div className="section-button-container">
                         <button style={buttonStyle1}>see how it works</button>
