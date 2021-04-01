@@ -22,7 +22,7 @@
     .funnel-start {
         @include flexCenter();
         background: $blue11;
-        h1, h2 {
+        h1, h2, h5 {
             font-family: $font1;
             display: none;
             color: $baseGreen;
@@ -67,7 +67,7 @@
             justify-content: space-evenly;
             // padding-bottom: 10%;
             // top: 60vh;
-            h1, h2 {
+            h1, h2, h3, h4, h5 {
                 display: inline;
             }
             
