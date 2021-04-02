@@ -60,7 +60,7 @@
                     background: $baseGreen;
                     color: white;
                     border-color: white;
-                    &:nth-last-child(2n) {
+                    &:nth-child(2n) {
                         background: $baseYellow;
                     }
                     outline: none;
