@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import '../../SCSS/HouseData.scss';
 import { CustomContext } from '../../context/CustomContext';
 import GoogleMap from './GoogleMap';
@@ -8,6 +8,12 @@ import SurveyInfo from '../Utility/SurveyInfo';
 
 const HouseData = ({ latLng }) => {
     const { propData } = useContext(CustomContext);
+    const [coordinates, setCoordinates] = useState(latLng);
+
+    useEffect(() => {
+        console.log("I'M THE MAP: ", latLng)
+        setCoordinates(latLng);
+    }, [latLng])
 
     return (
         
@@ -22,7 +28,7 @@ const HouseData = ({ latLng }) => {
                             <p className="number"><span> {propData && propData[0].sizeData.grossSize}</span> sq ft</p>
                         </div> */}
                         
-                        <GoogleMap {...{latLng}} />
+                        <GoogleMap {...{coordinates}} />
                     </div>
 
                 </React.Fragment> : <SurveyInfo {...{type: "home"}}/>

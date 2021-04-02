@@ -19,14 +19,20 @@ class LocationSearchInput extends React.Component {
  
   handleSelect = address => {
     this.props.setAddress(address);
-    console.log("ding")
+    console.log("ding", address)
     geocodeByAddress(address)
-    .then(results => getLatLng(results[0]))
-    .then(latLng => {
-      console.log("latLng", latLng)
-      this.props.setLatLng(latLng);
-      })
-      .catch(error => console.error('Error', error));
+    .then(async results => {
+      console.log("RESULTS: ", address, results)
+      console.log("getLatLng(results[0]):", getLatLng(results[0]))
+      let thisLatLng = await getLatLng(results[0]);
+      console.log("latLng THEN: ", thisLatLng)
+      this.props.setLatLng(thisLatLng);
+      // return getLatLng(results[0])
+    })
+    // .then(latLng => {
+    //   console.log("latLng THEN: ", latLng)
+    //   this.props.setLatLng(latLng);
+    //   }).catch(error => console.error('Error', error));
   };
  
   render() {

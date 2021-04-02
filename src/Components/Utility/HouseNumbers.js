@@ -20,7 +20,7 @@ const HouseNumbers = ({ propData, perimeter }) => {
 
 
 
-    console.log("propData", propData);
+    // console.log("propData", propData);
 
     return (
         <div className="house-numbers-container">

@@ -25,7 +25,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
   ];
 
   const handleHomeClick = (option) => {
-    console.log("homeClickAddress", address)
+    // console.log("homeClickAddress", address)
     // setHomeAnswer([address ? address : editAddress, option]);
   };
 
@@ -35,7 +35,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
   };
 
 
-  console.log("address", address)
+  // console.log("address", address)
 
   const mappedHomeOptions = homeOptions.map((e,i) => {
     return (

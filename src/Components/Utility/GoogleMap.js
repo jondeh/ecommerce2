@@ -1,52 +1,47 @@
-import React, { Component } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { GoogleApiWrapper, Map, Marker, InfoWindow, Circle } from "google-maps-react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import customMarker from '../../data/media/place-marker.svg';
 import '../../SCSS/Google.scss';
 import { colors } from '../../data/variables';
+import { CustomContext } from '../../context/CustomContext';
 
 const { primary, secondary, accent, textColor, altBlue} = colors;
 
-export class MapContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {},
-    mapCenter: {
-      lat: props.latLng.lat,
-      lng: props.latLng.lng,
-    },
-  };
-  }
+export function MapContainer(props) {
+  const { latLng } = useContext(CustomContext);
+
+    const [showingInfoWindow, setShowingInfoWindow] = useState(false);
+    const [activeMarker, setActiveMarker] = useState({});
+    const [selectedPlace, setSelectedPlace] = useState({});
+    const [mapCenter, setMapCenter] = useState(latLng);
+
+    useEffect(() => {
+      setMapCenter(latLng);
+    }, [latLng])
   
 
-  onMarkerClick = (props, marker, e) =>
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      // showingInfoWindow: true,
-    });
+  // const onMarkerClick = (props, marker, e) => {
+  //   setSelectedPlace(props);
+  //   setActiveMarker(marker);
+  // }
 
-  onMapClicked = (props) => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null,
-      });
-    }
-  };
+  // const onMapClicked = (props) => {
+  //   if (showingInfoWindow) {
+  //     setShowingInfoWindow(false);
+  //     setActiveMarker(null);
+  //   }
+  // };
  
-  handleSelect = address => {
-    geocodeByAddress(address)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
-  };
+  // const handleSelect = address => {
+  //   geocodeByAddress(address)
+  //     .then(results => getLatLng(results[0]))
+  //     .then(latLng => console.log('Success', latLng))
+  //     .catch(error => console.error('Error', error));
+  // };
 
-  style = {
+  const style = {
     height: "100%",
     width: "90%",
     borderRadius: "15px",
@@ -55,58 +50,57 @@ export class MapContainer extends Component {
     boxShadow: `0px 1px 5px grey`,
   }
 
-  containerStyle = {
+  const containerStyle = {
     // width: "90%",
     marginLeft: "5%",
     marginRight: "5%",
   }
 
-  render() {
     return (
-      <div className="google-map">
+        <div className="google-map">
         <Map
-          style={this.style}
-          containerStyle={this.containerStyle}
-          zoom={19}
-          draggable={false}
-          mapType={'satellite'}
-          // mapTypeControl={false}
-          // zoomControl={false}
-          // scaleControl={false}
-          // streetViewControl={false}
-          // rotateControl={false}
-          // fullscreenControl={false}
-          disableDefaultUI={true}
-          initialCenter={{
-            lat: this.state.mapCenter.lat,
-            lng: this.state.mapCenter.lng,
-          }}
-          center={{
-            lat: this.state.mapCenter.lat,
-            lng: this.state.mapCenter.lng,
-          }}
-          google={this.props.google}
-          // onClick={this.onMapClicked}
-        >
-          <Marker
-            position={{
-              lat: this.state.mapCenter.lat,
-              lng: this.state.mapCenter.lng,
+            style={style}
+            containerStyle={containerStyle}
+            zoom={19}
+            draggable={false}
+            mapType={'satellite'}
+            // mapTypeControl={false}
+            // zoomControl={false}
+            // scaleControl={false}
+            // streetViewControl={false}
+            // rotateControl={false}
+            // fullscreenControl={false}
+            disableDefaultUI={true}
+            initialCenter={{
+            lat: mapCenter.lat,
+            lng: mapCenter.lng,
             }}
-            // onClick={this.onMarkerClick}
+            center={{
+            lat: mapCenter.lat,
+            lng: mapCenter.lng,
+            }}
+            google={props.google}
+            // onClick={onMapClicked}
+        >
+            <Marker
+            position={{
+                lat: mapCenter.lat,
+                lng: mapCenter.lng,
+            }}
+            // onClick={onMarkerClick}
             name={"Current location"}
             // opacity={.5}
             icon={{
-              url: customMarker,
-              // anchor: new google.maps.Point(32,32),
-              // scaledSize: new google.maps.Size(64,64)
-          }}
-          />
-          <Circle
+                url: customMarker,
+                // anchor: new google.maps.Point(32,32),
+                // scaledSize: new google.maps.Size(64,64)
+            }}
+            />
+            <Circle
             radius={35}
             center={{
-              lat: this.state.mapCenter.lat,
-              lng: this.state.mapCenter.lng,
+                lat: mapCenter.lat,
+                lng: mapCenter.lng,
             }}
             // onMouseover={() => console.log('mouseover')}
             // onClick={() => console.log('click')}
@@ -116,20 +110,19 @@ export class MapContainer extends Component {
             strokeWeight={5}
             fillColor={accent}
             fillOpacity={0.4}
-          />
+            />
 
-          <InfoWindow
-            marker={this.state.activeMarker}
-            visible={this.state.showingInfoWindow}
-          >
+            <InfoWindow
+            marker={activeMarker}
+            visible={showingInfoWindow}
+            >
             <div>
-              <h1>{this.state.selectedPlace.name}</h1>
+                <h1>{selectedPlace.name}</h1>
             </div>
-          </InfoWindow>
+            </InfoWindow>
         </Map>
-      </div>
+        </div>
     );
-  }
 }
 
 export default GoogleApiWrapper({

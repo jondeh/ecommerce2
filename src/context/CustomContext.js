@@ -26,7 +26,7 @@ export const CustomProvider = ({ children }) => {
 
 
   useEffect(() => {
-    console.log("HIT 1")
+    // console.log("HIT 1")
     if (surveyNum > farthestIndex) {
       setFarthestIndex(surveyNum);
     }
@@ -54,6 +54,7 @@ export const CustomProvider = ({ children }) => {
   }, [addressState]);
 
   const getPropData = (address) => {
+    console.log("GET PROP DATA", address)
 
     if (address) {
       let homeAnswerArr = address.split(',');
@@ -90,15 +91,15 @@ export const CustomProvider = ({ children }) => {
         setHomeLoad(false);
         setDidAPICallFail(false);
       }).catch(err => {
-        console.log("ERROR: ", err);
+        // console.log("ERROR: ", err);
         setDidAPICallFail(true);
         setHomeLoad(false);
       });
     };
-  }
+  };
   
   useEffect(() => {
-    console.log("HIT")
+    // console.log("HIT")
     if (address) {
       setHomeLoad(true);
       getPropData(address)
@@ -122,7 +123,7 @@ export const CustomProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log("HIT 2", surveyNum, farthestIndex)
+    // console.log("HIT 2", surveyNum, farthestIndex)
     setSurveyNum(0);
     setFarthestIndex(0);
     setWhoAnswer(null);
@@ -150,11 +151,13 @@ export const CustomProvider = ({ children }) => {
 
 
 const handleNavClick = (index) => {
-  console.log("NAV CLICK: ", index, farthestIndex)
+  // console.log("NAV CLICK: ", index, farthestIndex)
   if (index <= farthestIndex) {
       setSurveyNum(index);
   }
-}
+};
+
+console.log("CONTEXT LATLNG: ", latLng)
 
   return (
     <CustomContext.Provider
