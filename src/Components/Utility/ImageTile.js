@@ -20,6 +20,8 @@ const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
             text: {color: (bugAnswer) && 
                 bugAnswer.includes(thisBug.bug) ? "white" : "black"},
             paddingBottom: "25%",
+            svg: {color: (bugAnswer) && 
+                bugAnswer.includes(thisBug.bug) ? "white" : "black"}
         }
     )
 
@@ -29,6 +31,10 @@ const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
             {
                 image: {background: !testStyle.image.background && accent},
                 text: {color: testStyle.text.color === "black" ? "white" : "black"},
+                svg: {
+                    color: testStyle.text.color === "black" ? "white" : "black",
+                    // filter: testStyle.text.color === "black" ? "sepia(1)" : "black"
+                }
             })
     }
 
@@ -38,7 +44,7 @@ const ImageTile = ({ thisBug, bugAnswer, addBug }) => {
                     className="bug-image" 
                     onClick={testClick} 
                     style={testStyle.image}>
-                    <div className="bug-image-container">
+                    <div className="bug-image-container" style={testStyle.svg}>
                         {thisBug.image}
                     </div>
                     <span style={testStyle.text}>{thisBug.bug}</span>

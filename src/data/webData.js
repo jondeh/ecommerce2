@@ -8,7 +8,7 @@ import { GiAnt as Ant} from 'react-icons/gi';
 export const pageSections = [
     {
         objType: "plug & spray",
-        text: "No guesswork. No measuring. Pest control. Ready out-of-the-box to treat your home like a pro.",
+        text: "No guesswork.  No measuring.  Pest control made easy. Ready out-of-the-box to treat your home like a pro.",
         image: grass,
         imageAlt: "Created for you",
     },

@@ -28,7 +28,8 @@
     // padding-left: 10px;
     font-family: sans-serif;
     margin-top: .6em;
-    @include flexCenter();
+    // @include flexCenter();
+    // border: 1px solid black;
 }
 
 .google-container {     // Google Map is absolutely positioned inside.
@@ -37,4 +38,52 @@
     height: 100%;
     width: 100%;
     position: relative;
+    // .map-square-feet {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 5%;
+    //     z-index: 5;
+    //     width: 90%;
+    //     height: 10%;
+    //     background: rgba(245, 245, 245, 0.93);
+    //     border-radius: 15px 15px 0px 0px;
+    //     border: .1em solid whitesmoke;
+    //     padding: .2em;
+    //     .number {
+    //         // border: 1px solid blue;
+    //         font-size: .8em;
+    //         span {
+    //             color: $baseGreen;
+    //             font-weight: bold;
+    //         }
+    //     }
+    // }
+    .map-square-feet {
+        position: absolute;
+        top: 0;
+        left: 5%;
+        z-index: 5;
+        width: 90%;
+        height: 10%;
+        background: rgba(245, 245, 245, 0.93);
+        border-radius: 15px 15px 0px 0px;
+        border: .1em solid whitesmoke;
+        padding: .2em .5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .first {
+            // text-transform: uppercase;
+            margin-right: .4em;
+        }
+
+        .number {
+            // border: 1px solid blue;
+            // font-size: .8em;
+            span {
+                color: $baseGreen;
+                font-weight: bold;
+            }
+        }
+    }
 }

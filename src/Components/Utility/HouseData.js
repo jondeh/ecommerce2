@@ -16,6 +16,12 @@ const HouseData = ({ latLng }) => {
                 (propData && latLng) ? <React.Fragment>
 
                     <div className="google-container">
+
+                        {/* <div className="map-square-feet">
+                            <span className="first"><strong>home size: </strong></span>
+                            <p className="number"><span> {propData && propData[0].sizeData.grossSize}</span> sq ft</p>
+                        </div> */}
+                        
                         <GoogleMap {...{latLng}} />
                     </div>
 

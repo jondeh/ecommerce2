@@ -84,14 +84,14 @@ const Customize = () => {
     // },
     {
       component: <WhoQuestion {...{ whoAnswer, setWhoAnswer, handleClick }} />,
-      description: <p>a little about who you're protecting:</p>,
+      description: <p>A little about who you're protecting:</p>,
       info: <SurveyInfo {...{type: "who"}}/> ,
     },
     {
       component: (
         <HomeQuestion {...{ homeAnswer, setHomeAnswer, handleClick }} />
       ),
-      description: <p>next, a little bit about your <strong>house</strong>.</p>,
+      description: <p>Next, a little bit about your <strong>house</strong>.</p>,
       info: <HouseData {...{latLng}}/> ,
     },
     {
@@ -99,7 +99,7 @@ const Customize = () => {
         <BugQuestion {...{ bugAnswer, setBugAnswer, handleClick, addBug }} />
       ),
       description:
-      <p>your <span className="address-city">{addressCity}</span> neighbors use Jitterbox to protect against the highlighted pests.  Do you need protection from any others?</p>,
+      <p>Your <span className="address-city">{addressCity}</span> neighbors use Jitterbox to protect against the highlighted pests.  Do you need protection from any others?</p>,
       info: <SurveyInfo  {...{type: "bugs"}}/> ,
     },
     {
@@ -108,7 +108,7 @@ const Customize = () => {
           {...{ sprayerAnswer, setSprayerAnswer, handleClick }}
         />
       ),
-      description: <p>do you already have a sprayer?</p>,
+      description: <p>Do you already have a sprayer?</p>,
       info: <SurveyInfo  {...{type: "sprayer"}}/> ,
     },
   ];

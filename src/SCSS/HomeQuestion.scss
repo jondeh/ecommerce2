@@ -4,19 +4,22 @@
     height: 85%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     overflow: hidden;
+    // border: 1px solid yellow;
+    // margin-top: 10%;
     @include fadeInEase1();
     @include textStyle1();
     // border: 5px dotted orange;
 
     .home-question-address {
-        height: 15%;
+        // height: 15%;
         // border: 3px dotted blue;
         width: 100%;
-        margin-top: 5%;
+        // margin-top: 5%;
+        // border: 2px dotted orange;
         button {
             @include fadeInEase1();
             transition-duration: $time3;

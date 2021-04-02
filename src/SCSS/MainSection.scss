@@ -42,17 +42,27 @@
         align-items: center;
         height: 75vh;
         width: 100%;
+        // border: 1px solid blue;
         .section-text {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             overflow: auto;
+            white-space: pre-line;
+            // border: 1px solid yellow;
+            // padding: 0em 0em;
             .section-button-container {
                 display: flex;
                 width: 100%;
                 justify-content: space-evenly;
                 margin-top: .8em;
                 button {
+                    background: $baseGreen;
+                    color: white;
+                    border-color: white;
+                    &:nth-child(2n) {
+                        background: $baseYellow;
+                    }
                     outline: none;
                     font-family: $mainFont;
                     font-size: .8em;
@@ -71,6 +81,7 @@
                 font-size: 14px;
                 text-align: justify;
                 font-weight: 400;
+                margin: 0em 3em;
             }
         }
     
@@ -97,7 +108,7 @@
     
         
         &:nth-child(2n) {
-            background: linear-gradient(to right, transparent 0%, transparent 30%, $baseGreen 30%, $baseGreen 100%);
+            background: linear-gradient(to right, rgb(238, 238, 238) 0%, rgb(238, 238, 238) 30%, $baseGreen 30%, $baseGreen 100%);
             color: white;
         }
 
@@ -112,18 +123,22 @@
             height: 100%;
             flex-direction: row;
             justify-content: space-evenly;
+            padding: 0 3em;
             .section-text {
+                // border: 1px solid yellow;
                 .section-button-container {
                     margin-top: none;
+                    // border: 1px solid purple;
                     button {
                         padding: 1em;
                     }
                 }
                 width: 50vh;
-                min-width: 40vh;
-                height: 40vh;
+                min-width: 45vh;
+                height: 45vh;
                 p {
                     font-size: .8em;
+                    margin: 0em 2em;
                 }
 
             }

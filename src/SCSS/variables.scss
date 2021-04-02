@@ -39,6 +39,7 @@ $blue11: #E1EBEE; // Marian Blue
 $blue12: #B0C4DE; // Light Steel Blue / Background
 
 $grey1: darkslategrey;
+$grey2: rgb(238, 238, 238);
 
 $red1: #6E0D25;
 $red2: #A13034;
@@ -51,6 +52,18 @@ $red8: #6E0D25;
 $red9: #6E0D25;
 $red10: #6E0D25;
 
+$yellow1: #eeff1b;
+$yellow2: #ffff31;
+$yellow3: #fbec5d; // 1
+$yellow4: #ffe135; // 2
+$yellow5: #ffc40c; // 1
+$yellow6: #ffffe0;
+$yellow7: #fada5e; // 0
+$yellow8: #f6d348; // 0
+$yellow9: #f6c738; // 0
+
+$baseYellow: $yellow9;
+
 // $baseBlue: $blue6; // Header/Footer - Main Blue
 // $baseBlue: $blue10; // Header/Footer - Main Blue
 $baseBlue: $grey1; // Header/Footer - Main Blue
@@ -58,6 +71,9 @@ $baseBlue: $grey1; // Header/Footer - Main Blue
 // $baseBlue: $blue12; // Overlay Blue
 $baseBlue2: $blue4; // Some icons - Secondary Blue
 $baseBlue3: $blue12; // Some icons - Another Secondary Blue
+$baseGrey: $grey2;
+
+$unselected: $baseGrey;
 
 $whiteSmokeHover: rgb(228, 228, 228);
 // $whiteSmokeHover: #f5f5f5;

@@ -26,11 +26,14 @@ const HouseNumbers = ({ propData, perimeter }) => {
         <div className="house-numbers-container">
             {
                 propData && <>
+            {/* <span className="square-feet"><strong>home size:</strong> {propData && propData[0].sizeData.grossSize} sq ft</span> */}
+            <div className="linear-feet-container">
             <h1>home perimeter</h1>
             <h3>(linear feet)</h3>
-            {/* <h4><span>{propData && propData[0].sizeData.grossSize}</span> sq ft.</h4> */}
-            <h1><span style={{color: accent}}>{perimeter}</span> ft.</h1>
+            <h1><span style={{color: accent}}>{perimeter}</span> ft</h1>
             <div className="not-right"><span>that doesn't seem right...</span></div>
+            </div>
+            {/* <h4><span>{propData && propData[0].sizeData.grossSize}</span> sq ft.</h4> */}
             <div className="button-container">
                 {/* <Button variant="contained">somethings not right</Button> */}
                 {/* <Button variant="contained" style={buttonStyle1}>sounds about right</Button> */}

@@ -8,16 +8,16 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
     const { push } = useHistory();
     const sectionPlace = index % 2 === 0 ? "right" : "left";
 
-    const buttonStyle1 = {
-        background: index % 2 !== 0 ? accent : null,
-        color: index % 2 !== 0 ? "white" : null,
-        borderColor: index % 2 !== 0 ? "white" : null,
-    }
+    // const buttonStyle1 = {
+    //     background: index % 2 !== 0 ? accent : null,
+    //     color: index % 2 !== 0 ? "white" : null,
+    //     borderColor: index % 2 !== 0 ? "white" : null,
+    // }
 
-    const buttonStyle2 = {
-        background: index % 2 === 0 ? accent : null,
-        color: index % 2 === 0 ? "white" : null,
-    }
+    // const buttonStyle2 = {
+    //     background: index % 2 === 0 ? accent : null,
+    //     color: index % 2 === 0 ? "white" : null,
+    // }
 
     const handleSeePlan = () => {
         push('/customize');
@@ -32,8 +32,12 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
                 <h2 className="web-title">{objType}</h2>
                     <p>{text}</p>
                     <div className="section-button-container">
-                        <button style={buttonStyle1}>see how it works</button>
-                        <button onClick={handleSeePlan} style={buttonStyle2}>see my plan</button>
+                        <button 
+                        // style={buttonStyle1}
+                        >see how it works</button>
+                        <button onClick={handleSeePlan} 
+                        // style={buttonStyle2}
+                        >see my plan</button>
                     </div>
                 </div>
             </div>

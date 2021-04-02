@@ -21,6 +21,7 @@
 }
 
 .questions-container {
+    // border: 2px solid black;
     box-shadow: $shadow1;
     height: 95%;
     width: 95%;
@@ -44,6 +45,7 @@
         font-family: $mainFont;
         font-size: 1rem;
         font-weight: 700;
+        // border: 3px dotted green;
         // text-align: center;
     }
     &-true {
