@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../../SCSS/HouseNumbers.scss';
 import { Button } from '@material-ui/core';
 import { colors } from '../../data/variables';
+// import spinLoader from '../Utility/loaders/Spin-1s-200px.svg';
+import SpinLoader from '../Utility/loaders/SpinLoader';
+import { CustomContext } from '../../context/CustomContext';
+import { SignalCellularNull } from '@material-ui/icons';
 
 const { primary, secondary, accent, textColor, altBlue, accent2} = colors;
 
 const HouseNumbers = ({ propData, perimeter }) => {
+    const { homeLoad } = useContext(CustomContext);
 
     const buttonStyle1 = {
         background: accent,
@@ -25,7 +30,7 @@ const HouseNumbers = ({ propData, perimeter }) => {
     return (
         <div className="house-numbers-container">
             {
-                propData && <>
+                propData ? <>
             {/* <span className="square-feet"><strong>home size:</strong> {propData && propData[0].sizeData.grossSize} sq ft</span> */}
             <div className="linear-feet-container">
             <h1>home perimeter</h1>
@@ -39,7 +44,7 @@ const HouseNumbers = ({ propData, perimeter }) => {
                 {/* <Button variant="contained" style={buttonStyle1}>sounds about right</Button> */}
                 <p>We calculate the linear feet based on satellite footage of your home's footprint.  It's pretty accurate, but don't worry if it's not exact.</p>
             </div>
-                </>
+                </> : homeLoad ? <SpinLoader /> : null
             }
             {/* <div className="row">
                 <span>LOT SIZE: </span><span>{propData && propData[0].lotData.lotSize1}</span>
