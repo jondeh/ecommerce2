@@ -13,11 +13,11 @@
     font-family: $mainFont;
     // font-weight: bold;
 
-    &:nth-child(2n) {
+    &:nth-last-child(2n) {
         background: $baseGreen;
         color: white;
     }
-    &:nth-child(2n+1) {
+    &:nth-last-child(2n+1) {
         .mobile-title {
          color: $baseGreen;   
         }
@@ -60,7 +60,7 @@
                     background: $baseGreen;
                     color: white;
                     border-color: white;
-                    &:nth-child(2n) {
+                    &:nth-last-child(2n) {
                         background: $baseYellow;
                     }
                     outline: none;
@@ -101,13 +101,13 @@
         padding: 1em 5em;
         border-top: 1em solid whitesmoke;
 
-        &:nth-child(2n+1) {
+        &:nth-last-child(2n+1) {
             background: linear-gradient(to left, transparent 0%, transparent 30%, $baseGreen 30%, $baseGreen 100%);
             color: white;
         }
     
         
-        &:nth-child(2n) {
+        &:nth-last-child(2n) {
             background: linear-gradient(to right, rgb(238, 238, 238) 0%, rgb(238, 238, 238) 30%, $baseGreen 30%, $baseGreen 100%);
             color: white;
         }
