@@ -16,13 +16,16 @@
     // left: 100%;
     // top: 0;
     // border: 5px solid orange;
-    height: 80%;
+    // height: calc((88vh - #{$headerHeight}) * .8);
+    height: 100%;
+    width: 100%;
     width: 100%;
     // background: white;
     z-index: 1;
     font-size: .9em;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     justify-content: space-between;
     align-items: center;
     // padding-left: 10px;
@@ -34,9 +37,10 @@
 .google-container {     // Google Map is absolutely positioned inside.
     // width: 35vh;
     // height: 35vh;
-    height: 100%;
+    height: calc((88vh - #{$headerHeight}) * .8);
     width: 100%;
     position: relative;
+    // border: 3px solid purple;
     // .map-square-feet {
     //     position: absolute;
     //     top: 0;

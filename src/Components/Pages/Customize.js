@@ -143,8 +143,9 @@ const Customize = () => {
             // <Button variant="contained" onClick={() => handleClick("previous")}>
             //   PREVIOUS
             // </Button>
-            <BsArrowLeft size={35}  onClick={() => handleClick("previous")}/>
-
+            <Button className="previous-button" variant="contained" onClick={() => handleClick("previous")}>
+              <BsArrowLeft />
+            </Button>
           ) : (
             // <Button variant="contained" disabled>
             //   PREVIOUS
@@ -155,7 +156,7 @@ const Customize = () => {
           )}
 
           {surveyNum >= surveyPosition.length - 1 ? (
-            <Button variant="contained" onClick={() => handleClick("get-plan")}>
+            <Button className="plan-button" variant="contained" onClick={() => handleClick("get-plan")}>
               <span>GET PLAN</span>
             </Button>
           ) : 
@@ -175,7 +176,7 @@ const Customize = () => {
             // <Button variant="contained" onClick={() => handleClick("next")}>
             //   NEXT
             // </Button>
-            <Button variant="contained" onClick={() => handleClick("next")} > 
+            <Button className="next-button" variant="contained" onClick={() => handleClick("next")} > 
               <BsArrowRight />
             </Button>
            

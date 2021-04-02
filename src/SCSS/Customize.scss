@@ -2,15 +2,22 @@
 
 .customize-container {
     &-true {
-        @include heightWithHeader();
+        margin-top: $headerHeight;
+        min-height: calc(88vh - #{$headerHeight});
         @include flexCenter();
         // @include fadeInEase3();
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
         position: relative;
         width: 100%;
         background: whitesmoke;
+        // border: 1px solid red;
+        padding-top: 10px;
     }
     &-false {
-        @include heightWithHeader();
+        margin-top: $headerHeight;
+        min-height: calc(88vh - #{$headerHeight});
         @include flexCenter();
         // @include fadeInEase3();
         position: relative;
@@ -23,7 +30,7 @@
 .questions-container {
     // border: 2px solid black;
     box-shadow: $shadow1;
-    height: 95%;
+    height: calc((88vh - #{$headerHeight}) * .95);
     width: 95%;
     border-radius: 15px;
     background: whitesmoke;
@@ -77,21 +84,41 @@
     // margin-top: 2em;
     height: 2em;
     $buttonTime: 150ms;
+    position: relative;
+    .next-button {
+        background: $baseGreen;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        // font-size: 1em;
+        svg {
+            animation: arrow 1s alternate infinite ease-in;
+        }
+    }
+    .previous-button {
+        position: absolute;
+        left: 0;
+    }
+    .plan-button {
+        background: $baseGreen;
+    }
     button {
         width: 50%;
         transition-duration: $time3;
         // background: whitesmoke;
         // font-family: $font1;
         @include buttonStyle1();
-        background: $baseGreen;
         padding: 0;
         color: white;
-        animation: buttonSlide $buttonTime ease-in-out forwards;
         clip-path: circle(0% at 95%, 50%);
+        animation: buttonSlide $buttonTime ease-in-out forwards;
+        &:nth-child(2) {
+        }
         span {
             color: white;
         }
         &:hover {
+            background: rgb(216, 216, 216);
             span {
                 color: $baseGreen;
             }
@@ -105,7 +132,7 @@
         height: 100%;
         font-size: 2.5em;
         color: white;
-        animation: arrow 1s alternate infinite ease-in;
+        // animation: arrow 1s alternate infinite ease-in;
         // animation-delay: calc(#{$buttonTime} + 100ms);
     }
 }
@@ -141,12 +168,29 @@
 }
 
 @media only screen and (min-width: $size2) {
+    .customize-container {
+        &-true {
+            @include flexCenter();
+            flex-direction: row;
+            // border: 3px solid red;
+            padding-top: 0px;
+        }
+    }
+
     .questions-container {
         width: 40%;
         // font-size: 30px;
+        // border: 1px solid green;
+        z-index: 1;
 
     }
     .customize-button-container {
+        .previous-button {
+            display: none;
+        }
+        .next-button {
+            position: relative;
+        }
         button {
             width: 50%;
             transition-duration: $time3;
