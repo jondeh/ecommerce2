@@ -8,8 +8,8 @@ import Checkout from './Components/Pages/Checkout';
 import Cart from './Components/Pages/Cart';
 import Auth from './Components/Pages/Auth';
 import Register from './Components/Pages/Register';
-import Success from './Components/Pages/Success';
-import Test from './Components/Test';
+// import Success from './Components/Pages/Success';
+// import Test from './Components/Test';
 import HowTo from './Components/Pages/HowTo';
 
 export default (
@@ -22,7 +22,7 @@ export default (
         <Route exact path='/auth' component={ Auth } />
         <Route exact path='/register' component={ Register } />
         <Route path='/success/:sessionId' component={ MyPlan } />
-        <Route exact path="/test" component={ Test } />
+        {/* <Route exact path="/test" component={ Test } /> */}
         <Route exact path="/how-to" component={ HowTo } />
     </Switch>
 )

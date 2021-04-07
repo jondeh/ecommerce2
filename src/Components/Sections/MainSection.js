@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../../SCSS/MainSection.scss';
 import {colors} from '../../data/variables';
 import { useHistory } from 'react-router-dom';
+import { AppContext } from '../../context/AppContext';
 const { primary, secondary, accent, textColor} = colors;
 
 const MainSection = ({ objType, text, image, imageAlt, index }) => {
     const { push } = useHistory();
+    const { handleSeeHowItWorks, handleGetStarted } = useContext(AppContext);
     const sectionPlace = index % 2 === 0 ? "right" : "left";
 
     // const buttonStyle1 = {
@@ -19,9 +21,9 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
     //     color: index % 2 === 0 ? "white" : null,
     // }
 
-    const handleSeePlan = () => {
-        push('/customize');
-    }
+    // const handleSeePlan = () => {
+    //     push('/customize');
+    // }
 
     return (
         <div className="main-section">
@@ -32,10 +34,10 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
                 <h2 className="web-title">{objType}</h2>
                     <p>{text}</p>
                     <div className="section-button-container">
-                        <button 
+                        <button onClick={() => handleSeeHowItWorks()} 
                         // style={buttonStyle1}
                         >see how it works</button>
-                        <button onClick={handleSeePlan} 
+                        <button onClick={() => handleGetStarted()} 
                         // style={buttonStyle2}
                         >see my plan</button>
                     </div>

@@ -78,18 +78,27 @@ export const AppProvider = ({ children }) => {
   };
 
   const handleSeeHowItWorks = (id) => {
-    handleLeave(id);
+    if (id) {
+      handleLeave(id);
+    }
     push("/how-to");
   };
   const handleProducts = (id) => {
-    handleLeave(id);
+    if (id) {
+      handleLeave(id);
+    }
   };
   const handleGetStarted = (id) => {
-    handleLeave(id);
+    console.log('HANDLE GET STARTED: ', id)
+    if (id) {
+      handleLeave(id);
+    }
     push("/customize");
   };
   const handleReviews = (id) => {
-    handleLeave(id);
+    if (id) {
+      handleLeave(id);
+    }
   };
 
   const webNavData = (id) => {
