@@ -12,7 +12,7 @@ import HouseNumbers from '../Utility/HouseNumbers';
 import HouseData from '../Utility/HouseData';
 
 const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
-  const { getPropData, setHomeLoad, latLng, setLatLng, address, setAddress, didAPICallFail, propData, perimeter } = useContext(CustomContext);
+  const { getPropData, setHomeLoad, latLng, setLatLng, address, setAddress, didAPICallFail, propData, perimeter, squareFeet } = useContext(CustomContext);
   // const [address, setAddress] = useState(homeAnswer && homeAnswer[0]);
   // const [latLng, setLatLng] = useState(null);
   const [editAddress, setEditAddress] = useState("");
@@ -91,7 +91,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
 
       </div>
 
-      <HouseNumbers {...{propData, perimeter}}/>
+      <HouseNumbers {...{propData, perimeter, squareFeet}}/>
 
 
 

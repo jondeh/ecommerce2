@@ -20,6 +20,7 @@
     "express-session": "^1.17.1",
     "google-maps-react": "^2.0.6",
     "massive": "^6.6.5",
+    "nodemailer": "^6.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",

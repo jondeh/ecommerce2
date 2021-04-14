@@ -9,7 +9,7 @@ import { SignalCellularNull } from '@material-ui/icons';
 
 const { primary, secondary, accent, textColor, altBlue, accent2} = colors;
 
-const HouseNumbers = ({ propData, perimeter }) => {
+const HouseNumbers = ({ propData, perimeter, squareFeet }) => {
     const { homeLoad } = useContext(CustomContext);
 
     const buttonStyle1 = {
@@ -32,6 +32,11 @@ const HouseNumbers = ({ propData, perimeter }) => {
             {
                 propData ? <>
             {/* <span className="square-feet"><strong>home size:</strong> {propData && propData[0].sizeData.grossSize} sq ft</span> */}
+            <div className="linear-feet-container">
+            <h1>home size</h1>
+            <h3>(square feet)</h3>
+            <h1><span style={{color: accent}}>{squareFeet}</span> ft<sup style={{fontSize: ".6em"}}>2</sup></h1>
+            </div>
             <div className="linear-feet-container">
             <h1>home perimeter</h1>
             <h3>(linear feet)</h3>

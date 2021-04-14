@@ -21,6 +21,7 @@ export const CustomProvider = ({ children }) => {
   const [address, setAddress] = useState("");
   const [didAPICallFail, setDidAPICallFail] = useState(false);
   const [perimeter, setPerimeter] = useState(0);
+  const [squareFeet, setSquareFeet] = useState(0);
   const [sprayerInfo, setSprayerInfo] = useState(false);
 
 
@@ -84,7 +85,7 @@ export const CustomProvider = ({ children }) => {
             parkingData: e.building.parking,
           };
         });
-
+        setSquareFeet(Math.ceil(propData[0].sizeData.grossSize))
         setPerimeter(Math.ceil((Math.sqrt(propData[0].sizeData.groundFloorSize)*4)*1.1))
         setHomeAnswer(address)
         setPropData(propData)
@@ -182,7 +183,7 @@ console.log("CONTEXT LATLNG: ", latLng)
         perimeter, setPerimeter,
         handleNavClick,
         sprayerInfo, setSprayerInfo,
-        
+        squareFeet, setSquareFeet,
 
       }}
     >
