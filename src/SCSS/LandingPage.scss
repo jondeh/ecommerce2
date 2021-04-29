@@ -10,11 +10,12 @@
     overflow: hidden;
     background: rgba(187, 87, 87, 0.479);
     text-align: center;
-    background: whitesmoke;
+    background: white;
     @include fadeInEase3();
     
     video {
         height: 55vh;
+        // max-height: 55vh;
         object-fit: cover;
         overflow: hidden;
     }
@@ -27,6 +28,7 @@
         justify-content: space-evenly;
         // background: $blue11;
         background: rgb(238, 238, 238);
+        background: white;
         height: 32vh;
         width: 100%;
         transition-duration: $time3;
@@ -38,6 +40,7 @@
         }
         h1 {
             font-size: .9em;
+            color: $baseGreen16;    
         }
         h5 {
             // font-size: .7em;
@@ -46,12 +49,13 @@
             // margin: 0em 4em;
             // text-align: center;
             display: none;
+            color: $baseGreen17;
         }
         button {
             z-index: 3;
             // transition-duration: $time3;
-            width: 60%;
-            background: $baseGreen;
+            // width: 60%;
+            background: $baseGreen18;
             font-family: $font2;
             color: white;
             font-weight: 800;
@@ -62,7 +66,7 @@
             font-size: .8em;
             font-weight: 800;
             padding: .7em;
-            border-radius: 2em;
+            border-radius: 12px;
             border: .1em solid white;
             &:hover {
                 filter: brightness(1.2);
@@ -74,15 +78,21 @@
 .section-page {
     width: 100%;
     background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (min-width: $size2) {
     
     .landing-page {
         height: auto;
+        font-size: 16px;        // TYLER SIZE
+        width: 100%;
         
         .funnel-start {
-            height: 30vh;
+            height: 25vh;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -92,7 +102,8 @@
                 display: inline;
             }
             h1 {
-                font-size: 2em;
+                // font-size: 2em;
+                font-size: 28px;
             }
             h5 {
                 // font-size: 1.8em;
@@ -102,7 +113,8 @@
             
             button {
                 max-width: 20%;
-                font-size: $fontSize1 * 1.2;
+                // font-size: $fontSize1 * 1.2;
+                font-size: 18px;   // TYLER SIZE
                 // background: $baseGreen;
                 // font-family: $font2;
                 // color: white;
@@ -111,9 +123,16 @@
             }
         }
         video {
-            width: 100%;
-            height: 70vh;
+            // width: 100%;
+            height: 80vh;
+            // min-height: 70vh;
+            // max-height: 70vh;
             object-fit: fill;
+            // transform: scale(1.6);
+            overflow: hidden;
+            outline: none;
+            border: none;
+
         }
     }
 }

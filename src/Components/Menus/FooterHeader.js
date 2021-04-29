@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../Utility/Logo';
+import hummingbird from '../../data/logo/hummingbird.png';
 import { useHistory, useLocation } from 'react-router-dom';
 import '../../SCSS/Footer.scss';
 import {colors} from '../../data/variables';
@@ -15,7 +16,8 @@ const FooterHeader = ({ mobile }) => {
 
     return (
         <div className="footer-header" style={styles}>
-            <Logo />
+            <Logo {...{type: "picture"}} />
+            {/* <img src={Hummingbird} /> */}
         </div>
     )
 }

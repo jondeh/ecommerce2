@@ -1,7 +1,15 @@
 @import './variables.scss';
 
 .logo-container {
-    // cursor: pointer;
+    cursor: pointer;
+    height: 70%;
+    img {
+        // cursor: pointer;
+        // margin-top: 3%;
+        // margin-bottom: 5%;
+        height: 100%;
+        // size: 105%;
+    }
 }
 
 #jitterbo {

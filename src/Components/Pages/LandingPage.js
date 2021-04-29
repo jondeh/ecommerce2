@@ -5,6 +5,7 @@ import { AppContext } from '../../context/AppContext';
 import { useHistory } from 'react-router-dom';
 import TextOverlay from '../Utility/TextOverlay';
 import MainSection from '../Sections/MainSection';
+import Reviews from '../Sections/Reviews';
 
 import '../../SCSS/LandingPage.scss';
 import { pageSections } from '../../data/webData';
@@ -12,6 +13,7 @@ import { pageSections } from '../../data/webData';
 import video1 from '../../data/media/sampleVideo1.mp4';
 import video2 from '../../data/media/playing-with-kids.mp4';
 import video3 from '../../data/media/Butterflies-On-A-Flower.mp4';
+import dogVideo from '../../data/media/dog-video5.mp4';
 
 const LandingPage = () => {
     const { user } = useContext(UserContext);
@@ -28,8 +30,7 @@ const LandingPage = () => {
     };
 
     const mappedSections = pageSections.map((section, i) => {
-        const { objType, text, image, imageAlt } = section;
-        return <MainSection key={i} {...{ objType, text, image, imageAlt, index: i }}/>
+        return <MainSection key={i} {...{ section, index: i, type: "landing" }}/>
     });
 
     return (
@@ -44,7 +45,8 @@ const LandingPage = () => {
                 loop={true}
                 muted 
                 >
-                    <source src={video1}></source>
+                    <source src={dogVideo}></source>
+                    {/* <source src={video1}></source> */}
                     {/* <source src={video2}></source> */}
                     {/* <source src={video3}></source> */}
             </video>
@@ -60,6 +62,9 @@ const LandingPage = () => {
             <div className="section-page">
                 {mappedSections}
             </div>
+            <Reviews>
+                <h2>But does it work?</h2>
+            </Reviews>
 
         </div>
     )

@@ -4,8 +4,13 @@ import { ReactComponent as ImportedComponent} from '../../data/logo/logo-letters
 import '../../SCSS/Logo.scss';
 import { useHistory, location } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import logo from '../../data/logo/jitterbox-logo-2.png';
+import hummingbird from '../../data/logo/hummingbird.png';
+
+// import logo from '../../data/logo/hummingbird.png';
 import {colors} from '../../data/variables';
 const { primary, secondary, accent, textColor, altBlue} = colors;
+
 
 let myLogo = document.getElementById("jitterbo");
 
@@ -17,7 +22,7 @@ const StyledSVG = styled(ImportedComponent)`
     cursor: pointer;
 `
 
-const Logo = ({  }) => {
+const Logo = ({ type }) => {
     const { push } = useHistory();
     const { mobileMenuVisible, setMobileMenuVisible, closeMobileMenu } = useContext(AppContext);
 
@@ -27,9 +32,16 @@ const Logo = ({  }) => {
         push('/');
     }
 
+    console.log("myLogo", myLogo);
+
     return (
         <div className="logo-container" onClick={handleLogoClick}>
-            <StyledSVG />
+            <picture>
+                {/* <source 
+                    media="(max-width: 10%)"
+                    srcset={myLogo}></source> */}
+                <img src={type === "picture" ? hummingbird : logo} alt="" />
+            </picture>
         </div>
     )
 }

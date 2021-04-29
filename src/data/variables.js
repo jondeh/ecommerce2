@@ -64,3 +64,15 @@ export const scheme4 = {
     textColor: "black",
     altBlue: blue5,
 }
+
+export const newColors = {
+    1: "#57C675",
+    2: "#40AD66",
+    3: "#49C182",
+    4: "#12B65C",
+    5: "#207042",
+    6: "#1E603C",
+    7: "#42BE7D",
+    8: "#4CCC7D",
+    9: "#203864",
+}

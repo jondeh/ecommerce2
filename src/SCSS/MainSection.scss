@@ -11,24 +11,27 @@
     align-items: center;
     // font-family: 'Roboto', sans-serif;
     font-family: $mainFont;
-    // font-weight: bold;
+    h2 {
+        font-size: 36px;
+    }
+    p {
+        font-size: 16px;
+    }
 
-    &:nth-last-child(2n) {
-        background: $baseGreen;
-        color: white;
-    }
-    &:nth-last-child(2n+1) {
-        .mobile-title {
-         color: $baseGreen;   
-        }
-    }
+    // &:nth-last-child(2n) {
+    //     background: $baseGreen;
+    //     color: white;
+    // }
+    // &:nth-last-child(2n+1) {
+    //     .mobile-title {
+    //      color: $baseGreen;   
+    //     }
+    // }
     
     .mobile-title {
         margin-bottom: .5em;
         font-weight: 700;
     }
-    // height: 100%;
-    // width: 100%;
 
 
     .web-title {
@@ -57,19 +60,25 @@
                 justify-content: space-evenly;
                 margin-top: .8em;
                 button {
-                    background: $baseGreen;
-                    color: white;
-                    border-color: white;
+                    // background: $baseGreen;
+                    // background: white;
+                    // color: white;
+                    // color: black;
+                    // border-color: $baseGreen21;
+                    background: $baseGreen18;
                     &:nth-child(2n) {
-                        background: $baseYellow;
+                        // background: $baseYellow;
+                        background: $baseGreen;
+                        color: white;
                     }
                     outline: none;
                     font-family: $mainFont;
-                    font-size: .8em;
-                    font-weight: 800;
+                    // font-size: .8em;
+                    // font-weight: 800;
                     padding: .7em;
-                    border-radius: 2em;
-                    border: .1em solid white;
+                    // border-radius: 2em;
+                    border-radius: 12px;
+                    border: .1em solid $baseGreen21;
                     transition-duration: $time1;
                     cursor: pointer;
                     &:hover {
@@ -78,10 +87,10 @@
                 }
             }
             p {
-                font-size: 14px;
-                text-align: justify;
-                font-weight: 400;
-                margin: 0em 3em;
+                // font-size: 14px;
+                text-align: center;
+                // font-weight: 400;
+                // margin: 0em 3em;
             }
         }
     
@@ -95,21 +104,32 @@
 
 @media only screen and (min-width: $size2) {
     .main-section {
-        height: 65vh;
-        min-height: 65vh;
+        height: 53vh;
+        min-height: 53vh;
+        // width: 70%;
         // background: whitesmoke;
         padding: 1em 5em;
-        border-top: 1em solid whitesmoke;
+        // border-top: 1em solid whitesmoke;
 
         &:nth-last-child(2n+1) {
-            background: linear-gradient(to left, transparent 0%, transparent 30%, $baseGreen 30%, $baseGreen 100%);
-            color: white;
+            // background: linear-gradient(to left, transparent 0%, transparent 30%, $baseGreen 30%, $baseGreen 100%);
+            // color: white;
+            // width: 90%;
+            background: $baseGreen23;
         }
     
         
         &:nth-last-child(2n) {
-            background: linear-gradient(to right, rgb(238, 238, 238) 0%, rgb(238, 238, 238) 30%, $baseGreen 30%, $baseGreen 100%);
-            color: white;
+            // background: linear-gradient(to right, rgb(238, 238, 238) 0%, rgb(238, 238, 238) 30%, $baseGreen 30%, $baseGreen 100%);
+            // color: white;
+            background: #DDFFDF;
+        }
+
+        &:nth-last-child(3n) {
+            // background: linear-gradient(to right, rgb(238, 238, 238) 0%, rgb(238, 238, 238) 30%, $baseGreen 30%, $baseGreen 100%);
+            // color: white;
+            // background: $baseGreen23;
+            background: #F7FFF9;
         }
 
         .web-title {
@@ -122,8 +142,9 @@
         .section-body {
             height: 100%;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: center;
             padding: 0 3em;
+            // border: 1px solid blue;
             .section-text {
                 // border: 1px solid yellow;
                 .section-button-container {
@@ -136,13 +157,14 @@
                 width: 50vh;
                 min-width: 45vh;
                 height: 45vh;
-                p {
-                    font-size: .8em;
-                    margin: 0em 2em;
-                }
+                // p {
+                //     font-size: 1.4em;
+                //     margin: 0em 2em;
+                // }
 
             }
             img {
+                margin: 0px 50px;
                 height: 45vh;
                 width: 65vh;
             }

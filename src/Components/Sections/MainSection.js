@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import '../../SCSS/MainSection.scss';
-import {colors} from '../../data/variables';
+import {colors, newColors} from '../../data/variables';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
-const { primary, secondary, accent, textColor} = colors;
+const { primary, secondary, accent, textColor } = colors;
 
-const MainSection = ({ objType, text, image, imageAlt, index }) => {
+const MainSection = ({ section, index, type }) => {
     const { push } = useHistory();
-    const { handleSeeHowItWorks, handleGetStarted } = useContext(AppContext);
+    const { objType, text, image, imageAlt, button } = section;
+    const { handleGetStarted } = useContext(AppContext);
     const sectionPlace = index % 2 === 0 ? "right" : "left";
 
     // const buttonStyle1 = {
@@ -24,22 +25,25 @@ const MainSection = ({ objType, text, image, imageAlt, index }) => {
     // const handleSeePlan = () => {
     //     push('/customize');
     // }
+    const handleClick = (route) => {
+        push(route)
+    }
 
     return (
-        <div className="main-section">
+        <div className="main-section" id={`${type}${index}`}>
             <h2 className="mobile-title">{objType}</h2>
             <div className={`section-body ${sectionPlace}`}>
                 <img src={image} alt={imageAlt} />
                 <div className="section-text">
-                <h2 className="web-title">{objType}</h2>
-                    <p>{text}</p>
+                {objType}
+                {text}
                     <div className="section-button-container">
-                        <button onClick={() => handleSeeHowItWorks()} 
+                        {button[0] && <button style={{background: "#FFFFFF", color: newColors[6]}} onClick={() => handleClick(button[1])} 
                         // style={buttonStyle1}
-                        >see how it works</button>
-                        <button onClick={() => handleGetStarted()} 
+                        >{button[0]}</button>}
+                        <button style={{background: newColors[3]}} onClick={() => handleGetStarted()} 
                         // style={buttonStyle2}
-                        >see my plan</button>
+                        >See my plan</button>
                     </div>
                 </div>
             </div>

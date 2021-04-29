@@ -4,17 +4,17 @@ import video2 from '../../data/media/playing-with-kids.mp4';
 import HowToSection from '../Sections/HowToSection';
 import MainSection from '../Sections/MainSection';
 import { howToSections } from '../../data/webData';
+import Reviews from '../Sections/Reviews';
 
 const HowTo = () => {
 
     const mappedSections = howToSections.map((section, i) => {
-        const { objType, text, image, imageAlt } = section;
-        return <MainSection {...{index: i, objType, text, image, imageAlt}} />
+        return <MainSection {...{index: i, section, type: "howTo"}} />
     })
     return (
         <div className="how-to-container">
             <div className="how-to-main">
-                <h1>how it works</h1>
+                <p><h1>start today with <br></br><span>Jitterbox</span></h1></p>
                 <video
                     id="landing-video" 
                     className="landing-video" 
@@ -26,6 +26,9 @@ const HowTo = () => {
                 </video>
             </div>
             {mappedSections}
+            <Reviews>
+                <h2>See what people say</h2>
+            </Reviews>
         </div>
     )
 }

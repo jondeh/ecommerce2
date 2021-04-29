@@ -4,47 +4,55 @@ import stockGardening from './media/stock-gardening.jpg';
 import { FaSpider as Spider } from 'react-icons/fa';
 import { GiWaspSting as Wasp } from 'react-icons/gi';
 import { GiAnt as Ant} from 'react-icons/gi';
+import {newColors} from '../data/variables';
+
 
 export const pageSections = [
     {
-        objType: "plug & spray",
-        text: "No guesswork.  No measuring.  Pest control made easy. Ready out-of-the-box to treat your home like a pro.",
+        objType: <h2 style={{color: newColors[9]}}>Plug & <span style={{color: newColors[4]}}>Spray</span></h2>,
+        text: <p style={{color: newColors[5]}}>No guesswork.  No measuring.  <span style={{color: newColors[9]}}>Custom</span> pest prescriptions. Ready out-of-the-box to treat your home like a pro. <br></br><br></br>With Jitterbox, you are ready to <span style={{color: newColors[9]}}>treat your home like a pro.</span></p>,
         image: grass,
         imageAlt: "Created for you",
+        button: ["How it works", "/how-to"],
     },
     {
-        objType: "professional products DIY price",
-        text: "You don't need to pay $500/yr to get professional protection from pests.  With plans from $12/mo, we build your plan with the best products available to the pros.",
+        objType: <h2 style={{color: newColors[9]}}>Professional doses.<br></br><span style={{color: newColors[7], size: "39px"}}>DIY prices.</span></h2>,
+        text: <p style={{color: newColors[6]}}><span style={{color: newColors[9]}}>Stop paying $500 for pest control.</span><br></br><br></br>Built with the <span style={{color: newColors[9]}}>best products used by pros,</span> your plan is delivered to your doorstep, starting at <span style={{color: newColors[9]}}>just $12/</span>mo.</p>,
         image: stockBox,
         imageAlt: "Expert instruction with every box",
+        button: ["What we use", "/how-to"],
     }, 
     {
-        objType: "no contracts",
-        text: "No salesmen.  No gimmicks.  No contracts. Update your plan as your needs evolve.  If professional products at DIY prices.",
+        objType: <h2 style={{color: "white"}}><span style={{color: newColors[9]}}>Expert</span> know-how</h2>,
+        text: <p style={{color: "white"}}><strong>We're in this with you.</strong><br></br><br></br> Get expert views, How-To's, and pro tips for the worst pests that crawl your way with Jitterbox Tips.</p>,
         image: stockGardening,
         imageAlt: "Customized to your needs",
+        button: ["Jitterbox Tips", "/how-to"],
     }, 
 ];
 
 
 export const howToSections = [
     {
-        objType: "professional results - DIY price",
-        text: "Pest control companies make it sound harder than it is - pest control is easy.  It shouldn't be $500/year.  With Jitterbox, your getting home protection for $35 per box.",
+        objType: <h2 style={{color: "white"}}>Unbox</h2>,
+        text: <p style={{color: "white"}}>Pest control companies make it sound harder than it is - pest control is easy.  It shouldn't be $500/year.  With Jitterbox, your getting home protection for $35 per box.</p>,
         image: stockBox,
         imageAlt: "Expert instruction with every box",
+        button: [null,  null],
     }, 
     {
-        objType: "your plan is made for you",
-        text: "SPOILER ALERT - we don't recommend spraying every 3 months like Pest Control companies offer. You should concentrate treatment around the bugs schedule, not the technician. Your Plan is based on how we treat our own homes. We’ve found the best bang for the buck is more like this: 1- Late Feb-March: Control early emergence and hit pests when they are at their weakest after winter. 2- May: Control later emerging pests/ants/spiderlings/forming nests. 3- July:  peak summer- to when spiders, flies, wasps, and mosquitos are at their highest levels. 4- September to eliminate them before they find their winter hiding places in your home.",
+        objType: <h2 style={{color: newColors[5]}}>Pour & Mix</h2>,
+        text: <p style={{color: newColors[5]}}>SPOILER ALERT - we don't recommend spraying every 3 months like Pest Control companies offer. You should concentrate treatment around the bugs schedule, not the technician. Your Plan is based on how we treat our own homes. We’ve found the best bang for the buck is more like this: 1- Late Feb-March: Control early emergence and hit pests when they are at their weakest after winter. 2- May: Control later emerging pests/ants/spiderlings/forming nests. 3- July:  peak summer- to when spiders, flies, wasps, and mosquitos are at their highest levels. 4- September to eliminate them before they find their winter hiding places in your home.</p>,
         image: grass,
         imageAlt: "created for you",
+        button: [null,  null],
     },
     {
-        objType: "we know things happen - cancel any time",
-        text: "You can update at any time to address new pests as they appear or to cut back when those pests are taken care of. And no contracts. If your bugs disappear forever (fingers crossed), you can cancel at anytime.",
+        objType: <h2 style={{color: newColors[6]}}>Apply</h2>,
+        text: <p style={{color: newColors[6]}}>You can update at any time to address new pests as they appear or to cut back when those pests are taken care of. And no contracts. If your bugs disappear forever (fingers crossed), you can cancel at anytime.</p>,
         image: stockGardening,
         imageAlt: "customized to your needs",
+        button: [null,  null],
     }, 
 ]
 

@@ -14,11 +14,14 @@ const footColumn2 = ["about us", "guarantee", "privacy policy", "terms of use", 
 const Footer = () => {
     return (
         <div className="footer-container">
-            <FooterHeader />
+            {/* <FooterHeader /> */}
             
             <div className="footer-nav-bar">
-                buy - login - help
+                <button>buy</button>
+                <button>login</button>
+                <button>help</button>
             </div>
+            <FooterHeader />
             <div className="footer-columns">
                 {/* <MenuColumn info={footColumn1} align="left" />
                 <MenuColumn info={footColumn2} align="right" /> */}
@@ -28,9 +31,9 @@ const Footer = () => {
                 {/* <div className="footer-blog-nav-description">natural lawn tips and tricks</div> */}
             </div>
             <div className="social-media-nav">
-                <FaFacebookF color={"white"} size={35} />
-                <FaInstagram color={"white"} size={35} />
-                <FaTwitter color={"white"} size={35} />
+                <FaFacebookF color={"white"} />
+                <FaInstagram color={"white"} />
+                <FaTwitter color={"white"} />
             </div>
         </div>
     )

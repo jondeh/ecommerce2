@@ -1,0 +1,47 @@
+@import './variables.scss';
+
+#reviews-section {
+    background: white;
+    height: auto;
+    min-height: auto;
+    h2 {
+        margin-bottom: 20px;
+        font-size: 36px;
+        color: $baseGreen16;
+    }
+    margin-bottom: 20px;
+}
+
+.reviews-body {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 12vw;
+    padding-right: 12vw;
+}
+
+.review {
+    // border: 1px solid black;
+    width: 15vw;
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $blue13;
+    // overflow: auto;
+    p {
+        font-size: 16px;
+        overflow: auto;
+    }
+    h3 {
+        font-size: 18px;
+    };
+    svg {
+        font-size: 28px;
+    }
+
+}
+
+@media only screen and (min-width: $size2) {
+  
+}

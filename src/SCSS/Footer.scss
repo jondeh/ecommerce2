@@ -42,23 +42,39 @@
 }
 
 .footer-blog-nav {
-    height: 22%;
+    // height: 22%;
 }
 
 .social-media-nav {
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
+    // width: 50%;
     align-items: center;
 }
 
 @media only screen and (min-width: $size2) {
     
   .footer-container {
-      height: 20vh;
+      height: 15vh;
+      flex-direction: row;
+      padding: 0 2%;
+  }
+
+  .footer-nav-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+      button {
+          background: none;
+          border: none;
+          color: white;
+      }
   }
 
   .social-media-nav {
-      width: 30%;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-evenly;
   }
 }

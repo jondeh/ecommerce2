@@ -11,6 +11,7 @@ import Register from './Components/Pages/Register';
 // import Success from './Components/Pages/Success';
 // import Test from './Components/Test';
 import HowTo from './Components/Pages/HowTo';
+import Dashboard from './Components/Pages/Dashboard';
 
 export default (
     <Switch>
@@ -24,5 +25,6 @@ export default (
         <Route path='/success/:sessionId' component={ MyPlan } />
         {/* <Route exact path="/test" component={ Test } /> */}
         <Route exact path="/how-to" component={ HowTo } />
+        <Route exact path="/dashboard" component={ Dashboard } />
     </Switch>
 )
