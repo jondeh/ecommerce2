@@ -14,6 +14,7 @@ const TextOverlay = () => {
         setInterval(() => {
             setOverlayNum((overlayNum) => {
                 // console.log("setOverlayNum", overlayNum++)
+                overlayNum++
                 return overlayNum < 4 ? overlayNum++ : 0
             })
         }, 4000);
@@ -25,7 +26,7 @@ const TextOverlay = () => {
         </span>
     });
 
-    // console.log("OVERLAY NUM: ", overlayNum);
+    console.log("OVERLAY NUM: ", overlayNum);
 
 
 
