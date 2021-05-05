@@ -5,6 +5,7 @@ import WebMenu from './WebMenu';
 import { useHistory } from 'react-router-dom';
 import '../../SCSS/WebAuth.scss';
 import Auth from '../Pages/Auth';
+import {IoMdArrowDropdown} from 'react-icons/io';
 
 const WebAuth = () => {
     let id = "web-auth-id";
@@ -75,6 +76,13 @@ const WebAuth = () => {
                 id="web-sign-in" 
                 variant="contained">
                 {user ? user.email : "sign in"}
+                <IoMdArrowDropdown />
+            </Button>
+            <Button
+                onClick={handleSeeMyPlan}
+                id="web-see-my-plan" 
+                variant="contained">
+                {user ? "see dashboard" : "see my plan"}
             </Button>
             <WebMenu {...{id, data: webAuthData, style: webAuthStyle}} />
             {/* <Auth /> */}

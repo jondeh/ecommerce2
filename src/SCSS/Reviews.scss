@@ -5,9 +5,10 @@
     height: auto;
     min-height: auto;
     h2 {
-        margin-bottom: 20px;
-        font-size: 36px;
-        color: $baseGreen16;
+        margin-top: 5px;
+        margin-bottom: 25px;
+        font-size: 5.5vh;
+        color: #203864;
     }
     margin-bottom: 20px;
 }
@@ -16,8 +17,8 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    padding-left: 12vw;
-    padding-right: 12vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 .review {
@@ -28,14 +29,25 @@
     flex-direction: column;
     justify-content: space-between;
     color: $blue13;
+    box-shadow: $shadow1;
+    border-radius: 15px;
     // overflow: auto;
+    padding: 1%;
     p {
-        font-size: 16px;
+        font-size: 1.6vh;
         overflow: auto;
+        // border: 1px solid purple;
+        height: 70%;
     }
     h3 {
         font-size: 18px;
+        // border: 1px solid purple;
+        height: 15%;
     };
+    .stars {
+        // border: 1px solid purple;
+        height: 15%;
+    }
     svg {
         font-size: 28px;
     }

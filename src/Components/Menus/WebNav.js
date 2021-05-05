@@ -25,7 +25,7 @@ const WebNav = () => {
     const { push } = useHistory();
 
     const webNavStyle = {
-        width: "125%",
+        width: "100%",
     }
 
     const handleEnter = () => {

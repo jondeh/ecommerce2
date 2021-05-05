@@ -38,7 +38,7 @@ const MainSection = ({ section, index, type }) => {
                 {objType}
                 {text}
                     <div className="section-button-container">
-                        {button[0] && <button style={{background: "#FFFFFF", color: newColors[6]}} onClick={() => handleClick(button[1])} 
+                        {button[0] && <button style={{background: "#203864", color: "white"}} onClick={() => handleClick(button[1])} 
                         // style={buttonStyle1}
                         >{button[0]}</button>}
                         <button style={{background: newColors[3]}} onClick={() => handleGetStarted()} 

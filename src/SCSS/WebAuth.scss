@@ -11,28 +11,44 @@
 @media only screen and (min-width: $size2) {
     .web-auth-container {
         display: flex;
-        min-width: 30%;
+        // min-width: 30%;
         // margin-left: 4%;
         margin-left: auto;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
+        // border: 2px solid rgb(255, 193, 78);
         button {
-            background: none;
             // border: none;
             box-shadow: none;
             font-family: $font1;
-            font-size: 1em;
+            font-size: 2vh;
             text-transform: lowercase; 
         }
     }
-      
+    
     #web-sign-in {
         // font-size: .8em;
         // margin-top: .9em;
+        display: flex;
+        background: none;
+        border: none;
+        color: white;
+        text-transform: lowercase;
+        margin-right: 5px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    #web-see-my-plan {
+        // font-size: .8em;
+        // margin-top: .9em;
+        border-radius: $corners;
         font-weight: bold;
         display: inline;
-        // background: none;
+        background: $baseGreen18;
+        background: $orange1;
+        // background: $mainAccent;
         border: none;
         color: white;
         text-transform: lowercase;
@@ -40,6 +56,6 @@
 
     .web-user-email {
         margin-top: .9em;
-        font-size: 1em;
+        font-size: 2vh;
     }
 }

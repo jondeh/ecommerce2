@@ -55,8 +55,9 @@
         font-family: $font1;
         font-weight: bold;
         color: white;
-        padding: 0vh 17vw;
+        padding: 0vh 7vw;
         align-items: center;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705));
 
     }
 }

@@ -33,10 +33,10 @@
         width: 100%;
         transition-duration: $time3;
         h1, h2, h5 {
-            font-family: $font1;
+            font-family: $bodyFont;
             // display: none;
             color: black;
-            // font-weight: bold;
+            font-weight: 800;
         }
         h1 {
             font-size: .9em;
@@ -50,6 +50,8 @@
             // text-align: center;
             display: none;
             color: $baseGreen17;
+            color: #203864;
+            font-weight: 700;
         }
         button {
             z-index: 3;
@@ -65,8 +67,8 @@
             font-family: $mainFont;
             font-size: .8em;
             font-weight: 800;
-            padding: .7em;
-            border-radius: 12px;
+            padding: .45em .7em;
+            border-radius: $corners;
             border: .1em solid white;
             &:hover {
                 filter: brightness(1.2);
@@ -103,18 +105,18 @@
             }
             h1 {
                 // font-size: 2em;
-                font-size: 28px;
+                font-size: 5vh;
             }
             h5 {
                 // font-size: 1.8em;
                 margin: 0em 1em;
-                font-weight: normal;
+                font-size: 2.5vh;
             }
             
             button {
                 max-width: 20%;
                 // font-size: $fontSize1 * 1.2;
-                font-size: 18px;   // TYLER SIZE
+                font-size: 3vh;   // TYLER SIZE
                 // background: $baseGreen;
                 // font-family: $font2;
                 // color: white;

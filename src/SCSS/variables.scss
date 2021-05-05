@@ -74,6 +74,10 @@ $yellow7: #fada5e; // 0
 $yellow8: #f6d348; // 0
 $yellow9: #f6c738; // 0
 
+$orange1: #e25822; // flame
+$orange2: #cc5500; // burnt orange
+
+
 $baseYellow: $yellow9;
 
 // $baseBlue: $blue6; // Header/Footer - Main Blue
@@ -90,9 +94,12 @@ $unselected: $baseGrey;
 $whiteSmokeHover: rgb(228, 228, 228);
 // $whiteSmokeHover: #f5f5f5;
 
+$mainAccent: rgb(255, 193, 78);
+
 $textColor1: #2f4f4f;
 $textColor2: black;
 
+$corners: 50px;
 
 $time-5: 125ms;
 $time1: 250ms;
@@ -114,8 +121,10 @@ $font4: 'Raleway', sans-serif;
 $font2: 'Yanone Kaffeesatz', sans-serif;
 $font3: 'Roboto Helvetica', arial, sans-serif;
 $font5: 'Poppins', sans-serif;
+$font6: 'Karla', sans-serif;
 
 $mainFont: $font5;
+$bodyFont: $font6;
 
 $shadow1: 0px 1px 5px grey;
 $shadow2: 0px 1px 5px $textColor1;

@@ -6,15 +6,17 @@
 
 #web-nav-bar {
     color: white;
+    // margin-right: 40%;
+
 }
 
 @media only screen and (min-width: $size2) {
     .web-nav {
         display: flex;
-        min-width: 20%;
-        // margin-left: 4%;
+        min-width: 285px;
+        margin-left: 4%;
         margin-right: auto;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
         button {
@@ -22,8 +24,12 @@
             // border: none;
             box-shadow: none;
             font-family: $font1;
-            font-size: 1em;
+            font-size: 2vh;
             text-transform: lowercase;
+
+            &:hover {
+                background: $baseGreen;
+            }
         }
     }
 }

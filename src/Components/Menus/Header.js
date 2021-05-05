@@ -33,7 +33,7 @@ const Header = ({ mobile }) => {
 
     const headerStyle = {
         // background: mobile && '#5D76A9',
-        background: mobile ? primary : location.pathname === '/' ? "transparent" : location.pathname === '/customize' ? altBlue : primary,
+        background: mobile ? primary : location.pathname === '/' ? "linear-gradient(to top, transparent,  rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8))" : location.pathname === '/customize' ? altBlue : primary,
 
         // boxShadow: location.pathname === "/" || location.pathname === "/customize" ? "none" : null,
     }

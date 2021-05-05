@@ -25,7 +25,7 @@ export default Reviews;
 const Review = ({ children }) => {
     return <div className="review">
         {children}
-        <div>
+        <div className="stars">
             <AiFillStar color={"#FFED67"} />
             <AiFillStar color={"#FFED67"} />
             <AiFillStar color={"#FFED67"} />

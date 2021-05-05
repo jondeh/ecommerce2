@@ -9,22 +9,22 @@ import {newColors} from '../data/variables';
 
 export const pageSections = [
     {
-        objType: <h2 style={{color: newColors[9]}}>Plug & <span style={{color: newColors[4]}}>Spray</span></h2>,
-        text: <p style={{color: newColors[5]}}>No guesswork.  No measuring.  <span style={{color: newColors[9]}}>Custom</span> pest prescriptions. Ready out-of-the-box to treat your home like a pro. <br></br><br></br>With Jitterbox, you are ready to <span style={{color: newColors[9]}}>treat your home like a pro.</span></p>,
+        objType: <h2 style={{color: newColors[9]}}>Plug & <span style={{color: newColors[4]}}>Spray.</span></h2>,
+        text: <p style={{color: newColors[5], fontWeight: "700"}}>No guesswork.  No measuring. <br></br> <span style={{color: newColors[9], fontWeight: "800"}}>Custom</span> pest prescriptions. <br></br><br></br>With Jitterbox you are ready to <br></br> <span style={{color: newColors[9], fontWeight: "800"}}>treat your home like a pro.</span></p>,
         image: grass,
         imageAlt: "Created for you",
         button: ["How it works", "/how-to"],
     },
     {
-        objType: <h2 style={{color: newColors[9]}}>Professional doses.<br></br><span style={{color: newColors[7], size: "39px"}}>DIY prices.</span></h2>,
-        text: <p style={{color: newColors[6]}}><span style={{color: newColors[9]}}>Stop paying $500 for pest control.</span><br></br><br></br>Built with the <span style={{color: newColors[9]}}>best products used by pros,</span> your plan is delivered to your doorstep, starting at <span style={{color: newColors[9]}}>just $12/</span>mo.</p>,
+        objType: <h2 style={{color: newColors[9], fontSize: "6vh"}}>Professional doses.<br></br><span style={{color: newColors[7], fontSize: "1.1em"}}>DIY prices.</span></h2>,
+        text: <p style={{color: newColors[6], fontWeight: "700"}}><span style={{color: newColors[9], fontWeight: "800"}}>Stop paying $500 for pest control.</span><br></br><br></br>Built with the <span style={{color: newColors[9], fontWeight: "800"}}>best products used by pros,</span> your plan is delivered to your doorstep, starting at <span style={{color: newColors[9], fontWeight: "800"}}>just $12/</span>mo.</p>,
         image: stockBox,
         imageAlt: "Expert instruction with every box",
         button: ["What we use", "/how-to"],
     }, 
     {
-        objType: <h2 style={{color: "white"}}><span style={{color: newColors[9]}}>Expert</span> know-how</h2>,
-        text: <p style={{color: "white"}}><strong>We're in this with you.</strong><br></br><br></br> Get expert views, How-To's, and pro tips for the worst pests that crawl your way with Jitterbox Tips.</p>,
+        objType: <h2 style={{fontSize: "6.5vh", color: "white"}}><span style={{fontSize: "1.1em", color: newColors[9]}}>Expert</span> <br></br>know-how.</h2>,
+        text: <p style={{color: "white", fontWeight: "700"}}>Get expert instructions, How-To's, <br></br>and pro tips for the worst pests that<br></br> crawl your way with <span style={{color: newColors[9], fontWeight: "800"}}>Jitterbox Tips.</span></p>,
         image: stockGardening,
         imageAlt: "Customized to your needs",
         button: ["Jitterbox Tips", "/how-to"],
