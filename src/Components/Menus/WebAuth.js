@@ -47,7 +47,8 @@ const WebAuth = () => {
 
     const handleSeeMyPlan = () => {
         handleLeave();
-        push('/customize');
+        user ? push('/dashboard') : push('/customize'); 
+        
     }
 
     const handleLogout = () => {

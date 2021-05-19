@@ -36,7 +36,7 @@ const Customize = () => {
           addressCity, setAddressCity,
           surveyNum, setSurveyNum,
           farthestIndex,
-          latLng,
+          customLatLng,
           handleNavClick,
           sprayerInfo, setSprayerInfo,
         } = useContext(CustomContext);
@@ -92,7 +92,7 @@ const Customize = () => {
         <HomeQuestion {...{ homeAnswer, setHomeAnswer, handleClick }} />
       ),
       description: <p>Next, a little bit about your <strong>house</strong>.</p>,
-      info: <HouseData {...{latLng}}/> ,
+      info: <HouseData {...{customLatLng}}/> ,
     },
     {
       component: (

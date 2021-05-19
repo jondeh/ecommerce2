@@ -12,6 +12,7 @@ import Register from './Components/Pages/Register';
 // import Test from './Components/Test';
 import HowTo from './Components/Pages/HowTo';
 import Dashboard from './Components/Pages/Dashboard';
+import Tips from './Components/Pages/Tips';
 
 export default (
     <Switch>
@@ -26,5 +27,6 @@ export default (
         {/* <Route exact path="/test" component={ Test } /> */}
         <Route exact path="/how-to" component={ HowTo } />
         <Route exact path="/dashboard" component={ Dashboard } />
+        <Route exact path="/tips" component={ Tips } />
     </Switch>
 )

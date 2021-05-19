@@ -3,7 +3,7 @@ import '../../SCSS/ScheduleSection.scss';
 import {AiFillInfoCircle} from 'react-icons/ai';
 import {BsInfoCircle} from 'react-icons/bs';
 
-const ScheduleSection = ({ boxName, boxDate, boxItems, boxImage }) => {
+const ScheduleSection = ({ boxName, boxDate, boxItems, boxImage, i }) => {
     // console.log("ScheduleSection Props:", boxName, boxItems, boxDate);
 
     const mappedItems = boxItems.map((item, i) => {
@@ -25,7 +25,7 @@ const ScheduleSection = ({ boxName, boxDate, boxItems, boxImage }) => {
     })
 
     return (
-        <div className="section-container">
+        <div className="section-container" id={`section-${i}`}>
             <div className="section-header">
                 <div className="box-name">
                     <img src={boxImage} />

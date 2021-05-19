@@ -15,6 +15,8 @@ export const UserProvider = ({ children }) => {
     sprayerAnswer: null,
   })
   const [emailAnswer, setEmailAnswer] = useState(null);
+  const [userLatLng, setUserLatLng] = useState({lat: 40.4593505, lng: -111.7574137});
+  console.log("userLatLng: ", userLatLng)
 
   useEffect(() => {
     const json = localStorage.getItem("user");
@@ -93,6 +95,7 @@ export const UserProvider = ({ children }) => {
         setAnswers,
         emailAnswer,
         setEmailAnswer,
+        userLatLng, setUserLatLng
         // getUser,
 
       }}

@@ -24,33 +24,15 @@
     
     .forecast {
         width: 450px;
-        height: 780px;
+        height: 750px;
         position: relative;
-        background: transparent;
+        background: white;
         border-radius: 15px;
         overflow: hidden;
-        display: flex;
-        // justify-content: center;
-        // align-items: center;
-        .forecast-circle {
-            box-shadow: $shadow1;
-            position: relative;
-            height: 70%;
-            width: 70%;
-            border-radius: 50%;
-            overflow: hidden;
-        }
+        box-shadow: $shadow1;
     }
-    
+
     #weather-forecast {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 600px;
-        
-        height: 600px;
-        background: linear-gradient(to top left, #5d76a99f, whitesmoke, whitesmoke);
-        border-radius: 50%;
         .forecast-top {
             height: 35%;
             position: relative;
@@ -60,51 +42,6 @@
             display: grid;
             grid-template-rows: 1.3fr 1fr 1fr 1fr 1fr;
         }
-        img {
-            position: absolute;
-            height: 7vh;
-        }
-        #weather-icon1 {
-            right: 10px;
-            z-index: 3;
-            transform: translate(-80%, 350%);
-        }
-        #weather-icon2 {
-            right: 10px;
-            z-index: 3;
-            transform: translate(-20%, 200%);
-            opacity: 80%;
-        }
-        #weather-icon3 {
-            right: 10px;
-            z-index: 3;
-            opacity: 55%;
-
-        }
-        #weather-icon4 {
-            transform: translate(-20%, -200%);
-            right: 10px;
-            z-index: 3;
-            opacity: 40%;
-
-            
-        }
-        #weather-icon5 {
-            transform: translate(-80%, -350%);
-            right: 10px;
-            z-index: 3;
-            opacity: 20%;
-
-        }
-        // #weather-icon6 {
-        //     right: 10px;
-        //     z-index: 3;
-        // }
-        // #weather-icon7 {
-        //     right: 10px;
-        //     z-index: 3;
-        // }
-
     }
 
     .forecast-row {

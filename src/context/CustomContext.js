@@ -17,7 +17,7 @@ export const CustomProvider = ({ children }) => {
   const [farthestIndex, setFarthestIndex] = useState(0);
   const [propData, setPropData] = useState(null);
   const [homeLoad, setHomeLoad] = useState(false);
-  const [latLng, setLatLng] = useState(null);
+  const [customLatLng, setCustomLatLng] = useState(null);
   const [address, setAddress] = useState("");
   const [didAPICallFail, setDidAPICallFail] = useState(false);
   const [perimeter, setPerimeter] = useState(0);
@@ -68,8 +68,10 @@ export const CustomProvider = ({ children }) => {
       // console.log("region", region);
       let url = `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/basicprofile?address1=${streetAddress}&address2=${region}`;
 
+        // todo MOVE API KEY TO SERVER INDEX.JS
+        
       let headers = {
-        'apikey': '3e6d99be50758186ec9a3ed0b3bbb25e',
+        'apikey': 'c3b2ce170cfbe102db1faa460b578a30',
         'accept': 'application/json'
       }
 
@@ -158,8 +160,6 @@ const handleNavClick = (index) => {
   }
 };
 
-console.log("CONTEXT LATLNG: ", latLng)
-
   return (
     <CustomContext.Provider
       value={{
@@ -177,7 +177,7 @@ console.log("CONTEXT LATLNG: ", latLng)
         propData, setPropData,
         getPropData,
         homeLoad, setHomeLoad,
-        latLng, setLatLng,
+        customLatLng, setCustomLatLng,
         address, setAddress,
         didAPICallFail,
         perimeter, setPerimeter,

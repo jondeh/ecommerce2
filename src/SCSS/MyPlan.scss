@@ -19,7 +19,6 @@
         color: $textColor1;
     }
     .my-plan-box-container {
-        border: 2px solid purple;
         height: 75vh;
         width: 100%;
         display: flex;
@@ -80,20 +79,31 @@
 .my-plan-schedule-container {
     border-top: 2px solid white;
     h3 {
-        margin-top: 2vh;
-        margin-bottom: 2vh;
+        // margin-top: 2vh;
+        // margin-bottom: 2vh;
+    }
+    .schedule-header {
+        background: green;
+        height: 7vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px 15px 0px 0px;
+        border: 2px solid white;
+        box-shadow: $shadow1;
     }
 }
 
 @media only screen and (min-width: $size2) {
     .my-plan-container {
-        // border: 3px solid blue;
+        border: 3px solid blue;
         font-family: $font1;
         flex-direction: row-reverse;
         justify-content: space-evenly;
         width: 100%;    
         align-items: flex-start; 
         padding-top: 8vh;
+        padding: 8vh 10% 3vh 10%;
 
         .my-plan-box-container {
             // border: 2px dotted green;
@@ -124,7 +134,6 @@
         }
 
         .my-plan-schedule-container {
-            // border: 2px solid green;
             min-height: 90%;
             width: 60%;
         }

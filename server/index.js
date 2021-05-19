@@ -1,5 +1,6 @@
 require("dotenv").config({ path: __dirname + "/../.env" });
 const express = require("express"),
+    cors = require("cors"),
     session = require("express-session"),
     massive = require("massive"),
     app = express(),
@@ -11,9 +12,11 @@ const express = require("express"),
 
 const authCtrl = require("./controllers/authController");
 const payCtrl = require("./controllers/payController");
+const dashCtrl = require("./controllers/dashController");
 
 // Middleware
 app.use(express.json());
+app.use(cors())
 
 app.use(
   session({
@@ -26,9 +29,10 @@ app.use(
 
 app.use(express.static(path.join(__dirname, '../build')));
 
-app.get('/*', (req, res) => {
-   res.sendFile(path.join(__dirname, '../build', 'index.html'));
- });
+// todo add back in for production
+// app.get('/*', (req, res) => {
+//    res.sendFile(path.join(__dirname, '../build', 'index.html'));
+//  });
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -58,3 +62,7 @@ app.post("/auth/user", authCtrl.register);
 // app.post('/pay', payCtrl.pay);
 // app.get('/secret', payCtrl.secret);
 app.post('/create-checkout-session', payCtrl.session);
+
+// Dash Endpoints
+
+app.get('/get-day-weather/:lat/:lng', dashCtrl.getDayWeather);

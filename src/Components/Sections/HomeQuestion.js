@@ -12,9 +12,9 @@ import HouseNumbers from '../Utility/HouseNumbers';
 import HouseData from '../Utility/HouseData';
 
 const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
-  const { getPropData, setHomeLoad, latLng, setLatLng, address, setAddress, didAPICallFail, propData, perimeter, squareFeet } = useContext(CustomContext);
+  const { getPropData, setHomeLoad, latLng, setCustomLatLng, address, setAddress, didAPICallFail, propData, perimeter, squareFeet } = useContext(CustomContext);
   // const [address, setAddress] = useState(homeAnswer && homeAnswer[0]);
-  // const [latLng, setLatLng] = useState(null);
+  // const [latLng, setCustomLatLng] = useState(null);
   const [editAddress, setEditAddress] = useState("");
   const [size, setSize] = useState("");
 
@@ -85,7 +85,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
             <Button onClick={handleEditClick} variant="contained"><FiEdit3 className="edit-icon" />{address}</Button> : 
             <div className="add-input-container">
                 {/* <h3>What is your home address?</h3> */}
-                <GoogleFind {...{setAddress, setLatLng}}/>
+                <GoogleFind {...{setAddress, setCustomLatLng}}/>
             </div>
         }
 

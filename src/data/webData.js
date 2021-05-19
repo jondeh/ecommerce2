@@ -27,7 +27,7 @@ export const pageSections = [
         text: <p style={{color: "white", fontWeight: "700"}}>Get expert instructions, How-To's, <br></br>and pro tips for the worst pests that<br></br> crawl your way with <span style={{color: newColors[9], fontWeight: "800"}}>Jitterbox Tips.</span></p>,
         image: stockGardening,
         imageAlt: "Customized to your needs",
-        button: ["Jitterbox Tips", "/how-to"],
+        button: ["Jitterbox Tips", "/tips"],
     }, 
 ];
 

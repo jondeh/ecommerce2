@@ -6,44 +6,39 @@ import customMarker from '../../data/media/place-marker.svg';
 import '../../SCSS/Google.scss';
 import { colors } from '../../data/variables';
 import { CustomContext } from '../../context/CustomContext';
+import { UserContext } from '../../context/UserContext';
 
 const { primary, secondary, accent, textColor, altBlue} = colors;
 
 export function MapContainer(props) {
-  const { latLng } = useContext(CustomContext);
+  const { customLatLng } = useContext(CustomContext);
+  const { userLatLng } = useContext(UserContext)
+
+  let latLng = customLatLng ? customLatLng : userLatLng ? userLatLng : null
+  latLng = {lat: 40.4593505, lng: -111.7574137}
 
     const [showingInfoWindow, setShowingInfoWindow] = useState(false);
     const [activeMarker, setActiveMarker] = useState({});
     const [selectedPlace, setSelectedPlace] = useState({});
     const [mapCenter, setMapCenter] = useState(latLng);
 
+    console.log("props.type", props.type)
     useEffect(() => {
       setMapCenter(latLng);
     }, [latLng])
-  
-
-  // const onMarkerClick = (props, marker, e) => {
-  //   setSelectedPlace(props);
-  //   setActiveMarker(marker);
-  // }
-
-  // const onMapClicked = (props) => {
-  //   if (showingInfoWindow) {
-  //     setShowingInfoWindow(false);
-  //     setActiveMarker(null);
-  //   }
-  // };
- 
-  // const handleSelect = address => {
-  //   geocodeByAddress(address)
-  //     .then(results => getLatLng(results[0]))
-  //     .then(latLng => console.log('Success', latLng))
-  //     .catch(error => console.error('Error', error));
-  // };
 
   const style = {
     height: "100%",
-    width: "90%",
+    width: "100%",
+    borderRadius: "15px",
+    // border: `.5em solid ${altBlue}`,
+    border: `.1em solid whitesmoke`,
+    boxShadow: `0px 1px 5px grey`,
+  }
+
+  const dashStyle = {
+    height: "100%",
+    width: "100%",
     borderRadius: "15px",
     // border: `.5em solid ${altBlue}`,
     border: `.1em solid whitesmoke`,
@@ -60,7 +55,7 @@ export function MapContainer(props) {
         <div className="google-map">
         <Map
             style={style}
-            containerStyle={containerStyle}
+            containerStyle={props.type === "custom" ? containerStyle : dashStyle}
             zoom={19}
             draggable={false}
             mapType={'satellite'}
@@ -82,7 +77,8 @@ export function MapContainer(props) {
             google={props.google}
             // onClick={onMapClicked}
         >
-            <Marker
+          {
+            props.type === "custom" && <Marker
             position={{
                 lat: mapCenter.lat,
                 lng: mapCenter.lng,
@@ -96,7 +92,9 @@ export function MapContainer(props) {
                 // scaledSize: new google.maps.Size(64,64)
             }}
             />
-            <Circle
+          }
+          {
+            props.type === "custom" && <Circle
             radius={35}
             center={{
                 lat: mapCenter.lat,
@@ -111,6 +109,7 @@ export function MapContainer(props) {
             fillColor={accent}
             fillOpacity={0.4}
             />
+          }
 
             <InfoWindow
             marker={activeMarker}

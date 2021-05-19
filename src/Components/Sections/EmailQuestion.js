@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import '../../SCSS/EmailQuestion.scss';
 import { AppContext } from '../../context/AppContext';
 import { UserContext } from '../../context/UserContext';
+import { CustomContext } from '../../context/CustomContext';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { HiOutlineMailOpen } from 'react-icons/hi';
@@ -12,13 +13,15 @@ const { primary, secondary, accent, textColor} = colors;
 const EmailQuestion = () => {
     const { push } = useHistory();
     const { emailQuestion, setGetAnswers, setIsSurvey } = useContext(AppContext);
-    const { register } = useContext(UserContext);
+    const { latLng } = useContext(CustomContext);
+    const { register,  setUserLatLng} = useContext(UserContext);
     const [emailInput, setEmailInput] = useState('');
 
     const handleClick = () => {
         if (emailInput.includes("@")) {
             register({email: emailInput, password: "password"}, "my-plan")
             // setIsSurvey(false)
+            setUserLatLng(latLng)
             setGetAnswers(null)
             setEmailInput('')
             // push('/my-plan')

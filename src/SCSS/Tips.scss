@@ -1,0 +1,32 @@
+@import './variables.scss';
+
+
+
+@media only screen and (min-width: $size2) {
+
+    .tips-container {
+        margin-top: $headerHeight;
+        min-height: calc(88vh - #{$headerHeight});
+        box-sizing: border-box;
+        padding-left: 25vh;
+        padding-right: 25vh;
+        padding-top: 3vh;
+        background: white;
+    }
+    
+    .tips-grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        justify-content: space-evenly;
+        margin-top: 3vh;
+    }
+    
+    .post-square {
+        height: 250px;
+        width: 250px;
+        // margin-right: 3vh;
+        margin-bottom: 3vh;
+        background: $baseGreen;
+    }
+}

@@ -56,31 +56,16 @@ const Forecast = () => {
       </div>
     )
   })
-  
-  const weatherIcons = [...Array(7)].map((e,i) => {
-    let idNum = i + 1
-
-    return (
-      <img
-        src={sunPic}
-        id={`weather-icon${idNum}`}
-        className="weather-circle"
-        />
-    )
-  })
 
   return (
     <div className='forecast' id='weather-forecast'>
-      {weatherIcons}
-      <div className='forecast-circle'>
+      <div className='forecast-top'>
         <GoogleMap {...{ type: 'dash' }} />
       </div>
-      {/* <div className='forecast-top'>
-      </div> */}
-      {/* <div className='forecast-bottom'>
-        <WeatherBoard /> */}
-        {/* {mappedData} */}
-      {/* </div> */}
+      <div className='forecast-bottom'>
+        <WeatherBoard />
+        {mappedData}
+      </div>
     </div>
   )
 }

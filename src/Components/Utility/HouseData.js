@@ -6,20 +6,19 @@ import HouseLoader from '../Utility/loaders/HouseLoader';
 import HouseNumbers from './HouseNumbers';
 import SurveyInfo from '../Utility/SurveyInfo';
 
-const HouseData = ({ latLng }) => {
+const HouseData = ({ customLatLng }) => {
     const { propData } = useContext(CustomContext);
-    const [coordinates, setCoordinates] = useState(latLng);
+    const [coordinates, setCoordinates] = useState(customLatLng);
 
     useEffect(() => {
-        console.log("I'M THE MAP: ", latLng)
-        setCoordinates(latLng);
-    }, [latLng])
+        setCoordinates(customLatLng);
+    }, [customLatLng])
 
     return (
         
         <div id="house-data">
             {
-                (propData && latLng) ? <React.Fragment>
+                (propData && customLatLng) ? <React.Fragment>
 
                     <div className="google-container">
 
@@ -28,7 +27,7 @@ const HouseData = ({ latLng }) => {
                             <p className="number"><span> {propData && propData[0].sizeData.grossSize}</span> sq ft</p>
                         </div> */}
                         
-                        <GoogleMap {...{coordinates}} />
+                        <GoogleMap {...{type: "custom", coordinates}} />
                     </div>
 
                 </React.Fragment> : <SurveyInfo {...{type: "home"}}/>
