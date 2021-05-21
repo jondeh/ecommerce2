@@ -127,7 +127,7 @@ const WeatherBoard = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:6233/get-open-weather/${customLatLng ? customLatLng.lat : userLatLng?.lat}/${customLatLng ? customLatLng.lng : userLatLng?.lng}`
+        `/get-open-weather/${customLatLng ? customLatLng.lat : userLatLng?.lat}/${customLatLng ? customLatLng.lng : userLatLng?.lng}`
       )
       .then(res => setWeather(res.data))
       .catch(err => console.log('err: ', err))
