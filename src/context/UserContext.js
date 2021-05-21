@@ -23,14 +23,15 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const json = localStorage.getItem("user");
-    const lat = localStorage.getItem("house_lat")
-    const lng = localStorage.getItem("house_lng")
+    // const lat = localStorage.getItem("house_lat")
+    // const lng = localStorage.getItem("house_lng")
     // console.log("json-2", json)
-    const savedLat = JSON.parse(lat)
-    const savedLng = JSON.parse(lng)
-    if (savedLat && savedLng) {
-      setUserLatLng({lat: savedLat, lng: savedLng})
-    }
+    // console.log("lat: ", lat)
+    // const savedLat = JSON.parse(lat)
+    // const savedLng = JSON.parse(lng)
+    // if (savedLat && savedLng) {
+    //   setUserLatLng({lat: savedLat, lng: savedLng})
+    // }
     const savedUser = JSON.parse(json);
     if (savedUser) {
       setUser(savedUser)
@@ -43,13 +44,13 @@ export const UserProvider = ({ children }) => {
     localStorage.setItem("user", json)
   }, [user]);
 
-  useEffect(() => {
-    const lat = JSON.stringify(userLatLng?.lat)
-    const lng = JSON.stringify(userLatLng?.lng)
-    // console.log("json-1", json)
-    localStorage.setItem("house_lat", lat)
-    localStorage.setItem("house_lng", lng)
-  }, [userLatLng]);
+  // useEffect(() => {
+  //   const lat = JSON.stringify(userLatLng?.lat)
+  //   const lng = JSON.stringify(userLatLng?.lng)
+  //   // console.log("json-1", json)
+  //   localStorage.setItem("house_lat", lat)
+  //   localStorage.setItem("house_lng", lng)
+  // }, [userLatLng]);
 
   const login = (body) => {
       // console.log("body", body)

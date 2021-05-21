@@ -125,13 +125,20 @@ const WeatherBoard = () => {
   console.log('weather: ', weather)
   console.log({ userLatLng })
   console.log({ customLatLng })
+
+const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
+
   useEffect(() => {
-    axios
-      .get(
-        `/get-open-weather/${customLatLng ? customLatLng.lat : userLatLng?.lat}/${customLatLng ? customLatLng.lng : userLatLng?.lng}`
-      )
-      .then(res => setWeather(res.data))
-      .catch(err => console.log('err: ', err))
+    // axios
+    //   .get(
+    //     `/get-open-weather/${customLatLng ? customLatLng.lat : userLatLng?.lat}/${customLatLng ? customLatLng.lng : userLatLng?.lng}`
+    //   )
+    //   .then(res => setWeather(res.data))
+    //   .catch(err => console.log('err: ', err))
+
+      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${customLatLng ? customLatLng.lat : userLatLng.lat}&lon=${customLatLng ? customLatLng.lng : userLatLng.lng}&units=imperial&appid=${openWeatherAPI}`).then(res => setWeather(res.data))
+
+
   }, [])
   return (
     <div className='weather-board'>
@@ -150,7 +157,7 @@ const WeatherBoard = () => {
           <span className="current-temp">{Math.round(weather.current.temp)}&#176;</span>
           <div className='flex-row precip'>
             <IoWaterSharp />
-            <span>{weather.daily[0].pop * 100}%</span>
+            <span>{Math.round(weather.daily[0].pop * 100)}%</span>
           </div>
           <div className='flex-row wind'>
             <FiWind />
