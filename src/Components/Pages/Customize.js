@@ -126,10 +126,10 @@ const Customize = () => {
           surveyNum, setSurveyNum,
           }}>
       <div className="left-column">
-        <div>{(whoAnswer && farthestIndex >= 1) && <span onClick={() => handleNavClick(0)}>{whoAnswer}</span>}</div>
-        <div>{(homeAnswer && farthestIndex >= 2) && <span onClick={() => handleNavClick(1)}>{homeAnswer}</span>}</div>
-        <div>{farthestIndex >= 3 && <span onClick={() => handleNavClick(2)}>{farthestIndex >= 3 && bugAnswer}</span>}</div>
-        <div>{(sprayerInfo && (sprayerAnswer || sprayerAnswer === 0)) && <span onClick={() => handleNavClick(3)}>{sprayerAnswer}</span>}</div>
+        <div>{(whoAnswer && farthestIndex >= 1) && <span onClick={() => handleNavClick(0)}>Kids and pets.</span>}</div>
+        <div>{(homeAnswer && farthestIndex >= 2) && <span onClick={() => handleNavClick(1)}>Address.</span>}</div>
+        <div>{farthestIndex >= 3 && <span onClick={() => handleNavClick(2)}>{farthestIndex >= 3 && "Pests in your area."}</span>}</div>
+        <div>{(sprayerInfo && (sprayerAnswer || sprayerAnswer === 0)) && <span onClick={() => handleNavClick(3)}>Sprayer.</span>}</div>
         
       </div>
         <CustomWhere {...{surveyPosition, surveyNum}}/>

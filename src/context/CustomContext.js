@@ -6,7 +6,7 @@ import axios from 'axios';
 export const CustomContext = createContext(null);
 export const CustomProvider = ({ children }) => {
   const location = useLocation();
-  const [whoAnswer, setWhoAnswer] = useState(null);
+  const [whoAnswer, setWhoAnswer] = useState("no");
   const [whoPets, setWhoPets] = useState([])
   const [homeAnswer, setHomeAnswer] = useState(null);
   const [bugAnswer, setBugAnswer] = useState(null);
@@ -17,7 +17,7 @@ export const CustomProvider = ({ children }) => {
   const [farthestIndex, setFarthestIndex] = useState(0);
   const [propData, setPropData] = useState(null);
   const [homeLoad, setHomeLoad] = useState(false);
-  const [customLatLng, setCustomLatLng] = useState(null);
+  const [customLatLng, setCustomLatLng] = useState({lat: '', lng: ''});
   const [address, setAddress] = useState("");
   const [didAPICallFail, setDidAPICallFail] = useState(false);
   const [perimeter, setPerimeter] = useState(0);
@@ -88,7 +88,8 @@ export const CustomProvider = ({ children }) => {
           };
         });
         setSquareFeet(Math.ceil(propData[0].sizeData.grossSize))
-        setPerimeter(Math.ceil((Math.sqrt(propData[0].sizeData.groundFloorSize)*4)*1.1))
+        console.log("propData: ", propData[0])
+        setPerimeter(Math.ceil((Math.sqrt(propData[0].sizeData.groundFloorSize + propData[0].parkingData.prkgSize)*4)*1.1))
         setHomeAnswer(address)
         setPropData(propData)
         setHomeLoad(false);
@@ -129,7 +130,7 @@ export const CustomProvider = ({ children }) => {
     // console.log("HIT 2", surveyNum, farthestIndex)
     setSurveyNum(0);
     setFarthestIndex(0);
-    setWhoAnswer(null);
+    setWhoAnswer("no");
     setWhoPets([]);
     setHomeAnswer(null);
     setBugAnswer(null);

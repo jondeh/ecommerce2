@@ -13,6 +13,7 @@ import Register from './Components/Pages/Register';
 import HowTo from './Components/Pages/HowTo';
 import Dashboard from './Components/Pages/Dashboard';
 import Tips from './Components/Pages/Tips';
+import DashMain from './Components/Sections/DashMain';
 
 export default (
     <Switch>
@@ -28,5 +29,6 @@ export default (
         <Route exact path="/how-to" component={ HowTo } />
         <Route exact path="/dashboard" component={ Dashboard } />
         <Route exact path="/tips" component={ Tips } />
+        <Route exact path="/dash-main" component={ DashMain } />
     </Switch>
 )

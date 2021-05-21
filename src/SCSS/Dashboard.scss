@@ -1,5 +1,16 @@
 @import './variables.scss';
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 @media only screen and (min-width: $size2) {
     .dashboard-container {
         display: flex;
@@ -9,61 +20,193 @@
         background: whitesmoke;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
+        padding-right: 2%;
+        // height: auto;
+        
     }
     
-    .forecast-container {
-        display: flex;
-        flex-direction: row;
+    .dashboard-body {
+        display: grid;
+        grid-template-columns: 30% 45% 25%;
+        // flex-direction: row;
         width: 100%;
-        justify-content: space-evenly;
+        height: 100%;
         height: calc(100vh - #{$headerHeight});
-        align-items: center;
-        padding-bottom: .5%;
-        padding: 0 9% .5% 9%;
+        justify-content: space-evenly;
+        // height: calc(100vh - #{$headerHeight} - #{$headerHeight});
+        // align-items: center;
+        // padding-bottom: .5%;
+        // padding: 0 9% .5% 9%;
+        
+        .body-col {
+            width: 100%;
+            height: 100%;
+        height: calc(100vh - #{$headerHeight});
+
+        }
+        
     }
     
     .forecast {
-        width: 450px;
-        height: 780px;
+        box-sizing: border-box;
+        width: 100%;
         position: relative;
         background: transparent;
         border-radius: 15px;
         overflow: hidden;
         display: flex;
+        height: 100%;
         // justify-content: center;
         // align-items: center;
-        .forecast-circle {
-            box-shadow: $shadow1;
-            position: relative;
-            height: 70%;
-            width: 70%;
-            border-radius: 50%;
-            overflow: hidden;
-        }
     }
     
     #weather-forecast {
+        // height: auto;
+        width: 100%;
+        // padding-top: 100%;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
-        width: 600px;
-        
-        height: 600px;
-        background: linear-gradient(to top left, #5d76a99f, whitesmoke, whitesmoke);
-        border-radius: 50%;
+        // border-radius: 50%;
+        background: #F5F5F5;
+        position: relative;
+        z-index: 2;
         .forecast-top {
-            height: 35%;
+            height: 50%;
+            // border: 1px solid blue;
+            width: 100%;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5%;
+            // .blue-circle {       // todo - make circle again.
+            //     position: absolute;
+            //     height: auto;
+            //     width: 90%;
+            //     padding-top: 90%;
+            //     background: linear-gradient(to top left, #5d76a99f, #5d76a99f, whitesmoke, whitesmoke);
+            // border-radius: 50%;
+            // }
+            // .forecast-circle {
+            //     box-shadow: $shadow1;
+            //     position: relative;
+            //     height: auto;
+            //     width: 70%;
+            //     padding-top: 70%;
+            //     // border-radius: 50%;
+            //     overflow: hidden;
+            //     border-radius: 50%;
+            // }
+            .forecast-circle {  // todo - delete when circle
+                // border: 1px solid blue;
+                height: 100%;
+                width: 100%;
+                // padding: 5%;
+                position: relative;
+            }
         }
         .forecast-bottom {
-            height: 65%;
-            display: grid;
-            grid-template-rows: 1.3fr 1fr 1fr 1fr 1fr;
+            height: 50%;
+            max-height: 50%;
+            padding: 10px;
+            padding-top: 0px;
+            z-index: 3;
+            width: 85%;
+            margin-left: 5%;
+            .forecast-bottom-container {
+                display: grid;
+                grid-template-rows: 1.3fr 1fr 1fr 1fr 1fr;
+                background: white;
+                box-shadow: $shadow1;
+                z-index: 3;
+                padding-bottom: 8px;
+                .forecast-row {
+                    display: flex;
+                    align-items: center;
+                    padding: 0px 10px;
+                    .forecast-icon {
+                        height: auto;
+                        width: 20%;
+                    }
+                    .forecast-text {
+                        background: #F5F5F5;    
+                        width: 100%;
+                        font-size: 1.9vh;
+                        height: 90%;
+                        text-align: start;
+                        padding: 12px 15px;
+                        display: flex;
+                        align-items: center;
+
+                        h6 {
+                            margin: 0;
+                            font-size: 2vh;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            
+                .weather-board {
+                    // max-height: 25%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    // padding: 3px 0px;
+                    padding-right: 15px;
+                    .weather-icon {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        margin-top: -4%;
+                    }
+                    .min-max {
+                        font-size: .7em;
+                        margin-top: -12px;
+                        // margin-bottom: 5px;
+                    }
+                    .current-temp {
+                        font-weight: 700;
+                        font-size: 1.3em;
+                        margin-left: -5px;
+                    }
+                    .precip {
+                        align-items: center;
+                        span {
+                            font-size: .9em;
+                        }
+                        svg {
+                            font-size: 4vh;
+                            fill: #4b9cd391;
+                        }
+                    }
+                    .wind {
+                        align-items: center;
+                        svg {
+                            font-size: 1.15em;
+                        }
+                        span {
+                            font-size: .9em;
+                        }
+                    }
+                    .img-container {
+                        height: 70%;
+                        border: 1px solid black;
+                    }
+                    img {
+                        height: 7vh;
+                        // background: grey;
+                        transform: scale(1.5);
+                    }
+                }
+            }
         }
-        img {
-            position: absolute;
-            height: 7vh;
-        }
+        // img {
+        //     position: absolute;
+        //     height: 7vh;
+        // }
         #weather-icon1 {
             right: 10px;
             z-index: 3;
@@ -96,45 +239,17 @@
             opacity: 20%;
 
         }
-        // #weather-icon6 {
-        //     right: 10px;
-        //     z-index: 3;
-        // }
-        // #weather-icon7 {
-        //     right: 10px;
-        //     z-index: 3;
-        // }
 
     }
 
-    .forecast-row {
-        display: flex;
-        align-items: center;
-        padding: 0px 10px;
-        .forecast-icon {
-            width: 50px;
-            height: 50px;
-            background: green;
-        }
-        .forecast-text {
-            // border: 1px solid purple;    
 
-        }
-    }
-
-    .weather-board {
-        // height: 25%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        img {
-            height: 70%;
-        }
-    }
 
     #next-forecast {
         display: flex;
         flex-direction: column;
+        margin-top: 5%;
+        box-shadow: $shadow1;
+        height: 95%;
         header {
             background: green;
             color: white;

@@ -3,7 +3,7 @@
 .header-container {
     // @include fadeInEase1();
     height: $headerHeight;
-    background: $baseBlue;
+    // background: $baseBlue;
     width: 100%;
     max-width: 100%;
     display: flex;
@@ -57,7 +57,8 @@
         color: white;
         padding: 0vh 7vw;
         align-items: center;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705));
-
+        // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705));
+        // box-shadow: $shadow1;
+        background: linear-gradient(to top, whitesmoke,  rgba(97, 147, 167, 0.2), rgba(97, 147, 167, 0.4), rgba(97, 147, 167, 0.6), rgba(97, 147, 167, 0.8));
     }
 }

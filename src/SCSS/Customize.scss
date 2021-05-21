@@ -3,7 +3,7 @@
 .customize-container {
     &-true {
         margin-top: $headerHeight;
-        min-height: calc(88vh - #{$headerHeight});
+        min-height: calc(100vh - #{$headerHeight} - #{$headerHeight});
         @include flexCenter();
         // @include fadeInEase3();
         // display: flex;
@@ -17,7 +17,7 @@
     }
     &-false {
         margin-top: $headerHeight;
-        min-height: calc(88vh - #{$headerHeight});
+        min-height: calc(100vh - #{$headerHeight} - #{$headerHeight});
         @include flexCenter();
         // @include fadeInEase3();
         position: relative;
@@ -30,7 +30,7 @@
 .questions-container {
     // border: 2px solid black;
     box-shadow: $shadow1;
-    height: calc((88vh - #{$headerHeight}) * .95);
+    height: calc((100vh - #{$headerHeight} - #{$headerHeight}) * .95);
     width: 95%;
     border-radius: 15px;
     background: white;

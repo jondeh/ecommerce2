@@ -15,7 +15,7 @@ module.exports = {
                     {price: priceId, quantity: 1},
                 ],
                 // success_url: "https://getjitterbox.com/success/{CHECKOUT_SESSION_ID}",
-                success_url: "https://getjitterbox.com/my-plan",
+                success_url: "https://getjitterbox.com/dashboard",
                 cancel_url: "https://getjitterbox.com/cart",
             });
     

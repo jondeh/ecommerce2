@@ -17,7 +17,8 @@ function App() {
 
   const appStyle = {
     // background: location.pathname === '/customize' ? "#B0C4DE" : null
-    background: location.pathname === '/customize' ? "#72A0C1" : "#B0C4DE"
+    background: location.pathname === '/customize' ? "#B0C4DE" : "#B0C4DE"
+    // background: "whitesmoke"
   }
 
   return (
@@ -28,7 +29,7 @@ function App() {
       <EmailQuestion />
       <AddOnQuestion />   
       { routes }
-      {(location.pathname !== '/customize') ? <Footer /> : <FooterHeader />}
+      {/* {(location.pathname !== '/customize') ? <Footer /> : <FooterHeader />} */}
       {/* <Footer /> */}
     </div>
   );

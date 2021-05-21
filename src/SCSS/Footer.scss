@@ -27,6 +27,9 @@
     width: 100%;
     @include flexCenter();
     transition: background-color 500ms ease;
+    background: linear-gradient(to bottom, whitesmoke,  rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+    background: skyblue;
+    background: linear-gradient(to bottom, whitesmoke,  rgba(97, 147, 167, 0.2), rgba(97, 147, 167, 0.4), rgba(97, 147, 167, 0.6), rgba(97, 147, 167, 0.8));
     // @include fadeInBackground();
 }
 
@@ -56,6 +59,7 @@
     
   .footer-container {
       height: 15vh;
+      height: $headerHeight;
       flex-direction: row;
       padding: 0 2%;
   }

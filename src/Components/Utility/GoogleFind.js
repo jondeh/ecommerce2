@@ -22,6 +22,8 @@ class LocationSearchInput extends React.Component {
     .then(async results => {
       let thisLatLng = await getLatLng(results[0]);
       this.props.setCustomLatLng(thisLatLng);
+      this.props.setUserLatLng(thisLatLng)
+      
       // return getLatLng(results[0])
     })
     // .then(latLng => {

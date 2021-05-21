@@ -66,3 +66,4 @@ app.post('/create-checkout-session', payCtrl.session);
 // Dash Endpoints
 
 app.get('/get-day-weather/:lat/:lng', dashCtrl.getDayWeather);
+app.get('/get-open-weather/:lat/:lng', dashCtrl.getOpenWeather);

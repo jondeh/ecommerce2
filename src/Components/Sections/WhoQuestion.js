@@ -9,6 +9,8 @@ const { primary, secondary, accent, textColor, altBlue} = colors;
 
 const WhoQuestion = ({  }) => {
     const { whoAnswer, setWhoAnswer } = useContext(CustomContext);
+
+    
     
     const whoOptions = [
         {text: "dogs", image: <GiSittingDog id="dogs" className="dog" color={altBlue} />},

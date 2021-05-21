@@ -142,7 +142,7 @@ $shadow6: 0px 1px 5px $baseGreen;
 $shadow7: 1px 2px 20px 0px grey;
 $shadow8: 0px -1px 5px grey;
 
-$headerHeight: 12vh;
+$headerHeight: 10.5vh;
 $boxHeight: 45vh;
 
 .open {
@@ -152,7 +152,7 @@ $boxHeight: 45vh;
 
 @mixin heightWithHeader() {
     margin-top: $headerHeight;
-    height: calc(88vh - #{$headerHeight});
+    height: calc(100vh - #{$headerHeight} - #{$headerHeight});
 }
 
 @keyframes fadeIn {

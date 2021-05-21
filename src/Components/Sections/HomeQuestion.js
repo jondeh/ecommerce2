@@ -6,6 +6,7 @@ import { Button } from "@material-ui/core";
 import GoogleFind from '../Utility/GoogleFind';
 import {FiEdit3} from 'react-icons/fi';
 import { CustomContext } from '../../context/CustomContext';
+import { UserContext } from '../../context/UserContext';
 import HouseNumbers from '../Utility/HouseNumbers';
 
 // To Do 
@@ -13,6 +14,7 @@ import HouseData from '../Utility/HouseData';
 
 const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
   const { getPropData, setHomeLoad, latLng, setCustomLatLng, address, setAddress, didAPICallFail, propData, perimeter, squareFeet } = useContext(CustomContext);
+  const { setUserLatLng } = useContext(UserContext);
   // const [address, setAddress] = useState(homeAnswer && homeAnswer[0]);
   // const [latLng, setCustomLatLng] = useState(null);
   const [editAddress, setEditAddress] = useState("");
@@ -85,7 +87,7 @@ const HomeQuestion = ({ homeAnswer, setHomeAnswer }) => {
             <Button onClick={handleEditClick} variant="contained"><FiEdit3 className="edit-icon" />{address}</Button> : 
             <div className="add-input-container">
                 {/* <h3>What is your home address?</h3> */}
-                <GoogleFind {...{setAddress, setCustomLatLng}}/>
+                <GoogleFind {...{setAddress, setCustomLatLng, setUserLatLng}}/>
             </div>
         }
 

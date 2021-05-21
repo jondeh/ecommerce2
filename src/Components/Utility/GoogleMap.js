@@ -14,8 +14,9 @@ export function MapContainer(props) {
   const { customLatLng } = useContext(CustomContext);
   const { userLatLng } = useContext(UserContext)
 
+  console.log({customLatLng}, {userLatLng})
   let latLng = customLatLng ? customLatLng : userLatLng ? userLatLng : null
-  latLng = {lat: 40.4593505, lng: -111.7574137}
+  // latLng = {lat: 40.4593505, lng: -111.7574137}
 
     const [showingInfoWindow, setShowingInfoWindow] = useState(false);
     const [activeMarker, setActiveMarker] = useState({});
@@ -43,6 +44,8 @@ export function MapContainer(props) {
     // border: `.5em solid ${altBlue}`,
     border: `.1em solid whitesmoke`,
     boxShadow: `0px 1px 5px grey`,
+    // position: 'absolute',        // todo - uncomment when circle
+    // transform: 'translateY(-100%)'
   }
 
   const containerStyle = {
@@ -103,11 +106,11 @@ export function MapContainer(props) {
             // onMouseover={() => console.log('mouseover')}
             // onClick={() => console.log('click')}
             // onMouseout={() => console.log('mouseout')}
-            strokeColor={primary}
+            strokeColor={"mediumseagreen"}
             strokeOpacity={.9}
             strokeWeight={5}
             fillColor={accent}
-            fillOpacity={0.4}
+            fillOpacity={0.2}
             />
           }
 
