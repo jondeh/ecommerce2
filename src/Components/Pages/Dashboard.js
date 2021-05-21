@@ -124,6 +124,7 @@ const WeatherBoard = () => {
   const { customLatLng } = useContext(CustomContext)
   console.log('weather: ', weather)
   console.log({ userLatLng })
+  console.log({ customLatLng })
   useEffect(() => {
     axios
       .get(
@@ -139,7 +140,7 @@ const WeatherBoard = () => {
         <>
           <div className='weather-icon'>
             <img
-              src={`http://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`}
+              src={`http://openweathermap.org/img/wn/${weather.current?.weather[0].icon}@2x.png`}
             />
             <span className="min-max">
               {Math.round(weather.daily[0].temp.max)}&#176;/
@@ -153,7 +154,7 @@ const WeatherBoard = () => {
           </div>
           <div className='flex-row wind'>
             <FiWind />
-            <span>&nbsp;{Math.round(weather.current.wind_speed)}mph</span>
+            <span>&nbsp;{Math.round(weather.current?.wind_speed)}mph</span>
           </div>
         </>
       )}
