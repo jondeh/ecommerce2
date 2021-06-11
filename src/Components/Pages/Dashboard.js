@@ -11,24 +11,30 @@ import { CustomContext } from '../../context/CustomContext'
 import { ErrorOutlineRounded } from '@material-ui/icons'
 import stockBox from '../../data/media/stock-box.jpg'
 import sunPic from '../../data/media/01-s.png'
-import DashMain from '../Sections/DashMain'
+import { DashProvider } from '../../context/DashContext'
+import { DashContext } from '../../context/DashContext'
+import DoughnutGraph from '../Utility/graphs/Doughnut'
+import MainModule from '../Sections/MainModule'
+// import DashMain from '../Sections/DashMain'
 
 const Dashboard = () => {
   return (
-    <div className='dashboard-container'>
-      <div className='dashboard-body'>
-        <div className='body-col'>
-          <WeatherForecast />
+    <DashProvider>
+      <div className='dashboard-container'>
+        <div className='dashboard-body'>
+          <div className='body-col'>
+            <WeatherForecast />
+          </div>
+          <div className='body-col mid'>
+            <DashMain />
+          </div>
+          <div className='body-col right'>
+            <NextForecast />
+          </div>
         </div>
-        <div className='body-col mid'>
-          <DashMain />
-        </div>
-        <div className='body-col right'>
-          <NextForecast />
-        </div>
+        {/* <MyPlan /> */}
       </div>
-      {/* <MyPlan /> */}
-    </div>
+    </DashProvider>
   )
 }
 
@@ -126,7 +132,7 @@ const WeatherBoard = () => {
   console.log({ userLatLng })
   console.log({ customLatLng })
 
-const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
+  const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
 
   useEffect(() => {
     // axios
@@ -135,11 +141,10 @@ const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
     //   )
     //   .then(res => setWeather(res.data))
     //   .catch(err => console.log('err: ', err))
-
-      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${customLatLng ? customLatLng.lat : userLatLng.lat}&lon=${customLatLng ? customLatLng.lng : userLatLng.lng}&units=imperial&appid=${openWeatherAPI}`).then(res => setWeather(res.data))
-
-
+    // todo uncomment !!
+    // axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${customLatLng ? customLatLng.lat : userLatLng.lat}&lon=${customLatLng ? customLatLng.lng : userLatLng.lng}&units=imperial&appid=${openWeatherAPI}`).then(res => setWeather(res.data))
   }, [])
+
   return (
     <div className='weather-board'>
       {/* <img src={sunPic} /> */}
@@ -149,12 +154,14 @@ const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
             <img
               src={`http://openweathermap.org/img/wn/${weather.current?.weather[0].icon}@2x.png`}
             />
-            <span className="min-max">
+            <span className='min-max'>
               {Math.round(weather.daily[0].temp.max)}&#176;/
               {Math.round(weather.daily[0].temp.min)}&#176;
             </span>
           </div>
-          <span className="current-temp">{Math.round(weather.current.temp)}&#176;</span>
+          <span className='current-temp'>
+            {Math.round(weather.current.temp)}&#176;
+          </span>
           <div className='flex-row precip'>
             <IoWaterSharp />
             <span>{Math.round(weather.daily[0].pop * 100)}%</span>
@@ -168,5 +175,16 @@ const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
     </div>
   )
 }
+
+const DashMain = () => {
+  return (
+    <div className='dash-main'>
+      <MainModule />
+      <div className='second-module'>two</div>
+      <div className='third-module'>three</div>
+    </div>
+  )
+}
+
 
 export default Dashboard

@@ -273,4 +273,74 @@
         }
     }
 
+    .dash-main {
+        border: 3px solid black;
+        height: 100%;
+        padding: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+        .main-module {
+            grid-column: 1 / 3;
+            grid-row: 1 / 4;
+            width: 100%;
+            .carousel {
+                height: 90%;
+                width: 100%;
+            }
+            .module-nav {
+                width: 100%;
+                height: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                button {
+                    height: 1rem;
+                    width: 1rem;
+                    border: 3px solid blue;
+                    cursor: pointer;
+                }
+            }
+        }
+        .second-module {
+            grid-row: 4 / 6;
+            border: 1px dotted purple;
+            
+        }
+        .third-module {
+            grid-row: 4 / 6;
+            border: 3px dotted orange;
+        }
+        // height: 100px;
+        // width: 100px;
+    }
+
+    .dash-module {
+        border: 1px solid red;
+        height: 100%;
+        width: 100%;
+        transition-duration: $time1;
+        position: relative;
+    }
+
+    .dash-mosquitoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        max-width: 100%;
+
+
+    }
+
+    .dash-alerts {
+        background: lightgreen;
+    }
+
+    .dash-spiders {
+        background: tan;
+    }
+
 }

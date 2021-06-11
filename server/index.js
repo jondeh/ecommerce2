@@ -23,16 +23,16 @@ app.use(
     secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 * 4},
   })
 );
 
 app.use(express.static(path.join(__dirname, '../build')));
 
 // todo add back in for production
-// app.get('/*', (req, res) => {
-//    res.sendFile(path.join(__dirname, '../build', 'index.html'));
-//  });
+app.get('/*', (req, res) => {
+   res.sendFile(path.join(__dirname, './build', 'index.html'));
+ });
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -67,3 +67,4 @@ app.post('/create-checkout-session', payCtrl.session);
 
 app.get('/get-day-weather/:lat/:lng', dashCtrl.getDayWeather);
 app.get('/get-open-weather/:lat/:lng', dashCtrl.getOpenWeather);
+app.get('/get-mosquitoes/:lat/:lng', dashCtrl.getMosquitoData);

@@ -14,6 +14,7 @@ import HowTo from './Components/Pages/HowTo';
 import Dashboard from './Components/Pages/Dashboard';
 import Tips from './Components/Pages/Tips';
 import DashMain from './Components/Sections/DashMain';
+import Doughnut2 from './Components/Utility/graphs/Doughnut2'
 
 export default (
     <Switch>
@@ -25,7 +26,7 @@ export default (
         <Route exact path='/auth' component={ Auth } />
         <Route exact path='/register' component={ Register } />
         <Route path='/success/:sessionId' component={ MyPlan } />
-        {/* <Route exact path="/test" component={ Test } /> */}
+        <Route exact path="/test" component={ Doughnut2 } />
         <Route exact path="/how-to" component={ HowTo } />
         <Route exact path="/dashboard" component={ Dashboard } />
         <Route exact path="/tips" component={ Tips } />
