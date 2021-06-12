@@ -12,18 +12,19 @@ const { primary, secondary, accent, textColor, altBlue} = colors;
 
 export function MapContainer(props) {
   const { customLatLng } = useContext(CustomContext);
-  const { userLatLng } = useContext(UserContext)
+  const { user } = useContext(UserContext)
 
-  console.log({customLatLng}, {userLatLng})
-  let latLng = customLatLng ? customLatLng : userLatLng ? userLatLng : null
+  // console.log({customLatLng}, {userLatLng})
+  // let latLng = customLatLng ? customLatLng : userLatLng ? userLatLng : null
   // latLng = {lat: 40.4593505, lng: -111.7574137}
+  let latLng = customLatLng.lat ? customLatLng : user ? {lat: user.lat, lng: user.lng} : null
 
     const [showingInfoWindow, setShowingInfoWindow] = useState(false);
     const [activeMarker, setActiveMarker] = useState({});
     const [selectedPlace, setSelectedPlace] = useState({});
     const [mapCenter, setMapCenter] = useState(latLng);
 
-    console.log("props.type", props.type)
+    console.log("latLng: ", latLng)
     useEffect(() => {
       setMapCenter(latLng);
     }, [latLng])
@@ -128,5 +129,5 @@ export function MapContainer(props) {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyBX-lHHPS16S3hrDWNDRe65HyB3JIcE8Xo",
+  apiKey: "AIzaSyBD_VFmfWUeF5hBVa36PJttNWIW9G6f950",
 })(MapContainer);

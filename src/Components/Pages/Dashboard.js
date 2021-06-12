@@ -126,23 +126,21 @@ const NextForecast = () => {
 
 const WeatherBoard = () => {
   const [weather, setWeather] = useState(null)
-  const { userLatLng } = useContext(UserContext)
+  const { user } = useContext(UserContext)
   const { customLatLng } = useContext(CustomContext)
-  console.log('weather: ', weather)
-  console.log({ userLatLng })
-  console.log({ customLatLng })
 
-  const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
+  console.log("USER DASHBOARD: ", user)
+  // const openWeatherAPI = '83ed53333ea8e6bf676ebd1e6e55c50f'
 
   useEffect(() => {
-    // axios
-    //   .get(
-    //     `/get-open-weather/${customLatLng ? customLatLng.lat : userLatLng?.lat}/${customLatLng ? customLatLng.lng : userLatLng?.lng}`
-    //   )
-    //   .then(res => setWeather(res.data))
-    //   .catch(err => console.log('err: ', err))
-    // todo uncomment !!
-    // axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${customLatLng ? customLatLng.lat : userLatLng.lat}&lon=${customLatLng ? customLatLng.lng : userLatLng.lng}&units=imperial&appid=${openWeatherAPI}`).then(res => setWeather(res.data))
+    if (user) {
+      axios
+        .get(
+          `/get-open-weather/${user.lat}/${user.lng}`
+        )
+        .then(res => setWeather(res.data))
+        .catch(err => console.log('err: ', err))
+    }
   }, [])
 
   return (

@@ -19,7 +19,7 @@ export const UserProvider = ({ children }) => {
   const [emailAnswer, setEmailAnswer] = useState(null);
   // const [userLatLng, setUserLatLng] = useState({lat: 40.4593505, lng: -111.7574137});
   const [userLatLng, setUserLatLng] = useState({lat: '', lng: ''});
-  console.log("userLatLng: ", userLatLng)
+  console.log("user: ", user)
 
   useEffect(() => {
     const json = localStorage.getItem("user");
@@ -40,24 +40,12 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const json = JSON.stringify(user)
-    // console.log("json-1", json)
     localStorage.setItem("user", json)
   }, [user]);
-
-  // useEffect(() => {
-  //   const lat = JSON.stringify(userLatLng?.lat)
-  //   const lng = JSON.stringify(userLatLng?.lng)
-  //   // console.log("json-1", json)
-  //   localStorage.setItem("house_lat", lat)
-  //   localStorage.setItem("house_lng", lng)
-  // }, [userLatLng]);
-
   const login = (body) => {
-      // console.log("body", body)
       axios
         .post("/auth/login", body)
         .then(({ data }) => {
-          // console.log("login data", data)
           setUser(data)
           push("/")
         })
@@ -66,11 +54,9 @@ export const UserProvider = ({ children }) => {
 
     const register = (body, myPlan) => {
       body = {...body, ...answers}
-      // console.log("register body", body)
       axios
         .post("/auth/register", body)
         .then(({ data }) => {
-          // console.log("data", data)
           setUser(data)
           if (myPlan) {
             push("/my-plan")
@@ -82,12 +68,10 @@ export const UserProvider = ({ children }) => {
     };
 
     const logout = () => {
-      // console.log("logout hit")
       axios
         .post("/auth/logout")
         .then(() => {
           setUser(null)
-          // console.log("hit 2")
           push("/")
         })
         .catch(({ message }) => console.log(message))

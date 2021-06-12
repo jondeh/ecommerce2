@@ -6,15 +6,9 @@ import DoughnutGraph from '../Utility/graphs/Doughnut'
 import DashCard from '../Utility/dash/DashCard'
 import axios from 'axios'
 
-const accuAPI = 'JQ3tLpCYP9VNGAJfTGnzJFjZIpc1lKdf'
-
 const DashMosquito = ({data}) => {
-    console.log("DINT", { data })
-
     const mappedData = data.map(day => {
-        console.log({ day })
-        console.log("categoryValue: ", day.CategoryValue)
-        return <DashCard {...{ value: day.CategoryValue }}/>
+        return <DashCard {...{ value: (day.Value*2) }}/>
     })
     return (
       <div className='dash-module dash-mosquitoes'>
@@ -45,36 +39,21 @@ const DashMosquito = ({data}) => {
   ]
   
   const MainModule = () => {
-    const { userLatLng } = useContext(UserContext)
+    const { user } = useContext(UserContext)
     const { customLatLng } = useContext(CustomContext)
     const { moduleCounter, setModuleCounter } = useContext(DashContext)
     const [mosData, setMosData] = useState([])
     const [weatherData, setWeatherData] = useState([])
+
+    console.log("USER MAIN MODULE: ", user)
   
     useEffect(async () => {
-      const { lat, lng } = customLatLng
-  
-      let locationKey = await axios
-        .get(
-          `https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${accuAPI}&q=${lat}%2C${lng}&language=en-us&details=true&toplevel=false`
-        )
-        .then(res => res.data)
-        .catch(err => console.log('err: ', err))
-  
-      console.log({ locationKey })
-  
-      if (locationKey) {
-        let mosquitoData = await axios
-          .get(
-            `https://dataservice.accuweather.com//indices/v1/daily/5day/${locationKey.Key}/17?apikey=${accuAPI}&language=en-us&details=false`
-          )
-          .then(res => setMosData(res.data.slice(0, 4)))
-          .catch(err => console.log(err))
-      }
-  
-      // todo put API call on backend once proxy
 
-      // axios.get(`/get-mosquitoes/${customLatLng.lat}/${customLatLng.lng}`).then(res => console.log(res.data))
+      if (user) {
+        axios.get(`/get-mosquitoes/${user.lat}/${user.lng}`).then(res => {
+          setMosData(res.data.slice(0, 4))
+        }).catch(err => console.log(err))
+      }
   
       const interval = setInterval(() => {
         setModuleCounter(moduleCounter =>
@@ -84,7 +63,6 @@ const DashMosquito = ({data}) => {
       return () => clearInterval(interval)
     }, [])
   
-    console.log({ mosData })
   
     // const mappedModules = dummyData.map(module => {
     //   return module.module
@@ -101,8 +79,6 @@ const DashMosquito = ({data}) => {
       )
     })
   
-    console.log({ userLatLng })
-    console.log({ customLatLng })
     return (
       <div className='main-module'>
         <div className='carousel'>{mappedModules[moduleCounter]}</div>

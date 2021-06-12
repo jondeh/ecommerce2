@@ -1,10 +1,13 @@
-import React, { useState, createContext, useEffect } from "react";
-import { useHistory, useLocation } from 'react-router-dom';
+import React, { useState, createContext, useEffect, useContext } from "react";
+import { useLocation } from 'react-router-dom';
 import { states } from "../data/webData";
+import { UserContext } from '../context/UserContext';
 import axios from 'axios';
 
 export const CustomContext = createContext(null);
 export const CustomProvider = ({ children }) => {
+  const { register,  setUserLatLng} = useContext(UserContext);
+
   const location = useLocation();
   const [whoAnswer, setWhoAnswer] = useState("no");
   const [whoPets, setWhoPets] = useState([])
@@ -27,7 +30,6 @@ export const CustomProvider = ({ children }) => {
 
 
   useEffect(() => {
-    // console.log("HIT 1")
     if (surveyNum > farthestIndex) {
       setFarthestIndex(surveyNum);
     }
@@ -44,7 +46,6 @@ export const CustomProvider = ({ children }) => {
   }, [homeAnswer]);
 
   useEffect(() => {
-    // console.log("DING DING DING");
     if (addressState) {
       if (states[addressState]) {
         setBugAnswer(states[addressState]);
@@ -55,38 +56,15 @@ export const CustomProvider = ({ children }) => {
   }, [addressState]);
 
   const getPropData = (address) => {
-    console.log("GET PROP DATA", address)
 
     if (address) {
       let homeAnswerArr = address.split(',');
-      
-      // console.log("homeAnswerArr", homeAnswerArr);
       let streetAddress = homeAnswerArr.shift();
-      // console.log("streetAddress", streetAddress);
       homeAnswerArr.pop();
       let region = homeAnswerArr.join('')
-      // console.log("region", region);
-      let url = `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/basicprofile?address1=${streetAddress}&address2=${region}`;
-
-        // todo MOVE API KEY TO SERVER INDEX.JS
-        
-      let headers = {
-        'apikey': 'c3b2ce170cfbe102db1faa460b578a30',
-        'accept': 'application/json'
-      }
-
-      axios.get(url, {headers})
-      .then(res => {
-        let propData = res.data.property.map((e,i) => {
-          return {
-            sizeData: e.building.size,
-            summaryData: e.building.summary,
-            constructionData: e.building.construction,
-            lotData: e.lot,
-            interiorData: e.building.interior,
-            parkingData: e.building.parking,
-          };
-        });
+      axios.post(`/get-prop-data`, {address, streetAddress, region}).then(res => {
+        console.log("res: ", res)
+        let propData = res.data
         setSquareFeet(Math.ceil(propData[0].sizeData.grossSize))
         console.log("propData: ", propData[0])
         setPerimeter(Math.ceil((Math.sqrt(propData[0].sizeData.groundFloorSize + propData[0].parkingData.prkgSize)*4)*1.1))
@@ -94,16 +72,11 @@ export const CustomProvider = ({ children }) => {
         setPropData(propData)
         setHomeLoad(false);
         setDidAPICallFail(false);
-      }).catch(err => {
-        // console.log("ERROR: ", err);
-        setDidAPICallFail(true);
-        setHomeLoad(false);
-      });
+      })
     };
   };
   
   useEffect(() => {
-    // console.log("HIT")
     if (address) {
       setHomeLoad(true);
       getPropData(address)
@@ -127,7 +100,6 @@ export const CustomProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    // console.log("HIT 2", surveyNum, farthestIndex)
     setSurveyNum(0);
     setFarthestIndex(0);
     setWhoAnswer("no");
@@ -155,11 +127,14 @@ export const CustomProvider = ({ children }) => {
 
 
 const handleNavClick = (index) => {
-  // console.log("NAV CLICK: ", index, farthestIndex)
   if (index <= farthestIndex) {
       setSurveyNum(index);
   }
 };
+
+const registerUser = ({email, password}, myplan) => {
+  register({email, password, whoAnswer, whoPets, homeAnswer, bugAnswer, sprayerAnswer, addressState, addressCity, address, perimeter, squareFeet, customLatLng }, myplan)
+}
 
   return (
     <CustomContext.Provider
@@ -185,6 +160,7 @@ const handleNavClick = (index) => {
         handleNavClick,
         sprayerInfo, setSprayerInfo,
         squareFeet, setSquareFeet,
+        registerUser
 
       }}
     >

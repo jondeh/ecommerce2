@@ -25,10 +25,6 @@ const TextOverlay = () => {
         </span>
     });
 
-    console.log("OVERLAY NUM: ", overlayNum);
-
-
-
     return (
         <div className="text-overlay-container">
             {mappedText}

@@ -27,12 +27,8 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '..', 'build')));
 
-// todo add back in for production
-app.get('/*', (req, res) => {
-   res.sendFile(path.join(__dirname, './build', 'index.html'));
- });
 
 massive({
   connectionString: CONNECTION_STRING,
@@ -42,7 +38,7 @@ massive({
   app.listen(SERVER_PORT, () => {
     console.log(`SERVER LISTENING ON ${SERVER_PORT}`)
     console.log("DATABASE CONNECTED")
-});
+  });
 }).catch(err => console.log(err));
 
 
@@ -68,3 +64,9 @@ app.post('/create-checkout-session', payCtrl.session);
 app.get('/get-day-weather/:lat/:lng', dashCtrl.getDayWeather);
 app.get('/get-open-weather/:lat/:lng', dashCtrl.getOpenWeather);
 app.get('/get-mosquitoes/:lat/:lng', dashCtrl.getMosquitoData);
+app.post('/get-prop-data', dashCtrl.getPropertyData);
+
+// todo add back in for production
+app.get('/*', (req, res) => {
+   res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+ });
