@@ -13,13 +13,13 @@ const { primary, secondary, accent, textColor} = colors;
 const EmailQuestion = () => {
     const { push } = useHistory();
     const { emailQuestion, setGetAnswers, setIsSurvey } = useContext(AppContext);
-    const { latLng } = useContext(CustomContext);
+    const { latLng, registerUser } = useContext(CustomContext);
     const { register,  setUserLatLng} = useContext(UserContext);
     const [emailInput, setEmailInput] = useState('');
 
     const handleClick = () => {
         if (emailInput.includes("@")) {
-            register({email: emailInput, password: "password"}, "my-plan")
+            registerUser({email: emailInput, password: "password"}, "my-plan")
             // setIsSurvey(false)
             setUserLatLng(latLng)
             setGetAnswers(null)

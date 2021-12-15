@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.graph-container {
+    position: relative;
+    // width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mos-value {
+        position: absolute; 
+        top: 50%;
+        transform: translate(0%, -50%);
+        font-size: 1.5em;
+        margin-top: 3%;
+    }
+}

@@ -29,11 +29,12 @@ const WhoQuestion = ({  }) => {
       };
 
     const mappedPets = whoOptions.map((pet, i) => {
-        return <PetOption {...{pet, whoAnswer, handleWhoClick}}/>
+        return <PetOption key={i} {...{pet, whoAnswer, handleWhoClick}}/>
     });
 
     const mappedYesNo = ["yes", "no"].map((e, i) => {
         return <Button
+            key={i}
             style={{background: whoAnswer === e ? accent : null}}
             onClick={() => handleChildClick(e)}
             variant="contained"> <span style={{color:  whoAnswer === e ? "white" : null}}>{e}</span> </Button>

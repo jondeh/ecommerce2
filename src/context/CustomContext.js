@@ -1,10 +1,13 @@
-import React, { useState, createContext, useEffect } from 'react'
+import React, { useState, createContext, useEffect, useContext } from 'react'
 import { useLocation } from 'react-router-dom'
 import { states } from '../data/webData'
+import { UserContext } from '../context/UserContext'
 import axios from 'axios'
 
 export const CustomContext = createContext(null)
 export const CustomProvider = ({ children }) => {
+  const { register, setUserLatLng } = useContext(UserContext)
+
   const location = useLocation()
   const [whoAnswer, setWhoAnswer] = useState('no')
   const [whoPets, setWhoPets] = useState([])
@@ -60,29 +63,13 @@ export const CustomProvider = ({ children }) => {
       let streetAddress = homeAnswerArr.shift()
       homeAnswerArr.pop()
       let region = homeAnswerArr.join('')
-      let url = `https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/basicprofile?address1=${streetAddress}&address2=${region}`
-
-      // todo MOVE API KEY TO SERVER INDEX.JS
-
-      let headers = {
-        apikey: '796f3114d0930206f05e32b23eded151',
-        accept: 'application/json'
-      }
-
       axios
-        .get(url, { headers })
+        .post(`/get-prop-data`, { address, streetAddress, region })
         .then(res => {
-          let propData = res.data.property.map((e, i) => {
-            return {
-              sizeData: e.building.size,
-              summaryData: e.building.summary,
-              constructionData: e.building.construction,
-              lotData: e.lot,
-              interiorData: e.building.interior,
-              parkingData: e.building.parking
-            }
-          })
+          console.log('res: ', res)
+          let propData = res.data
           setSquareFeet(Math.ceil(propData[0].sizeData.grossSize))
+          console.log('propData: ', propData[0])
           setPerimeter(
             Math.ceil(
               Math.sqrt(
@@ -97,10 +84,6 @@ export const CustomProvider = ({ children }) => {
           setPropData(propData)
           setHomeLoad(false)
           setDidAPICallFail(false)
-        })
-        .catch(err => {
-          setDidAPICallFail(true)
-          setHomeLoad(false)
         })
     }
   }
@@ -160,6 +143,27 @@ export const CustomProvider = ({ children }) => {
     }
   }
 
+  const registerUser = ({ email, password }, myplan) => {
+    register(
+      {
+        email,
+        password,
+        whoAnswer,
+        whoPets,
+        homeAnswer,
+        bugAnswer,
+        sprayerAnswer,
+        addressState,
+        addressCity,
+        address,
+        perimeter,
+        squareFeet,
+        customLatLng
+      },
+      myplan
+    )
+  }
+
   return (
     <CustomContext.Provider
       value={{
@@ -199,7 +203,8 @@ export const CustomProvider = ({ children }) => {
         sprayerInfo,
         setSprayerInfo,
         squareFeet,
-        setSquareFeet
+        setSquareFeet,
+        registerUser
       }}
     >
       {children}

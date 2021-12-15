@@ -11,13 +11,12 @@ const TextOverlay = () => {
     const [overlayNum, setOverlayNum] = useState(0);
 
     useEffect(() => {
-        setInterval(() => {
+        const interval = setInterval(() => {
             setOverlayNum((overlayNum) => {
-                // console.log("setOverlayNum", overlayNum++)
-                overlayNum++
-                return overlayNum < 4 ? overlayNum++ : 0
+                return overlayNum < 4 ? overlayNum+1 : 0
             })
         }, 4000);
+        return () => clearInterval(interval)
     }, []);
 
     const mappedText = overlayText.map((text,i) => {
@@ -25,10 +24,6 @@ const TextOverlay = () => {
                 {text}
         </span>
     });
-
-    console.log("OVERLAY NUM: ", overlayNum);
-
-
 
     return (
         <div className="text-overlay-container">
